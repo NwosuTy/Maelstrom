@@ -1,0 +1,2629 @@
+fileFormatVersion: 2
+guid: fec746e46c2fd354fa0bc92720075dbd
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: BigCanon01_L
+  - first:
+      1: 100002
+    second: BigCanon01_R
+  - first:
+      1: 100004
+    second: BigCanon01Stretcher_L
+  - first:
+      1: 100006
+    second: BigCanon01Stretcher_R
+  - first:
+      1: 100008
+    second: BigCanon02_L
+  - first:
+      1: 100010
+    second: BigCanon02_R
+  - first:
+      1: 100012
+    second: BigCanon02Stretcher_L
+  - first:
+      1: 100014
+    second: BigCanon02Stretcher_R
+  - first:
+      1: 100016
+    second: Body
+  - first:
+      1: 100018
+    second: Foot01_L
+  - first:
+      1: 100020
+    second: Foot01_R
+  - first:
+      1: 100022
+    second: Foot02_L
+  - first:
+      1: 100024
+    second: Foot02_R
+  - first:
+      1: 100026
+    second: Heel_L
+  - first:
+      1: 100028
+    second: Heel_R
+  - first:
+      1: 100030
+    second: Hip01_L
+  - first:
+      1: 100032
+    second: Hip01_R
+  - first:
+      1: 100034
+    second: Hip02_L
+  - first:
+      1: 100036
+    second: Hip02_R
+  - first:
+      1: 100038
+    second: LowerLeg_L
+  - first:
+      1: 100040
+    second: LowerLeg_R
+  - first:
+      1: 100042
+    second: Mech
+  - first:
+      1: 100044
+    second: mech
+  - first:
+      1: 100046
+    second: //RootNode
+  - first:
+      1: 100048
+    second: Mortar
+  - first:
+      1: 100050
+    second: Pelvis
+  - first:
+      1: 100052
+    second: PistonBaseLower_L
+  - first:
+      1: 100054
+    second: PistonBaseLower_R
+  - first:
+      1: 100056
+    second: PistonBaseUpper_L
+  - first:
+      1: 100058
+    second: PistonBaseUpper_R
+  - first:
+      1: 100060
+    second: PistonLower_L
+  - first:
+      1: 100062
+    second: PistonLower_R
+  - first:
+      1: 100064
+    second: PistonLower_R_001
+  - first:
+      1: 100066
+    second: PistonMedian_L
+  - first:
+      1: 100068
+    second: PistonMedian_R
+  - first:
+      1: 100070
+    second: PistonUpper_L
+  - first:
+      1: 100072
+    second: PistonUpper_R
+  - first:
+      1: 100074
+    second: Root
+  - first:
+      1: 100076
+    second: ShinShield_L
+  - first:
+      1: 100078
+    second: ShinShield_R
+  - first:
+      1: 100080
+    second: SmallCanon01_L
+  - first:
+      1: 100082
+    second: SmallCanon01_R
+  - first:
+      1: 100084
+    second: SmallCanon02_L
+  - first:
+      1: 100086
+    second: SmallCanon02_R
+  - first:
+      1: 100088
+    second: Toe1_L
+  - first:
+      1: 100090
+    second: Toe1_R
+  - first:
+      1: 100092
+    second: Toe2_L
+  - first:
+      1: 100094
+    second: Toe2_R
+  - first:
+      1: 100096
+    second: Toe3_L
+  - first:
+      1: 100098
+    second: Toe3_R
+  - first:
+      1: 100100
+    second: Toe4_L
+  - first:
+      1: 100102
+    second: Toe4_R
+  - first:
+      1: 100104
+    second: UpperLeg_L
+  - first:
+      1: 100106
+    second: UpperLeg_R
+  - first:
+      4: 400000
+    second: BigCanon01_L
+  - first:
+      4: 400002
+    second: BigCanon01_R
+  - first:
+      4: 400004
+    second: BigCanon01Stretcher_L
+  - first:
+      4: 400006
+    second: BigCanon01Stretcher_R
+  - first:
+      4: 400008
+    second: BigCanon02_L
+  - first:
+      4: 400010
+    second: BigCanon02_R
+  - first:
+      4: 400012
+    second: BigCanon02Stretcher_L
+  - first:
+      4: 400014
+    second: BigCanon02Stretcher_R
+  - first:
+      4: 400016
+    second: Body
+  - first:
+      4: 400018
+    second: Foot01_L
+  - first:
+      4: 400020
+    second: Foot01_R
+  - first:
+      4: 400022
+    second: Foot02_L
+  - first:
+      4: 400024
+    second: Foot02_R
+  - first:
+      4: 400026
+    second: Heel_L
+  - first:
+      4: 400028
+    second: Heel_R
+  - first:
+      4: 400030
+    second: Hip01_L
+  - first:
+      4: 400032
+    second: Hip01_R
+  - first:
+      4: 400034
+    second: Hip02_L
+  - first:
+      4: 400036
+    second: Hip02_R
+  - first:
+      4: 400038
+    second: LowerLeg_L
+  - first:
+      4: 400040
+    second: LowerLeg_R
+  - first:
+      4: 400042
+    second: Mech
+  - first:
+      4: 400044
+    second: //RootNode
+  - first:
+      4: 400046
+    second: mech
+  - first:
+      4: 400048
+    second: Mortar
+  - first:
+      4: 400050
+    second: Pelvis
+  - first:
+      4: 400052
+    second: PistonBaseLower_L
+  - first:
+      4: 400054
+    second: PistonBaseLower_R
+  - first:
+      4: 400056
+    second: PistonBaseUpper_L
+  - first:
+      4: 400058
+    second: PistonBaseUpper_R
+  - first:
+      4: 400060
+    second: PistonLower_L
+  - first:
+      4: 400062
+    second: PistonLower_R
+  - first:
+      4: 400064
+    second: PistonLower_R_001
+  - first:
+      4: 400066
+    second: PistonMedian_L
+  - first:
+      4: 400068
+    second: PistonMedian_R
+  - first:
+      4: 400070
+    second: PistonUpper_L
+  - first:
+      4: 400072
+    second: PistonUpper_R
+  - first:
+      4: 400074
+    second: Root
+  - first:
+      4: 400076
+    second: ShinShield_L
+  - first:
+      4: 400078
+    second: ShinShield_R
+  - first:
+      4: 400080
+    second: SmallCanon01_L
+  - first:
+      4: 400082
+    second: SmallCanon01_R
+  - first:
+      4: 400084
+    second: SmallCanon02_L
+  - first:
+      4: 400086
+    second: SmallCanon02_R
+  - first:
+      4: 400088
+    second: Toe1_L
+  - first:
+      4: 400090
+    second: Toe1_R
+  - first:
+      4: 400092
+    second: Toe2_L
+  - first:
+      4: 400094
+    second: Toe2_R
+  - first:
+      4: 400096
+    second: Toe3_L
+  - first:
+      4: 400098
+    second: Toe3_R
+  - first:
+      4: 400100
+    second: Toe4_L
+  - first:
+      4: 400102
+    second: Toe4_R
+  - first:
+      4: 400104
+    second: UpperLeg_L
+  - first:
+      4: 400106
+    second: UpperLeg_R
+  - first:
+      43: 4300000
+    second: mech
+  - first:
+      74: 7400000
+    second: DefaultToWalk
+  - first:
+      74: 7400002
+    second: Hit
+  - first:
+      74: 7400004
+    second: Run
+  - first:
+      74: 7400006
+    second: Run_InPlace
+  - first:
+      74: 7400008
+    second: RunJump
+  - first:
+      74: 7400010
+    second: RunJump_InPlace
+  - first:
+      74: 7400012
+    second: ShootBigCanon_A
+  - first:
+      74: 7400014
+    second: ShootBigCanon_B
+  - first:
+      74: 7400016
+    second: ShootSmallCanon_A
+  - first:
+      74: 7400018
+    second: ShootSmallCanon_B
+  - first:
+      74: 7400020
+    second: SleepToDefault
+  - first:
+      74: 7400022
+    second: Walk
+  - first:
+      74: 7400024
+    second: WalkInPlace
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: mech
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: None__Untitled_002
+    second: {fileID: 2100000, guid: 059282d24af041a4f94e2354b1770ef4, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'Head' not found\n"
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: DefaultToWalk
+      takeName: DefaultToWalk
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: mech
+        weight: 1
+      - path: Mech
+        weight: 1
+      - path: Mech/Root
+        weight: 1
+      - path: Mech/Root/Pelvis
+        weight: 1
+      - path: Mech/Root/Pelvis/Body
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01Stretcher_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01Stretcher_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02Stretcher_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02Stretcher_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/Mortar
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_L/Hip02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_R/Hip02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/PistonBaseLower_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/PistonBaseLower_L/PistonLower_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/ShinShield_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe1_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe1_L/Toe3_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe2_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe2_L/Toe4_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Heel_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L/PistonUpper_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L/PistonUpper_L/PistonMedian_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R/PistonLower_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R/PistonLower_R_001
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/ShinShield_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe1_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe1_R/Toe3_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe2_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe2_R/Toe4_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Heel_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R/PistonUpper_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R/PistonUpper_R/PistonMedian_R
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hit
+      takeName: Hit
+      internalID: 0
+      firstFrame: -1
+      lastFrame: 49
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: mech
+        weight: 1
+      - path: Mech
+        weight: 1
+      - path: Mech/Root
+        weight: 1
+      - path: Mech/Root/Pelvis
+        weight: 1
+      - path: Mech/Root/Pelvis/Body
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01Stretcher_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01Stretcher_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02Stretcher_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02Stretcher_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/Mortar
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_L/Hip02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_R/Hip02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/PistonBaseLower_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/PistonBaseLower_L/PistonLower_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/ShinShield_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe1_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe1_L/Toe3_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe2_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe2_L/Toe4_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Heel_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L/PistonUpper_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L/PistonUpper_L/PistonMedian_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R/PistonLower_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R/PistonLower_R_001
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/ShinShield_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe1_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe1_R/Toe3_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe2_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe2_R/Toe4_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Heel_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R/PistonUpper_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R/PistonUpper_R/PistonMedian_R
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Run
+      takeName: Run
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0
+        functionName: FootStep
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 1
+        functionName: EndOfRun
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.4763158
+        functionName: FootStep
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: mech
+        weight: 1
+      - path: Mech
+        weight: 1
+      - path: Mech/Root
+        weight: 1
+      - path: Mech/Root/Pelvis
+        weight: 1
+      - path: Mech/Root/Pelvis/Body
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01Stretcher_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01Stretcher_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02Stretcher_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02Stretcher_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/Mortar
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_L/Hip02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_R/Hip02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/PistonBaseLower_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/PistonBaseLower_L/PistonLower_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/ShinShield_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe1_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe1_L/Toe3_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe2_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe2_L/Toe4_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Heel_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L/PistonUpper_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L/PistonUpper_L/PistonMedian_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R/PistonLower_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R/PistonLower_R_001
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/ShinShield_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe1_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe1_R/Toe3_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe2_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe2_R/Toe4_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Heel_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R/PistonUpper_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R/PistonUpper_R/PistonMedian_R
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Run_InPlace
+      takeName: Run_InPlace
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: mech
+        weight: 1
+      - path: Mech
+        weight: 1
+      - path: Mech/Root
+        weight: 1
+      - path: Mech/Root/Pelvis
+        weight: 1
+      - path: Mech/Root/Pelvis/Body
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01Stretcher_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01Stretcher_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02Stretcher_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02Stretcher_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/Mortar
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_L/Hip02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_R/Hip02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/PistonBaseLower_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/PistonBaseLower_L/PistonLower_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/ShinShield_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe1_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe1_L/Toe3_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe2_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe2_L/Toe4_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Heel_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L/PistonUpper_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L/PistonUpper_L/PistonMedian_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R/PistonLower_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R/PistonLower_R_001
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/ShinShield_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe1_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe1_R/Toe3_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe2_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe2_R/Toe4_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Heel_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R/PistonUpper_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R/PistonUpper_R/PistonMedian_R
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RunJump
+      takeName: RunJump
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 1
+        functionName: EndOfRunJump
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0
+        functionName: FootStep
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.6894737
+        functionName: FootStep
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: mech
+        weight: 1
+      - path: Mech
+        weight: 1
+      - path: Mech/Root
+        weight: 1
+      - path: Mech/Root/Pelvis
+        weight: 1
+      - path: Mech/Root/Pelvis/Body
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01Stretcher_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01Stretcher_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02Stretcher_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02Stretcher_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/Mortar
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_L/Hip02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_R/Hip02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/PistonBaseLower_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/PistonBaseLower_L/PistonLower_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/ShinShield_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe1_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe1_L/Toe3_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe2_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe2_L/Toe4_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Heel_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L/PistonUpper_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L/PistonUpper_L/PistonMedian_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R/PistonLower_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R/PistonLower_R_001
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/ShinShield_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe1_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe1_R/Toe3_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe2_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe2_R/Toe4_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Heel_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R/PistonUpper_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R/PistonUpper_R/PistonMedian_R
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RunJump_InPlace
+      takeName: RunJump_InPlace
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: mech
+        weight: 1
+      - path: Mech
+        weight: 1
+      - path: Mech/Root
+        weight: 1
+      - path: Mech/Root/Pelvis
+        weight: 1
+      - path: Mech/Root/Pelvis/Body
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01Stretcher_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01Stretcher_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02Stretcher_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02Stretcher_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/Mortar
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_L/Hip02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_R/Hip02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/PistonBaseLower_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/PistonBaseLower_L/PistonLower_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/ShinShield_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe1_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe1_L/Toe3_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe2_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe2_L/Toe4_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Heel_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L/PistonUpper_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L/PistonUpper_L/PistonMedian_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R/PistonLower_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R/PistonLower_R_001
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/ShinShield_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe1_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe1_R/Toe3_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe2_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe2_R/Toe4_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Heel_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R/PistonUpper_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R/PistonUpper_R/PistonMedian_R
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: ShootBigCanon_A
+      takeName: ShootBigCanon_A
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0
+        functionName: ShootBigCanonA
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: mech
+        weight: 1
+      - path: Mech
+        weight: 1
+      - path: Mech/Root
+        weight: 1
+      - path: Mech/Root/Pelvis
+        weight: 1
+      - path: Mech/Root/Pelvis/Body
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01Stretcher_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01Stretcher_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02Stretcher_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02Stretcher_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/Mortar
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_L/Hip02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_R/Hip02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/PistonBaseLower_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/PistonBaseLower_L/PistonLower_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/ShinShield_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe1_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe1_L/Toe3_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe2_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe2_L/Toe4_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Heel_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L/PistonUpper_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L/PistonUpper_L/PistonMedian_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R/PistonLower_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R/PistonLower_R_001
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/ShinShield_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe1_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe1_R/Toe3_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe2_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe2_R/Toe4_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Heel_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R/PistonUpper_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R/PistonUpper_R/PistonMedian_R
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: ShootBigCanon_B
+      takeName: ShootBigCanon_B
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 15
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0
+        functionName: ShootBigCanonB
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: mech
+        weight: 1
+      - path: Mech
+        weight: 1
+      - path: Mech/Root
+        weight: 1
+      - path: Mech/Root/Pelvis
+        weight: 1
+      - path: Mech/Root/Pelvis/Body
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01Stretcher_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01Stretcher_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02Stretcher_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02Stretcher_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/Mortar
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_L/Hip02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_R/Hip02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/PistonBaseLower_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/PistonBaseLower_L/PistonLower_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/ShinShield_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe1_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe1_L/Toe3_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe2_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe2_L/Toe4_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Heel_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L/PistonUpper_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L/PistonUpper_L/PistonMedian_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R/PistonLower_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R/PistonLower_R_001
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/ShinShield_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe1_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe1_R/Toe3_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe2_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe2_R/Toe4_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Heel_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R/PistonUpper_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R/PistonUpper_R/PistonMedian_R
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: ShootSmallCanon_A
+      takeName: ShootSmallCanon_A
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 7
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0
+        functionName: ShootSmallCanonA
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: mech
+        weight: 1
+      - path: Mech
+        weight: 1
+      - path: Mech/Root
+        weight: 1
+      - path: Mech/Root/Pelvis
+        weight: 1
+      - path: Mech/Root/Pelvis/Body
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01Stretcher_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01Stretcher_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02Stretcher_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02Stretcher_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/Mortar
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_L/Hip02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_R/Hip02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/PistonBaseLower_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/PistonBaseLower_L/PistonLower_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/ShinShield_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe1_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe1_L/Toe3_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe2_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe2_L/Toe4_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Heel_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L/PistonUpper_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L/PistonUpper_L/PistonMedian_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R/PistonLower_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R/PistonLower_R_001
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/ShinShield_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe1_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe1_R/Toe3_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe2_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe2_R/Toe4_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Heel_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R/PistonUpper_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R/PistonUpper_R/PistonMedian_R
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: ShootSmallCanon_B
+      takeName: ShootSmallCanon_B
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 7
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0
+        functionName: ShootSmallCanonB
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: mech
+        weight: 1
+      - path: Mech
+        weight: 1
+      - path: Mech/Root
+        weight: 1
+      - path: Mech/Root/Pelvis
+        weight: 1
+      - path: Mech/Root/Pelvis/Body
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01Stretcher_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01Stretcher_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02Stretcher_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02Stretcher_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/Mortar
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_L/Hip02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_R/Hip02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/PistonBaseLower_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/PistonBaseLower_L/PistonLower_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/ShinShield_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe1_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe1_L/Toe3_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe2_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe2_L/Toe4_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Heel_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L/PistonUpper_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L/PistonUpper_L/PistonMedian_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R/PistonLower_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R/PistonLower_R_001
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/ShinShield_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe1_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe1_R/Toe3_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe2_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe2_R/Toe4_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Heel_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R/PistonUpper_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R/PistonUpper_R/PistonMedian_R
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: SleepToDefault
+      takeName: SleepToDefault
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 33
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: mech
+        weight: 1
+      - path: Mech
+        weight: 1
+      - path: Mech/Root
+        weight: 1
+      - path: Mech/Root/Pelvis
+        weight: 1
+      - path: Mech/Root/Pelvis/Body
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01Stretcher_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01Stretcher_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02Stretcher_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02Stretcher_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/Mortar
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_L/Hip02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_R/Hip02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/PistonBaseLower_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/PistonBaseLower_L/PistonLower_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/ShinShield_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe1_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe1_L/Toe3_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe2_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe2_L/Toe4_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Heel_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L/PistonUpper_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L/PistonUpper_L/PistonMedian_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R/PistonLower_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R/PistonLower_R_001
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/ShinShield_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe1_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe1_R/Toe3_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe2_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe2_R/Toe4_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Heel_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R/PistonUpper_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R/PistonUpper_R/PistonMedian_R
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walk
+      takeName: Walk
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 49
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.49712643
+        functionName: FootStep
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 1
+        functionName: EndOfWalk
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.013157895
+        functionName: FootStep
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: mech
+        weight: 1
+      - path: Mech
+        weight: 1
+      - path: Mech/Root
+        weight: 1
+      - path: Mech/Root/Pelvis
+        weight: 1
+      - path: Mech/Root/Pelvis/Body
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01Stretcher_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01Stretcher_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02Stretcher_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02Stretcher_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/Mortar
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_L/Hip02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_R/Hip02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/PistonBaseLower_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/PistonBaseLower_L/PistonLower_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/ShinShield_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe1_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe1_L/Toe3_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe2_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe2_L/Toe4_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Heel_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L/PistonUpper_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L/PistonUpper_L/PistonMedian_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R/PistonLower_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R/PistonLower_R_001
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/ShinShield_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe1_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe1_R/Toe3_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe2_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe2_R/Toe4_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Heel_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R/PistonUpper_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R/PistonUpper_R/PistonMedian_R
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: WalkInPlace
+      takeName: WalkInPlace
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 49
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: mech
+        weight: 1
+      - path: Mech
+        weight: 1
+      - path: Mech/Root
+        weight: 1
+      - path: Mech/Root/Pelvis
+        weight: 1
+      - path: Mech/Root/Pelvis/Body
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01Stretcher_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon01Stretcher_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02Stretcher_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/BigCanon02Stretcher_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/Mortar
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Body/SmallCanon02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_L/Hip02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/Hip01_R/Hip02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/PistonBaseLower_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/PistonBaseLower_L/PistonLower_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/ShinShield_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe1_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe1_L/Toe3_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe2_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Foot02_L/Toe2_L/Toe4_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/LowerLeg_L/Foot01_L/Heel_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L/PistonUpper_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_L/PistonBaseUpper_L/PistonUpper_L/PistonMedian_L
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R/PistonLower_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/PistonBaseLower_R/PistonLower_R_001
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/ShinShield_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe1_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe1_R/Toe3_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe2_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Foot02_R/Toe2_R/Toe4_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/LowerLeg_R/Foot01_R/Heel_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R/PistonUpper_R
+        weight: 1
+      - path: Mech/Root/Pelvis/UpperLeg_R/PistonBaseUpper_R/PistonUpper_R/PistonMedian_R
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.45
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: mech(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: mech
+      parentName: mech(Clone)
+      position: {x: -0, y: 0, z: -3.352761e-11}
+      rotation: {x: 0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mech
+      parentName: mech(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Root
+      parentName: Mech
+      position: {x: -0, y: 0, z: -3.352761e-11}
+      rotation: {x: 0.7071068, y: 0.7071067, z: 0.00000010991034, w: -0.00000029822425}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Pelvis
+      parentName: Root
+      position: {x: -0.000010684299, y: -0.0000000066029315, z: -0.017265279}
+      rotation: {x: 0.00000011098621, y: 0.7071065, z: -0.00000011098612, w: 0.70710707}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+    - name: Body
+      parentName: Pelvis
+      position: {x: 0.0000000012717445, y: 9.45e-17, z: -2.5598648e-10}
+      rotation: {x: 0.000000075497844, y: 1, z: -0.0000000754979, w: -5.7611607e-15}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Mortar
+      parentName: Body
+      position: {x: -0.011490236, y: -0.0049164942, z: -0.0015803016}
+      rotation: {x: 0.7071068, y: -0.00000009415696, z: -0.7071067, w: -0.00000009415697}
+      scale: {x: 0.99999976, y: 1, z: 1}
+    - name: BigCanon01_L
+      parentName: Body
+      position: {x: -0.00670593, y: -0.0043618362, z: 0.0030853546}
+      rotation: {x: 0.70710707, y: -0.000000094156924, z: -0.7071065, w: -0.000000094157}
+      scale: {x: 0.99999976, y: 1, z: 1}
+    - name: BigCanon02_L
+      parentName: Body
+      position: {x: -0.0055266614, y: -0.005954555, z: 0.0030853543}
+      rotation: {x: 0.7071068, y: -0.00000009415696, z: -0.7071067, w: -0.00000009415697}
+      scale: {x: 0.9999999, y: 0.9999999, z: 0.99999976}
+    - name: BigCanon01_R
+      parentName: Body
+      position: {x: -0.006705929, y: 0.0043618367, z: 0.0030853553}
+      rotation: {x: 0.70710707, y: -0.000000094156924, z: -0.7071065, w: -0.000000094157}
+      scale: {x: 0.9999999, y: 0.9999999, z: 0.9999999}
+    - name: BigCanon02_R
+      parentName: Body
+      position: {x: -0.0055266605, y: 0.005954555, z: 0.0030853548}
+      rotation: {x: 0.7071068, y: -0.00000009415696, z: -0.7071067, w: -0.00000009415697}
+      scale: {x: 0.99999976, y: 1, z: 1}
+    - name: BigCanon01Stretcher_L
+      parentName: Body
+      position: {x: -0.006705929, y: -0.0043618367, z: 0.0062459586}
+      rotation: {x: 0.00000004371138, y: -6.850417e-15, z: 2.103122e-15, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: BigCanon02Stretcher_L
+      parentName: Body
+      position: {x: -0.005526658, y: -0.0059545552, z: 0.006245959}
+      rotation: {x: 0.00000004371138, y: -6.850417e-15, z: 2.103122e-15, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: BigCanon01Stretcher_R
+      parentName: Body
+      position: {x: -0.006705928, y: 0.0043618367, z: 0.00624596}
+      rotation: {x: 0.00000004371138, y: -6.850417e-15, z: 2.103122e-15, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: BigCanon02Stretcher_R
+      parentName: Body
+      position: {x: -0.0055266577, y: 0.0059545552, z: 0.00624596}
+      rotation: {x: 0.00000004371138, y: -6.850417e-15, z: 2.103122e-15, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SmallCanon02_L
+      parentName: Body
+      position: {x: -0.006522763, y: -0.0069506573, z: 0.0030853532}
+      rotation: {x: 0.7071068, y: -0.00000009415696, z: -0.7071067, w: -0.00000009415697}
+      scale: {x: 0.9999999, y: 1, z: 1.0000001}
+    - name: SmallCanon01_L
+      parentName: Body
+      position: {x: -0.007083948, y: -0.0063427067, z: 0.0030853536}
+      rotation: {x: 0.7071068, y: -0.00000009415696, z: -0.7071067, w: -0.00000009415697}
+      scale: {x: 0.9999999, y: 1, z: 0.9999999}
+    - name: SmallCanon02_R
+      parentName: Body
+      position: {x: -0.006522762, y: 0.0069506573, z: 0.0030853548}
+      rotation: {x: 0.7071068, y: -0.00000009415696, z: -0.7071067, w: -0.00000009415697}
+      scale: {x: 0.99999976, y: 1, z: 0.9999999}
+    - name: SmallCanon01_R
+      parentName: Body
+      position: {x: -0.0070839464, y: 0.0063427067, z: 0.0030853548}
+      rotation: {x: 0.7071068, y: -0.00000009415696, z: -0.7071067, w: -0.00000009415697}
+      scale: {x: 0.99999976, y: 1, z: 1}
+    - name: Hip01_L
+      parentName: Pelvis
+      position: {x: -0.0027622653, y: -0.0011703462, z: -0.0000934185}
+      rotation: {x: 0.7193377, y: 0.6935331, z: -0.006615292, w: 0.03900399}
+      scale: {x: 0.9999997, y: 1, z: 1}
+    - name: Hip02_L
+      parentName: Hip01_L
+      position: {x: -0.001130465, y: -0.000000001290813, z: 8.381903e-11}
+      rotation: {x: 0.018261196, y: 0.025577102, z: -0.017847368, w: 0.99934673}
+      scale: {x: 0.99999994, y: 1, z: 1}
+    - name: UpperLeg_L
+      parentName: Pelvis
+      position: {x: -0.0028051531, y: -0.0045689177, z: 0.0000106944}
+      rotation: {x: 0.011727507, y: 0.108516395, z: 0.018660579, w: 0.9938504}
+      scale: {x: 1, y: 0.9999998, z: 1}
+    - name: LowerLeg_L
+      parentName: UpperLeg_L
+      position: {x: -0.0060772747, y: 8.829811e-10, z: 6.1397437e-10}
+      rotation: {x: 0.0028420242, y: -0.17404109, z: 0.0051835678, w: 0.9847207}
+      scale: {x: 0.99999994, y: 1.0000002, z: 1}
+    - name: Foot01_L
+      parentName: LowerLeg_L
+      position: {x: -0.006144089, y: 5.086767e-10, z: 1.0477379e-10}
+      rotation: {x: -0.013516452, y: 0.19707052, z: -0.021881372, w: 0.98005193}
+      scale: {x: 1.0000001, y: 0.99999994, z: 0.99999994}
+    - name: Heel_L
+      parentName: Foot01_L
+      position: {x: -0.0021398985, y: 1.9697471e-10, z: 1.0477377e-11}
+      rotation: {x: -0.0009795632, y: 0.3823497, z: -0.002975587, w: 0.92401236}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Foot02_L
+      parentName: Foot01_L
+      position: {x: -0.0021398985, y: 1.9697471e-10, z: 1.0477377e-11}
+      rotation: {x: 0.60760254, y: -0.000000020241762, z: 0.79423666, w: 0.002693729}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: Toe2_L
+      parentName: Foot02_L
+      position: {x: -0.003450409, y: -0.000842988, z: 0.000040093408}
+      rotation: {x: 0.015201568, y: -0.16386999, z: 0.30842727, w: 0.9369035}
+      scale: {x: 1.0000004, y: 1.0000001, z: 1.0000001}
+    - name: Toe4_L
+      parentName: Toe2_L
+      position: {x: -0.0011156616, y: 7.145572e-10, z: -1.6763806e-10}
+      rotation: {x: 0.050352387, y: 0.1129004, z: 0.012294034, w: 0.9922535}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: Toe1_L
+      parentName: Foot02_L
+      position: {x: -0.003430485, y: 0.00089496345, z: 0.000040093324}
+      rotation: {x: -0.07675311, y: -0.16997072, z: -0.35597405, w: 0.9156972}
+      scale: {x: 1.0000001, y: 1.0000001, z: 0.9999999}
+    - name: Toe3_L
+      parentName: Toe1_L
+      position: {x: -0.0011156609, y: -2.2893072e-10, z: -1.3411044e-10}
+      rotation: {x: -0.022393908, y: 0.11029748, z: 0.018595582, w: 0.9934723}
+      scale: {x: 1, y: 1, z: 0.9999998}
+    - name: PistonBaseLower_L
+      parentName: Foot02_L
+      position: {x: -0.002840932, y: 4.939429e-10, z: 5.2910766e-11}
+      rotation: {x: -0.54527193, y: 0.0002749586, z: 0.8382579, w: -0.0014871503}
+      scale: {x: 0.9999999, y: 1, z: 0.9999998}
+    - name: PistonLower_L
+      parentName: PistonBaseLower_L
+      position: {x: -0.0018864309, y: -2.766028e-10, z: 1.1695374e-10}
+      rotation: {x: 0.0006426126, y: 0.024231035, z: 0.00036358653, w: 0.99970615}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: ShinShield_L
+      parentName: Foot02_L
+      position: {x: -0.0025721726, y: 0.000005578, z: 0.0019383908}
+      rotation: {x: -0.5654241, y: 0.0009757799, z: 0.8247985, w: -0.0014478118}
+      scale: {x: 0.9999999, y: 1, z: 0.9999998}
+    - name: PistonBaseUpper_L
+      parentName: UpperLeg_L
+      position: {x: -0.0060772747, y: 8.829811e-10, z: 6.1397437e-10}
+      rotation: {x: -0.1807495, y: 0.7000202, z: -0.6653328, w: -0.18610118}
+      scale: {x: 1, y: 1, z: 0.99999976}
+    - name: PistonUpper_L
+      parentName: PistonBaseUpper_L
+      position: {x: -0.002259564, y: -0.0000000010980292, z: -2.2893072e-10}
+      rotation: {x: 0.56759393, y: -0.4336452, z: -0.45315033, w: 0.5333327}
+      scale: {x: 1, y: 0.9999998, z: 1}
+    - name: PistonMedian_L
+      parentName: PistonUpper_L
+      position: {x: -0.0029884763, y: 0.000000095144024, z: 0.00000006599072}
+      rotation: {x: -0.0018679495, y: -0.00864916, z: 0.000328725, w: 0.99996084}
+      scale: {x: 1.0000001, y: 1.0000004, z: 1.0000002}
+    - name: Hip01_R
+      parentName: Pelvis
+      position: {x: -0.002762265, y: 0.0011703464, z: -0.00009341986}
+      rotation: {x: 0.3625207, y: -0.3101547, z: -0.6203516, w: 0.6225325}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: Hip02_R
+      parentName: Hip01_R
+      position: {x: -0.0011304648, y: -6.8731604e-10, z: 3.8556752e-10}
+      rotation: {x: -0.49590975, y: -0.030782057, z: -0.0050179367, w: 0.8678139}
+      scale: {x: 0.9999999, y: 1, z: 1}
+    - name: UpperLeg_R
+      parentName: Pelvis
+      position: {x: -0.0028051513, y: 0.0045689177, z: 0.000010691417}
+      rotation: {x: -0.011784209, y: 0.10846449, z: -0.01868733, w: 0.99385476}
+      scale: {x: 1.0000001, y: 0.9999999, z: 1.0000001}
+    - name: PistonBaseUpper_R
+      parentName: UpperLeg_R
+      position: {x: -0.006077276, y: 5.6053974e-11, z: 3.9185397e-10}
+      rotation: {x: -0.17668568, y: 0.70001054, z: -0.6653429, w: -0.1899637}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1.0000004}
+    - name: PistonUpper_R
+      parentName: PistonBaseUpper_R
+      position: {x: -0.0022595637, y: 7.0407985e-10, z: 0.0000000010232634}
+      rotation: {x: 0.5607389, y: -0.4313929, z: -0.45710528, w: 0.53900546}
+      scale: {x: 0.9999998, y: 0.9999998, z: 0.9999999}
+    - name: PistonMedian_R
+      parentName: PistonUpper_R
+      position: {x: -0.0029887897, y: -0.00000012324017, z: 0.00000007847976}
+      rotation: {x: 0.0018679069, y: -0.008649166, z: -0.00032880736, w: 0.99996084}
+      scale: {x: 1.0000005, y: 1.0000004, z: 1}
+    - name: LowerLeg_R
+      parentName: UpperLeg_R
+      position: {x: -0.006077276, y: 5.6053974e-11, z: 3.9185397e-10}
+      rotation: {x: -0.0028637927, y: -0.17408234, z: -0.00515975, w: 0.98471344}
+      scale: {x: 1, y: 1.0000002, z: 1.0000001}
+    - name: Foot01_R
+      parentName: LowerLeg_R
+      position: {x: -0.0061440896, y: 5.9616284e-10, z: 3.7299466e-10}
+      rotation: {x: 0.01632787, y: 0.19722179, z: 0.02129518, w: 0.97999156}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1.0000001}
+    - name: Heel_R
+      parentName: Foot01_R
+      position: {x: -0.0021398976, y: 1.1394148e-11, z: 8.696224e-11}
+      rotation: {x: -0.0021050123, y: 0.30190074, z: 0.0020039529, w: 0.9533349}
+      scale: {x: 1.0000001, y: 1, z: 1}
+    - name: Foot02_R
+      parentName: Foot01_R
+      position: {x: -0.0021398976, y: 1.1394148e-11, z: 8.696224e-11}
+      rotation: {x: 0.60760814, y: 0.0025998491, z: 0.79423237, w: -0.00070475234}
+      scale: {x: 1, y: 0.99999994, z: 0.9999999}
+    - name: Toe2_R
+      parentName: Foot02_R
+      position: {x: -0.003450409, y: 0.0008429894, z: 0.000040093382}
+      rotation: {x: -0.0022254304, y: -0.124295466, z: -0.3083374, w: 0.94311917}
+      scale: {x: 0.9999999, y: 0.9999998, z: 1.0000001}
+    - name: Toe4_R
+      parentName: Toe2_R
+      position: {x: -0.0011156602, y: 1.5087426e-10, z: 8.381903e-11}
+      rotation: {x: -0.050742663, y: 0.07897009, z: -0.010568483, w: 0.99552864}
+      scale: {x: 0.9999997, y: 0.99999994, z: 0.9999998}
+    - name: Toe1_R
+      parentName: Foot02_R
+      position: {x: -0.0034304853, y: -0.0008949626, z: 0.000040093135}
+      rotation: {x: 0.07662739, y: -0.16958281, z: 0.3564483, w: 0.9155952}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Toe3_R
+      parentName: Toe1_R
+      position: {x: -0.001115661, y: -8.381903e-11, z: -2.0116567e-10}
+      rotation: {x: 0.02240164, y: 0.11071081, z: -0.018586196, w: 0.9934263}
+      scale: {x: 0.99999994, y: 0.9999996, z: 0.9999999}
+    - name: PistonBaseLower_R
+      parentName: Foot02_R
+      position: {x: -0.002840932, y: -1.7248385e-10, z: -3.660534e-11}
+      rotation: {x: -0.54527324, y: -0.0012481101, z: 0.8382571, w: 0.0008541319}
+      scale: {x: 0.9999998, y: 1, z: 0.9999999}
+    - name: PistonLower_R
+      parentName: PistonBaseLower_R
+      position: {x: -0.0018864309, y: -1.0929215e-10, z: 8.748611e-11}
+      rotation: {x: 0.0005177426, y: 0.027022984, z: -0.00013712715, w: 0.9996347}
+      scale: {x: 0.9999999, y: 0.9999999, z: 0.99999994}
+    - name: PistonLower_R_001
+      parentName: PistonBaseLower_R
+      position: {x: -0.0018864309, y: -1.0929215e-10, z: 8.748611e-11}
+      rotation: {x: 0.0005177426, y: 0.027022984, z: -0.00013712715, w: 0.9996347}
+      scale: {x: 0.9999999, y: 0.9999999, z: 0.99999994}
+    - name: ShinShield_R
+      parentName: Foot02_R
+      position: {x: -0.0025721726, y: -0.0000055777655, z: 0.0019383905}
+      rotation: {x: -0.5677255, y: -0.00086292176, z: 0.82321656, w: 0.0012864629}
+      scale: {x: 0.99999964, y: 0.99999994, z: 0.9999998}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 0.45
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
