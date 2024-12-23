@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: HandGun Crouching Override Controller
+  m_Controller: {fileID: 9100000, guid: 23ec498455db9634a9929839be5a9b4e, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: d57a1737a8959b74bb9cb6aae79f2469, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f4c67544f069747409bc36d9f90f0529, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c1d8135453f9958439540c7420510926, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 372356d0b82046540968f9a5ab8e031d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 0313051bc5fa9ef47a641ccd853f22f6, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ead2027133fccfd4f87f96c23e46b265, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 830f2e55c493e7f4ab3f1d63aac3bc26, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 87b2ffd3db6cd49498e43693d67bffcf, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 750d02ae81aa7004aa693d32bda63725, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8198b0461cfaf634ab6ec689d047eb70, type: 2}

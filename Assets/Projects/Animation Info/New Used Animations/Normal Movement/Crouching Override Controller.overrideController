@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Crouching Override Controller
+  m_Controller: {fileID: 9100000, guid: 23ec498455db9634a9929839be5a9b4e, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 945821941ee90f044bc0c8c33872b51c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3a2f8eb386a1ab844857fff2193f4a20, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 7464f8a9da2e59140893e71fb4284470, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 08dc29b68d962bb43956dd72b768fe32, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: c3608ee294870854cbf65b98b6f091c5, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a008a0fec2bc0f540b78e95cbd2881bb, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 31b58ecfe45e5f04baa78caa94fa81bd, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d1d88d5d339dedc4fbbe03b98a7758ab, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: de459a81af6aa0542b93cb5adf204342, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3d93ab85ab5085841a3c84a01240a3e1, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d35d3de48f0ea324f9fbce2ea337db9a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1479127baafeb794e881ad1f5fee2dc4, type: 2}

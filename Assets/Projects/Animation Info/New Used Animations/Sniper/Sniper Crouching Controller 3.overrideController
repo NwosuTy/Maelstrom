@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sniper Crouching Controller 3
+  m_Controller: {fileID: 9100000, guid: 23ec498455db9634a9929839be5a9b4e, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: c1d8135453f9958439540c7420510926, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 71b0c3c17b028204c9d7bd8bb7d6a81b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 0313051bc5fa9ef47a641ccd853f22f6, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7cb3f50e643e84e44acc3a591055c581, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d57a1737a8959b74bb9cb6aae79f2469, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e44a1716570e4bb4b90ad2fc6a914451, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 830f2e55c493e7f4ab3f1d63aac3bc26, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 137d43b1ee0634046b575d609c1b4ca7, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 29648707a42d22b40918dbffbbf443ab, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 43ed995e1824ce54fac54c58c0aaa398, type: 2}

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Standing Heavy Gun
+  m_Controller: {fileID: 9100000, guid: d097723d42438594eb4c8e94fc0acd9a, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: f9c28a0041b220240aa7ff7432330261, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d66ca731b3695654cada2651502f23df, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 74a9a96967dd2f74f8cc6b3d46d14abe, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0e87884aeab782d4b933bf57e7dcf611, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 60579b5c439501247b38154c3503a188, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f0392673fa2d96641a70e0a4671aaa06, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: be7c0c14eafce8f4f984ad1304aa3001, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 04abb9381a418f04ba8920151779460f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 3c5752d503f76394ea4e3f51178dc8fe, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 04abb9381a418f04ba8920151779460f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 1d99aa0ad3a2eea47a36810abb4c6e39, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 04abb9381a418f04ba8920151779460f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: dbbddefb60e4bf941bc17392b02a61e2, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 04abb9381a418f04ba8920151779460f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 586e17dedb901ab419edfb03f53b4de7, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 04abb9381a418f04ba8920151779460f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e3cb606f259d42a44828ba498a2aa548, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 04abb9381a418f04ba8920151779460f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 5a2e2be4072f0e24f804d8898b2947ae, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 04abb9381a418f04ba8920151779460f, type: 2}

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AR Standing Override Controller 1
+  m_Controller: {fileID: 9100000, guid: 56e928e81a904a749b370720f6afbff1, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 41c63f001fc1a054abe8b16520894276, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c9d34eb94941db74bbd1d1be27450e16, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 7038039f993152e4dab855e26ad9fa33, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f277ec76237700d41961fb010ff5fc73, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 29648707a42d22b40918dbffbbf443ab, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 9f94c4d7e07a11540817a15368a4d0d6, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: aa3d306eaf10edf45877712c28e89693, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0313051bc5fa9ef47a641ccd853f22f6, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d35d3de48f0ea324f9fbce2ea337db9a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d35d3de48f0ea324f9fbce2ea337db9a, type: 2}
