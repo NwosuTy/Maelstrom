@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 652717016690443390}
   - component: {fileID: 2411675922669314875}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Minimap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,7 +371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70b342d8ce5c2fd48b8fa3147d48d1d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Weight: 1
+  m_Weight: 0
   m_Effectors: []
 --- !u!1 &532529709361917442
 GameObject:
@@ -419,7 +419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70b342d8ce5c2fd48b8fa3147d48d1d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Weight: 1
+  m_Weight: 0
   m_Effectors: []
 --- !u!1 &831354436223975857
 GameObject:
@@ -592,7 +592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeda7bfbf984f2a4da5ab4b8967b115d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Weight: 1
+  m_Weight: 0
   m_Data:
     m_Root: {fileID: 4498691014587006902}
     m_Mid: {fileID: 5858458316372946047}
@@ -1540,7 +1540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70b342d8ce5c2fd48b8fa3147d48d1d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Weight: 1
+  m_Weight: 0
   m_Effectors: []
 --- !u!1 &3314746577186029604
 GameObject:
@@ -1856,7 +1856,7 @@ Transform:
   m_GameObject: {fileID: 3760524498939190305}
   serializedVersion: 2
   m_LocalRotation: {x: -0.010701668, y: 0.06069216, z: -0.8186849, w: 0.57092655}
-  m_LocalPosition: {x: -0.005039215, y: 1.2655067, z: -0.106048584}
+  m_LocalPosition: {x: -0.012, y: 1.477, z: -0.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1880,7 +1880,7 @@ MonoBehaviour:
     m_SourceObjects:
       m_Length: 1
       m_Item0:
-        transform: {fileID: 0}
+        transform: {fileID: 3220543047322541521}
         weight: 1
       m_Item1:
         transform: {fileID: 0}
@@ -2023,7 +2023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70b342d8ce5c2fd48b8fa3147d48d1d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Weight: 1
+  m_Weight: 0
   m_Effectors: []
 --- !u!1 &4450154956939176001
 GameObject:
@@ -2233,7 +2233,7 @@ MonoBehaviour:
     m_SourceObjects:
       m_Length: 1
       m_Item0:
-        transform: {fileID: 0}
+        transform: {fileID: 7993907846164067243}
         weight: 1
       m_Item1:
         transform: {fileID: 0}
@@ -2368,7 +2368,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4659604922748283608}
   - component: {fileID: 4343495813979068605}
-  - component: {fileID: 783601911700788073}
   - component: {fileID: 458545808264752624}
   - component: {fileID: 2098814584239470729}
   - component: {fileID: 7083112549047333617}
@@ -2417,7 +2416,7 @@ Animator:
   m_GameObject: {fileID: 5014165933970459472}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 0e8a3e384345ece49a977b96aecf15c5, type: 3}
-  m_Controller: {fileID: 22100000, guid: e62ab6f68faea4146b19c2a92f87d6dc, type: 2}
+  m_Controller: {fileID: 22100000, guid: 1b5b10b4c382bd240a79a10290c66a6c, type: 2}
   m_CullingMode: 2
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -2429,33 +2428,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!54 &783601911700788073
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5014165933970459472}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 2
 --- !u!143 &458545808264752624
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2474,13 +2446,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2
+  m_Height: 1.55
   m_Radius: 0.25
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1.15, z: 0}
+  m_Center: {x: 0, y: 0.79, z: 0}
 --- !u!114 &2098814584239470729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2522,10 +2494,12 @@ MonoBehaviour:
     <targetDirection>k__BackingField: {x: 0, y: 0, z: 0}
     <targetType>k__BackingField: 0
   angleLimit:
-    lowerBound: 0
-    upperBound: 0
+    lowerBound: -180
+    upperBound: 180
   possibleVisualTargets: []
+  canUpdate: 0
   coolDownTimer: 0
+  dataHolder: {fileID: 0}
   enemyType: 1
 --- !u!114 &7083112549047333617
 MonoBehaviour:
@@ -2590,16 +2564,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45af8baeb46bd2542bdd51f58e901860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <groundLayer>k__BackingField:
-    serializedVersion: 2
-    m_Bits: 64
   groundedForce: -20
-  sphereRadius: 0.15
   <acceleration>k__BackingField: 1
   <rotationSpeed>k__BackingField: 12
-  <movementSpeed>k__BackingField: 7
+  <movementSpeed>k__BackingField: 0.55
   <crouchingSpeed>k__BackingField: 7
-  <sprintingSpeed>k__BackingField: 8
+  <sprintingSpeed>k__BackingField: 2
+  sphereRadius: 0.15
   jumpHeight: 4
   gravityForce: -30
   <fallingVelocitySet>k__BackingField: 0
@@ -2689,8 +2660,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grenadesLeft: 3
   activeWeapons: []
-  inactiveWeaponSpawnPoint: []
-  <ActiveWeaponSpawnPoint>k__BackingField: {fileID: 0}
+  inactiveWeaponSpawnPoint:
+  - {fileID: 2804585641026125851}
+  - {fileID: 1536247725374691691}
+  <ActiveWeaponSpawnPoint>k__BackingField: {fileID: 7315384253641385735}
   <PrimaryWeapon>k__BackingField: {fileID: 7203927920083379686, guid: c13aeecc094687945ab1b8192aa49be7, type: 3}
   <Grenade>k__BackingField: {fileID: 1855803067300241307, guid: ad227f8846e46df43886a3e5f69e991f, type: 3}
 --- !u!114 &7327074767807028196
@@ -2859,7 +2832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70b342d8ce5c2fd48b8fa3147d48d1d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Weight: 1
+  m_Weight: 0
   m_Effectors: []
 --- !u!1 &5369731287371124162
 GameObject:
@@ -3299,12 +3272,12 @@ NavMeshAgent:
   m_GameObject: {fileID: 6235048048835566210}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.65
+  m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 2
+  m_StoppingDistance: 0.75
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -4422,7 +4395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeda7bfbf984f2a4da5ab4b8967b115d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Weight: 1
+  m_Weight: 0
   m_Data:
     m_Root: {fileID: 3904072429568436836}
     m_Mid: {fileID: 6837487050697296530}

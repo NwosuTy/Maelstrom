@@ -8,18 +8,15 @@ namespace Creotly_Studios
         public static Sentient Instance;
 
         //Private Parameters
-        private UITimeStamp uITimeStamp;
-        private WaitForSeconds waitForSeconds;
         private EnvironmentSetter environmentSetter;
-        private FloorNavmeshBuilder floorNavmeshBuilder;
-        private EnemyManagerController aIManagersController;
 
         //Target
         public Transform playerTransform {get; private set;}
         public PlayerManager playerManager {get; private set;}
 
         [Header("Parameters")]
-        [SerializeField] private float checkInterval = 1f;
+        [SerializeField] private Transform playerHolder;
+        [SerializeField] private PlayerManager playerPrefab;
 
         [Header("NavMesh")]
         public bool surroundingPlayerCellsCollapsed;
@@ -35,22 +32,30 @@ namespace Creotly_Studios
             Instance = this;
 
             environmentSetter = GetComponentInChildren<EnvironmentSetter>();
-            floorNavmeshBuilder = GetComponentInChildren<FloorNavmeshBuilder>();
-            aIManagersController = GetComponentInChildren<EnemyManagerController>();
-
             environmentSetter.InitializeGrid(this);
-            waitForSeconds = new WaitForSeconds(checkInterval);
         }
 
         private void Start()
         {
-            playerManager = GameManager.playerManager;
-            playerTransform = playerManager.transform;
-            uITimeStamp = playerManager.GetComponentInChildren<UITimeStamp>();
-
             Cells cellToCollapse = FirstCell();
+            StartCoroutine(SpawnPlayer(cellToCollapse));
             environmentSetter.EnvironmentGeneration(cellToCollapse);
         }
+
+        public IEnumerator SpawnPlayer(Cells cells)
+        {
+            yield return new WaitUntil(() => cells.hasCollapsed == true);
+
+            playerManager = Instantiate(playerPrefab, playerHolder);
+            playerTransform = playerManager.transform;
+
+            GameManager.Instance.SetPlayerManager(playerManager);
+
+            yield return new WaitUntil(() => playerManager.isGrounded == true);
+
+            FloorNavmeshBuilder.Instance.FloorNavMeshBuilder_Start();
+        }
+
         private Cells FirstCell()
         {
             Cells cellToCollapse = environmentSetter.cellsList[0];

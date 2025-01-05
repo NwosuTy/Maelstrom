@@ -38,7 +38,9 @@ namespace Creotly_Studios
         public List<Target> possibleVisualTargets = new List<Target>();
 
         [Header("Enemy Status")]
+        public bool canUpdate;
         public float coolDownTimer;
+        public EnemyDataHolder dataHolder;
         public EnemyType enemyType = EnemyType.Mech;
 
         protected override void Awake()
@@ -46,6 +48,7 @@ namespace Creotly_Studios
             animator = GetComponent<Animator>();
             
             base.Awake();
+            currentState = null;
 
             patrolState = Instantiate(patrolState);
             pursueState = Instantiate(pursueState);
@@ -61,8 +64,6 @@ namespace Creotly_Studios
             aIAnimationManager = characterAnimationManager as AIAnimationManager;
             aIInventoryManager = characterInventoryManager as AIInventoryManager;
             aILocomotionManager = characterLocomotionManager as AILocomotionManager;
-
-            navMeshAgent.enabled = false;
         }
 
         // Start is called before the first frame update
@@ -76,6 +77,11 @@ namespace Creotly_Studios
         // Update is called once per frame
         protected override void Update()
         {
+            if(canUpdate != true)
+            {
+                return;
+            }
+
             if(isDead)
             {
                 return;
@@ -91,13 +97,31 @@ namespace Creotly_Studios
 
         protected override void FixedUpdate()
         {
+            if (canUpdate != true)
+            {
+                return;
+            }
             base.FixedUpdate();
         }
 
         protected override void LateUpdate()
         {
+            if (canUpdate != true)
+            {
+                return;
+            }
             base.LateUpdate();
             aICombatManager.AICombatManager_LateUpdate();
+        }
+
+        private void OnDisable()
+        {
+            canUpdate = false;
+        }
+
+        public void ReleaseFromPool()
+        {
+            dataHolder.aiManagerPool.Release(this);
         }
 
         private void ReduceCoolDownTimer(float delta)
@@ -133,8 +157,11 @@ namespace Creotly_Studios
             {
                 return;
             }
-            DirectionToTarget = (transform.position - targetPosition).normalized;
+
+            DirectionToTarget = (transform.position - targetPosition);
             DistanceToTarget = DirectionToTarget.magnitude;
+
+            DirectionToTarget.Normalize();
             AngleOfTarget = Maths_PhysicsHelper.CalculateViewAngle(transform.forward, DirectionToTarget);
         }
 

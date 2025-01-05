@@ -451,7 +451,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5446075516961677960}
   - component: {fileID: 8188179406399341489}
-  - component: {fileID: 258530245484509455}
   - component: {fileID: 7648960809122882426}
   - component: {fileID: 3518084854877093837}
   - component: {fileID: 2094998038949942141}
@@ -510,33 +509,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!54 &258530245484509455
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2502421722606902978}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 2
 --- !u!143 &7648960809122882426
 CharacterController:
   m_ObjectHideFlags: 0
@@ -555,7 +527,7 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2.75
+  m_Height: 2.55
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -606,7 +578,9 @@ MonoBehaviour:
     lowerBound: 0
     upperBound: 0
   possibleVisualTargets: []
+  canUpdate: 0
   coolDownTimer: 0
+  dataHolder: {fileID: 11400000, guid: 28f35b30475f8b746822b1b1fa2d2994, type: 2}
   enemyType: 0
 --- !u!114 &2094998038949942141
 MonoBehaviour:
@@ -665,16 +639,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45af8baeb46bd2542bdd51f58e901860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <groundLayer>k__BackingField:
-    serializedVersion: 2
-    m_Bits: 64
   groundedForce: -20
-  sphereRadius: 0.15
   <acceleration>k__BackingField: 1
   <rotationSpeed>k__BackingField: 12
-  <movementSpeed>k__BackingField: 0.55
+  <movementSpeed>k__BackingField: 0.45
   <crouchingSpeed>k__BackingField: 0.55
-  <sprintingSpeed>k__BackingField: 2
+  <sprintingSpeed>k__BackingField: 1.5
   jumpHeight: 4
   gravityForce: -30
   <fallingVelocitySet>k__BackingField: 0
@@ -1140,7 +1110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1207737352177939804}
   - component: {fileID: 7993710596700011700}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Minimap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1483,7 +1453,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 30
   m_AngularSpeed: 120
-  m_StoppingDistance: 2.75
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

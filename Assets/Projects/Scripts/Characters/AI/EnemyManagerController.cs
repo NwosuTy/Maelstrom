@@ -31,7 +31,7 @@ namespace Creotly_Studios
             sentient = GetComponentInParent<Sentient>();
             
             int random = Random.Range(0, aiManagersToSpawn.Length);
-            aiManagersPool = ObjectPooler.AIManagerPool(aiManagersToSpawn[random]);
+            //aiManagersPool = ObjectPooler.AIManagerPool(aiManagersToSpawn[random]);
         }
 
         private int GetSpawnQuantity()

@@ -6,11 +6,10 @@ namespace Creotly_Studios
     [CreateAssetMenu(fileName = "Patrol State", menuName = "Creotly Studio/AIStates/PatrolState")]
     public class PatrolState : AIState
     {
-        //Private
         private float idleTime = 7.5f;
 
         [Header("General Parameters")]
-        public float sphereRadius = 5.0f;
+        public float sphereRadius = 10.0f;
 
         [Header("Time")]
         public float idleTimeDefault = 7.5f;
@@ -20,90 +19,66 @@ namespace Creotly_Studios
         private bool destinationSet;
         public PatrolMode patrolMode = PatrolMode.Idle;
 
-        public override AIState AISate_Updater(AIManager aIManager)
+        public override AIState AISate_Updater(AIManager aiManager)
         {
-            if(aIManager.performingAction)
+            if (aiManager.performingAction)
             {
-                aIManager.aIAnimationManager.SetBlendTreeParameter(0f, 0f, false, Time.deltaTime);
+                aiManager.aIAnimationManager.SetBlendTreeParameter(0f, 0f, false, Time.deltaTime);
                 return this;
             }
 
-            if(aIManager.navMeshAgent.enabled == false)
+            if (aiManager.navMeshAgent.enabled == false)
             {
-                aIManager.navMeshAgent.enabled = true;
+                aiManager.navMeshAgent.enabled = true;
             }
 
-            if(aIManager.target.visualTarget != null || aIManager.target.audioTarget != null)
+            if (aiManager.target.visualTarget != null || aiManager.target.audioTarget != null)
             {
-                return SwitchState(aIManager.pursueState, aIManager);
+                return SwitchState(aiManager.pursueState, aiManager);
             }
-
-            if(aIManager.enemyType == EnemyType.Mech)
-            {
-                return MechEnemy_Updater(aIManager);
-            }
-            return HumanoidEnemy_Updater(aIManager);
+            return HandleAction(aiManager);
         }
 
-        protected override AIState MechEnemy_Updater(AIManager aiManager)
+        private AIState HandleAction(AIManager aiManager)
         {
+            if (aiManager.enemyType == EnemyType.Humanoid)
+            {
+                if (aiManager.AngleOfTarget < aiManager.angleLimit.lowerBound || aiManager.AngleOfTarget > aiManager.angleLimit.upperBound)
+                {
+                    aiManager.aILocomotionManager.PivotTowardsTarget(aiManager);
+                }
+            }
             aiManager.aILocomotionManager.RotateTowardsTarget();
-            if(patrolMode == PatrolMode.Idle)
+
+            if (patrolMode == PatrolMode.Idle)
             {
                 return Idle(aiManager);
             }
             return Walk(aiManager);
         }
 
-        protected override AIState HumanoidEnemy_Updater(AIManager aiManager)
-        {
-            if(aiManager.AngleOfTarget < aiManager.angleLimit.lowerBound || aiManager.AngleOfTarget > aiManager.angleLimit.upperBound)
-            {
-                aiManager.aILocomotionManager.PivotTowardsTarget(aiManager);
-            }
-            
-            aiManager.aILocomotionManager.RotateTowardsTarget();
-            if(patrolMode == PatrolMode.Idle)
-            {
-                return Idle(aiManager);
-            }
-            return Walk(aiManager);
-        }
+        #region Actions
 
-        protected override void ResetStateParameters(AIManager aIManager)
-        {
-            idleTime = idleTimeDefault;
-            base.ResetStateParameters(aIManager);
-            SetFieldOfViewDetails(aIManager, aIManager.enemyDetectionScript.originalViewRadius, aIManager.enemyDetectionScript.originalViewAngle);
-        }
-
-        private void SetFieldOfViewDetails(AIManager aIManager, float fieldOfViewRadius, float fieldOfViewAngle)
-        {
-            aIManager.enemyDetectionScript.viewAngle = fieldOfViewAngle;
-            aIManager.enemyDetectionScript.viewRadius = fieldOfViewRadius;
-        }
-
-
-        //Functionalities
-
-        private AIState Idle(AIManager aiManager)
+        private AIState Idle(AIManager robot)
         {
             idleTime -= Time.deltaTime;
-            aiManager.isMoving = false;
-            aiManager.characterAnimationManager.SetBlendTreeParameter(0f, 0f, false, Time.deltaTime);
+            robot.navMeshAgent.enabled = false;
+            robot.aIAnimationManager.SetBlendTreeParameter(0f, 0f, false, Time.deltaTime);
 
-            if(idleTime <= 0.0f)
+            if (idleTime <= 0.0f)
             {
-                if(destinationSet != true)
+                if (destinationSet != true)
                 {
-                    SetDestination(aiManager);
+                    SetDestination(robot);
                 }
 
-                if(destinationSet)
+                if (destinationSet)
                 {
                     destinationSet = false;
+                    idleTime = idleTimeDefault;
+
                     patrolMode = PatrolMode.Walk;
-                    return SwitchState(Walk(aiManager), aiManager);
+                    robot.navMeshAgent.enabled = true;
                 }
             }
             return this;
@@ -111,38 +86,47 @@ namespace Creotly_Studios
 
         private AIState Walk(AIManager aiManager)
         {
-            aiManager.aILocomotionManager.RotateTowardsTarget();
-            if(aiManager.DistanceToTarget >= aiManager.navMeshAgent.stoppingDistance)
+            aiManager.SetPersonalTargetDetails(enemyDestination);
+            if (aiManager.DistanceToTarget >= aiManager.navMeshAgent.stoppingDistance)
             {
-                aiManager.characterAnimationManager.SetBlendTreeParameter(0f, 0.55f, false, Time.deltaTime);
+                aiManager.aIAnimationManager.HandleAnimation(3.0f);
                 aiManager.aILocomotionManager.HandleMovement(enemyDestination, aiManager.aILocomotionManager.movementSpeed);
             }
             else
             {
                 patrolMode = PatrolMode.Idle;
                 aiManager.navMeshAgent.enabled = false;
-                return SwitchState(Idle(aiManager), aiManager);
             }
             return this;
         }
 
+        #endregion
+
         private void SetDestination(AIManager aiManager)
         {
             Vector3 randomPoint = Random.insideUnitSphere * sphereRadius + aiManager.transform.position;
-            
+
             NavMeshHit navMeshHit;
-            if(NavMesh.SamplePosition(randomPoint, out navMeshHit, sphereRadius, NavMesh.AllAreas))
+            if (NavMesh.SamplePosition(randomPoint, out navMeshHit, sphereRadius, NavMesh.AllAreas))
             {
-                Debug.Log(0);
+                destinationSet = true;
                 enemyDestination = navMeshHit.position;
                 aiManager.SetPersonalTargetDetails(enemyDestination);
-                destinationSet = true;
+                return;
             }
-            else
-            {
-                Debug.Log(1);
-                destinationSet = false;
-            }
+            destinationSet = false;
+        }
+
+        protected override void ResetStateParameters(AIManager aiManager)
+        {
+            base.ResetStateParameters(aiManager);
+            SetFieldOfViewDetails(aiManager, aiManager.enemyDetectionScript.originalViewRadius, aiManager.enemyDetectionScript.originalViewAngle);
+        }
+
+        private void SetFieldOfViewDetails(AIManager aiManager, float fieldOfViewRadius, float fieldOfViewAngle)
+        {
+            aiManager.enemyDetectionScript.viewAngle = fieldOfViewAngle;
+            aiManager.enemyDetectionScript.viewRadius = fieldOfViewRadius;
         }
     }
 }

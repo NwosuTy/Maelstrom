@@ -42,14 +42,6 @@ namespace Creotly_Studios
             EvaluateVisualTargetScore();
         }
 
-        public void ForgetCurrentTarget()
-        {
-            if(aiManager.target.source != null)
-            {
-                aiManager.target.ClearDetails();
-            }
-        }
-
         bool isInSight(CharacterManager potentialTarget)
         {
             Vector3 targetDirection = (potentialTarget.transform.position - aiManager.transform.position).normalized;
@@ -100,7 +92,7 @@ namespace Creotly_Studios
 
         void EvaluateVisualTargetScore()
         {
-            aiManager.target.ClearDetails();
+            //aiManager.target.ClearDetails();
             for(int i = 0; i < aiManager.possibleVisualTargets.Count; i++)
             {
                 Target target = aiManager.possibleVisualTargets[i];

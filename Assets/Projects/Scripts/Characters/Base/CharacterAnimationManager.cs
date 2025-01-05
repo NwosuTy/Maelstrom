@@ -49,11 +49,10 @@ namespace Creotly_Studios
 
         protected virtual void OnAnimatorMove()
         {
-            if(characterManager.isGrounded)
+            if(characterManager.isGrounded != true)
             {
                 return;
             }
-
             deltaPosition = characterManager.animator.deltaPosition;
             characterManager.characterController.Move(deltaPosition);
             characterManager.transform.rotation *= characterManager.animator.deltaRotation;

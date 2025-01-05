@@ -6,165 +6,171 @@ namespace Creotly_Studios
 {
     public class EnemySpawner : MonoBehaviour
     {
-        private Transform target;
-        private Collider[] colliders;
+        public static EnemySpawner Instance;
 
-        private const int cnst_tileSize = 20;
+        private Sentient sentient;
+        private int spawnedEnemies;
+        private const int cnst_tileSize = 10;
+
+        private Vector3 randomPosition;
+        private Collider[] enemyColliders;
+
         private HashSet<Vector3> spawnedTiles = new HashSet<Vector3>();
         private List<AIManager> spawnedEnemiesList = new List<AIManager>();
 
-        [Header("Component's Parameters")]
-        [SerializeField] private LayerMask enemyMask;
-        [SerializeField] private LayerMask groundLayerMask;
-        [SerializeField] private FloorNavmeshBuilder floorNavmeshBuilder;
-        [SerializeField] private SpawnMethod spawnMethod = SpawnMethod.RoundRobin;
+        [Header("Parameters")]
+        [SerializeField] private int maxEnemies;
+        [SerializeField] private Transform parent;
+        [SerializeField] private LayerMask enemyLayerMask;
 
         [Header("Spawn Parameters")]
         [SerializeField] private float spawnRadius;
-        [SerializeField] private Transform spawnPoint;
-        [SerializeField] private EnemyDataHolder[] enemyDataHolders;
-
-        [Header("Spawn Statistics")]
-        [SerializeField] private int maxEnemies = 5;
         [SerializeField] private float spawnDensityPerTile = 0.5f;
-        [SerializeField] private Vector3Int navMeshSize = new Vector3Int(40, 10, 40);
+        [SerializeField] private EnemyDataHolder[] enemyDataHolders;
+        [SerializeField] private SpawnMethod spawnMethod = SpawnMethod.RoundRobin;
+
+        [Header("NavMesh Parameters")]
+        [SerializeField] private Vector3Int navMeshSize = new Vector3Int(80, 0, 80);
+
         private void Awake()
         {
-            InitializeEnemyDataHolders();
-        }
-        private void Start()
-        {
-            colliders = new Collider[maxEnemies];
-            floorNavmeshBuilder.OnNavMeshBuilderUpdate += HandleNavMeshUpdate;
+            if(Instance != null)
+            {
+                Destroy(gameObject);
+            }
+            Instance = this;
+
+            Initialize();
         }
 
-        private void InitializeEnemyDataHolders()
+        public void EnemySpawner_Start()
+        {
+            enemyColliders = new Collider[maxEnemies];
+        }
+
+        private void Initialize()
         {
             for (int i = 0; i < enemyDataHolders.Length; i++)
             {
                 enemyDataHolders[i] = Instantiate(enemyDataHolders[i]);
-
-                EnemyDataHolder enemyDataHolder = enemyDataHolders[i];
-                enemyDataHolder.Initialize();
+                enemyDataHolders[i].Initialize();
             }
+
+            sentient = GetComponentInParent<Sentient>();
         }
 
-        private void SpawnEnemyOnNewTile(Vector3 currentPosition)
+        private void SpawnEnemiesOnNewTile(Vector3 currentTilePosition)
         {
-            if(spawnedEnemiesList.Count >= maxEnemies)
+            if(spawnedEnemies >= maxEnemies)
             {
                 return;
             }
 
-            int navMeshSizeCalc = navMeshSize.x / cnst_tileSize / 2;
-
-            for(int x = -1 * navMeshSizeCalc; x < navMeshSizeCalc; x++)
+            int navMeshCalc = navMeshSize.x / cnst_tileSize / 2;
+            for (int x = -1 * navMeshCalc; x < navMeshCalc; x++)
             {
-                for (int z = -1 * navMeshSizeCalc; z < navMeshSizeCalc; z++)
+                for (int z = -1 * navMeshCalc; z < navMeshCalc; z++)
                 {
-                    int enemiesSpawnedForTile = 0;
-                    Vector3 tilePosition = new Vector3(currentPosition.x + x, currentPosition.y, currentPosition.z + z);
+                    int enemiesSpawnedPerTile = 0;
+                    Vector3 tilePosition = new Vector3(currentTilePosition.x + x, currentTilePosition.y, currentTilePosition.z + z);
 
-                    if(spawnedTiles.Contains(tilePosition) != true)
+                    if (spawnedTiles.Contains(tilePosition) != true)
                     {
-                        while (enemiesSpawnedForTile + Random.value < spawnDensityPerTile && spawnedEnemiesList.Count < maxEnemies)
+                        while (enemiesSpawnedPerTile + Random.value < spawnDensityPerTile && spawnedEnemies < maxEnemies)
                         {
-                            enemiesSpawnedForTile++;
-                            HandleSpawnEnemyOnTile(currentPosition);
+                            SpawnEnemyOnTile(tilePosition);
+                           
+                            enemiesSpawnedPerTile++;
+                            spawnedEnemies++;
                         }
-                        spawnedTiles.Add(tilePosition);
                     }
                 }
             }
         }
 
-        private void HandleSpawnEnemyOnTile(Vector3 currentPosition)
+        private void SpawnEnemyOnTile(Vector3 tilePosition)
         {
             if(spawnMethod == SpawnMethod.Random)
             {
-                Spawn_Random(currentPosition);
+                SpawnEnemy_Random(tilePosition);
                 return;
             }
-            Spawn_RoundRobin(spawnedEnemiesList.Count, currentPosition);
+            SpawnEnemy_RoundRobin(spawnedEnemies, tilePosition);
         }
 
-        private void Spawn_Random(Vector3 currentPosition)
+        private void SpawnEnemy_Random(Vector3 tilePosition)
         {
             int random = Random.Range(0, enemyDataHolders.Length);
-            SpawnEnemy(random, currentPosition);
+            HandleSpawnEnemy(random, tilePosition);
         }
 
-        private void Spawn_RoundRobin(int index, Vector3 currentPosition)
+        private void SpawnEnemy_RoundRobin(int index, Vector2 tilePosition)
         {
             int spawnIndex = index % enemyDataHolders.Length;
-            SpawnEnemy(spawnIndex, currentPosition);
+            HandleSpawnEnemy(spawnIndex, tilePosition);
         }
 
-        private void SpawnEnemy(int spawnIndex, Vector3 currentPosition)
+        private void HandleSpawnEnemy(int index, Vector3 tilePosition)
         {
-            EnemyDataHolder enemyData = enemyDataHolders[spawnIndex];
+            randomPosition = tilePosition * cnst_tileSize + new 
+                Vector3(Random.Range(-27.5f, 27.5f), 0.0f, Random.Range(-27.5f, 27.5f));
 
-            AIManager aiManager = enemyData.aiManagerPool.Get();
-
-            float random = Random.Range(-cnst_tileSize, cnst_tileSize);
-            Vector3 randomPoint = currentPosition * cnst_tileSize + new Vector3(random,0,random);
-
-            if (NavMesh.SamplePosition(randomPoint, out NavMeshHit navMeshHit, spawnRadius, NavMesh.AllAreas))
+            if (NavMesh.SamplePosition(randomPosition, out NavMeshHit navMeshHit, spawnRadius, NavMesh.AllAreas))
             {
-                aiManager.transform.SetParent(spawnPoint);
-                Vector3 localSpawnPosition = spawnPoint.InverseTransformPoint(navMeshHit.position);
-                aiManager.transform.SetPositionAndRotation(localSpawnPosition, Quaternion.identity);
+                EnemyDataHolder dataHolder = enemyDataHolders[index];
+                AIManager aiManager = dataHolder.aiManagerPool.Get();
 
+                aiManager.transform.SetParent(parent);
+                Vector3 localPosition = parent.InverseTransformPoint(navMeshHit.position);
+
+                StartCoroutine(dataHolder.GetObject(aiManager, localPosition));
                 spawnedEnemiesList.Add(aiManager);
                 return;
             }
 
-            spawnedTiles.Remove(currentPosition);
-            enemyData.aiManagerPool.Release(aiManager);
-            Debug.LogWarning("Could not find suitable navMeshArea");
+            spawnedEnemies--;
+            spawnedTiles.Remove(tilePosition);
+            Debug.LogWarning($"The Position {randomPosition} is not on a suitable NavMesh Area");
         }
 
-        private void HandleNavMeshUpdate(Bounds bounds)
+        public void HandleNavMeshUpdate(Bounds bounds)
         {
-            int hits = Physics.OverlapBoxNonAlloc(bounds.center, bounds.extents, colliders, Quaternion.identity, enemyMask.value);
+            int hits = Physics.OverlapBoxNonAlloc(bounds.center, bounds.extents, enemyColliders, Quaternion.identity);
 
-            AIManager[] aIManagersArray = new AIManager[hits];
-            for(int i = 0; i < hits; i++)
+            AIManager[] enemyArrays = new AIManager[hits];
+            for (int i = 0; i < hits; i++)
             {
-                AIManager aiManager = colliders[i].GetComponentInParent<AIManager>();
-
-                if(aiManager != null)
+                AIManager aiManager = enemyColliders[i].GetComponentInParent<AIManager>();
+                if(aiManager == null)
                 {
-                    aiManager.navMeshAgent.enabled = true;
+                    continue;
                 }
+
+                enemyArrays[i] = aiManager;
+                aiManager.navMeshAgent.enabled = true;
             }
 
-            HashSet<AIManager> outsideBoundEnemies = new HashSet<AIManager>(spawnedEnemiesList);
-            outsideBoundEnemies.ExceptWith(aIManagersArray);
+            HashSet<AIManager> outOfBoundsEnemy = new HashSet<AIManager>();
+            outOfBoundsEnemy.ExceptWith(enemyArrays);
 
-            foreach(AIManager outOfBound in outsideBoundEnemies)
+            foreach(AIManager ai in  outOfBoundsEnemy)
             {
-                outOfBound.navMeshAgent.enabled = false;
+                ai.navMeshAgent.enabled = false;
             }
 
-            if(target == null)
-            {
-                target = Sentient.Instance.playerTransform;
-            }
-
-            Vector3 currentTilePosition = new            
+            Transform playerTransform = sentient.playerTransform;
+            Vector3 currentTilePosition = new Vector3
             (
-                Mathf.FloorToInt(target.transform.position.x) / cnst_tileSize,
-                Mathf.FloorToInt(target.transform.position.y) / cnst_tileSize,
-                Mathf.FloorToInt(target.transform.position.z) / cnst_tileSize
+                Mathf.FloorToInt(playerTransform.position.x) / cnst_tileSize,
+                Mathf.FloorToInt(playerTransform.position.y) / cnst_tileSize,
+                Mathf.FloorToInt(playerTransform.position.z) / cnst_tileSize
             );
 
-            if (spawnedTiles.Contains(currentTilePosition))
+            if (spawnedTiles.Contains(currentTilePosition) != true)
             {
                 spawnedTiles.Add(currentTilePosition);
             }
-
-            SpawnEnemyOnNewTile(currentTilePosition);
+            SpawnEnemiesOnNewTile(currentTilePosition);
         }
     }
 }

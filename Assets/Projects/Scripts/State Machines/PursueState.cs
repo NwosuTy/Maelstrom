@@ -38,7 +38,6 @@ namespace Creotly_Studios
             {
                 aiManager.aILocomotionManager.PivotTowardsTarget(aiManager);
             }
-
             aiManager.aILocomotionManager.RotateTowardsTarget();
             
             if(aiManager.target.targetType == TargetType.Visual)
@@ -83,7 +82,7 @@ namespace Creotly_Studios
         {
             if(aiManager.DistanceToTarget >= aiManager.navMeshAgent.stoppingDistance)
             {
-                aiManager.aIAnimationManager.HandleAnimation(aiManager.navMeshAgent.stoppingDistance);
+                aiManager.aIAnimationManager.HandleAnimation(aiManager.navMeshAgent.stoppingDistance * 2.5f);
                 aiManager.aILocomotionManager.HandleMovement(aiManager.target.targetPosition, aiManager.aILocomotionManager.movementSpeed);
             }
             else

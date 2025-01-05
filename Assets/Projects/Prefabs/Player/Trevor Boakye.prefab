@@ -547,10 +547,10 @@ RectTransform:
   - {fileID: 6539239202168474818}
   m_Father: {fileID: 2209023452114787259}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 210, y: -57.5}
-  m_SizeDelta: {x: 400, y: 65}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5999286451854513378
 CanvasRenderer:
@@ -1971,8 +1971,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 3806718167172835068}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.31, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2158,7 +2158,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: -10, y: -1}
-  m_SizeDelta: {x: 51.48, y: 50}
+  m_SizeDelta: {x: 0, y: 50}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &9155485164010368120
 CanvasRenderer:
@@ -3721,8 +3721,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 4842977814656219180}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.48000002, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3989,7 +3989,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: -10, y: -1}
-  m_SizeDelta: {x: 52.87, y: 50}
+  m_SizeDelta: {x: 0, y: 50}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &9027076757567679208
 CanvasRenderer:
@@ -7634,10 +7634,10 @@ RectTransform:
   - {fileID: 7458808827097119059}
   m_Father: {fileID: 2209023452114787259}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 210, y: -122.5}
-  m_SizeDelta: {x: 400, y: 65}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1955565530204379705
 CanvasRenderer:
@@ -9963,7 +9963,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8748541069240783967
 Transform:
   m_ObjectHideFlags: 0
@@ -10051,10 +10051,6 @@ MonoBehaviour:
   isAttacking: 0
   performingAction: 0
   rotateWithRootMotion: 0
-  <handHolders>k__BackingField:
-  - {fileID: 1799829681624900146}
-  - {fileID: 2485614938186437025}
-  - {fileID: 7515092712077718169}
   isLockedIn: 0
   <characterType>k__BackingField: 1
   <healthBarUI>k__BackingField: {fileID: 6644127913327273742}
@@ -10062,6 +10058,7 @@ MonoBehaviour:
   <staminaBarUI>k__BackingField: {fileID: 2489697270056015953}
   crossHairImage: {fileID: 0}
   aimingCrossHairImage: {fileID: 0}
+  <crossHairTransform>k__BackingField: {fileID: 0}
   currentCell: {fileID: 0}
   previousCell: {fileID: 0}
   neighboringCells: []
@@ -10094,6 +10091,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainAnimatorController: {fileID: 0}
   crouchAnimatorController: {fileID: 0}
+  unarmedStandingController: {fileID: 0}
+  unarmedCrouchingController: {fileID: 0}
 --- !u!114 &2511283459144190335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10106,14 +10105,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90dc0b9ac9877f5448590f755a5859ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <normalCamera>k__BackingField: {fileID: 0}
-  <lockedInCamera>k__BackingField: {fileID: 0}
-  <aimingComponents>k__BackingField: []
   <cameraTarget>k__BackingField: {fileID: 5694881809994882613}
   <miniMapTarget>k__BackingField: {fileID: 5800295245040930148}
-  topClamp: 70
-  bottomClamp: -30
-  cameraAngleOverride: 0
+  <normalCamera>k__BackingField: {fileID: 0}
+  <lockedInCamera>k__BackingField: {fileID: 0}
 --- !u!114 &7636803571347648543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10128,14 +10123,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grenadesLeft: 5
   activeWeapons: []
-  weaponHolders:
-  - {fileID: 3846887661538609312}
-  - {fileID: 8211035661638397334}
-  - {fileID: 5406419629886296941}
-  <PrimaryWeapon>k__BackingField: {fileID: 1965547766018698716, guid: 4dceedc7c1ff9cf49a6d78344548da86, type: 3}
+  inactiveWeaponSpawnPoint: []
+  <ActiveWeaponSpawnPoint>k__BackingField: {fileID: 0}
+  <PrimaryWeapon>k__BackingField: {fileID: 6101053299378740585, guid: 4dceedc7c1ff9cf49a6d78344548da86, type: 3}
   <Grenade>k__BackingField: {fileID: 1855803067300241307, guid: ad227f8846e46df43886a3e5f69e991f, type: 3}
   <SecondaryWeapon>k__BackingField: {fileID: 7884064613221441947, guid: c62700470e3e7d24588cc9b2842848a5, type: 3}
-  <TacticalKnife>k__BackingField: {fileID: 86918033240910722, guid: a1b6c303f02cd844291ebab5c1ca71cf, type: 3}
 --- !u!114 &3237357400450716404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10164,16 +10156,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91613a3626c173745a3e4963f021ebe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <groundLayer>k__BackingField:
-    serializedVersion: 2
-    m_Bits: 0
   groundedForce: -20
-  sphereRadius: 0.15
   <acceleration>k__BackingField: 1
   <rotationSpeed>k__BackingField: 12
   <movementSpeed>k__BackingField: 7
   <crouchingSpeed>k__BackingField: 7
   <sprintingSpeed>k__BackingField: 12
+  sphereRadius: 0.15
   jumpHeight: 4
   gravityForce: -30
   <fallingVelocitySet>k__BackingField: 0

@@ -23,7 +23,7 @@ namespace Creotly_Studios
             {
                 flash.SetActive(false);
             }
-            aIManager = GetComponentInParent<AIManager>();
+            aiManager = GetComponentInParent<AIManager>();
         }
 
         public void EnableMuzzleFlash(int enable)
@@ -42,12 +42,7 @@ namespace Creotly_Studios
 
         private void HandleShooting(float delta)
         {
-            if(playerManager != null && playerManager.performingAction)
-            {
-                return;
-            }
-
-            if(characterManager.isAttacking != true)
+            if(aiManager.isAttacking != true)
             {
                 return;
             }
@@ -56,9 +51,9 @@ namespace Creotly_Studios
             if(Physics.Raycast(ray, out raycastHit, range, EnemyLayerMask))
             {
                 CharacterStatsManager shotCharacter = raycastHit.collider.GetComponent<CharacterStatsManager>();
-                if(shotCharacter != null && shotCharacter.characterManager.characterType != characterManager.characterType)
+                if(shotCharacter != null && shotCharacter.characterManager.characterType != aiManager.characterType)
                 {
-                    float directionFromHit = Vector3.SignedAngle(characterManager.transform.position, shotCharacter.transform.position, Vector3.up);
+                    float directionFromHit = Vector3.SignedAngle(aiManager.transform.position, shotCharacter.transform.position, Vector3.up);
 
                     deathAnimation = GetDeathAnimation(shotCharacter.transform);
                     damageAnimation = AnimatorHashNames.DamageTargetAnimation(directionFromHit);
@@ -141,7 +136,7 @@ namespace Creotly_Studios
                 x *= 1.5f;
                 y *= 1.5f;
             }
-            return new Ray(MuzzlePoint.transform.position, aIManager.DirectionToTarget + new Vector3(x,y,0));
+            return new Ray(MuzzlePoint.transform.position, aiManager.DirectionToTarget + new Vector3(x,y,0));
         }
 
         private int GetDeathAnimation(Transform damagedCharacter)

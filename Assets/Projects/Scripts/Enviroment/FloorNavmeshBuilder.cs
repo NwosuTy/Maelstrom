@@ -9,13 +9,15 @@ namespace Creotly_Studios
 {
     public class FloorNavmeshBuilder : MonoBehaviour
     {
+        public static FloorNavmeshBuilder Instance;
+
         //Components
         private Sentient sentient;
+        private NavMeshData navMeshData;
         private NavMeshSurface navMeshSurface;
 
         //Parameters
         private Vector3 worldAnchor;
-        private NavMeshData navMeshData;
         private WaitForSeconds waitForSeconds;
         private List<NavMeshModifier> navMeshModifiers = new List<NavMeshModifier>();
         private List<NavMeshBuildSource> navMeshSources = new List<NavMeshBuildSource>();
@@ -32,13 +34,18 @@ namespace Creotly_Studios
 
         private void Awake()
         {
+            if(Instance != null)
+            {
+                Destroy(gameObject);
+            }
+            Instance = this;
+
             sentient = GetComponentInParent<Sentient>();
             navMeshSurface = GetComponent<NavMeshSurface>();
-
             waitForSeconds = new WaitForSeconds(updateRate);
         }
 
-        private void Start()
+        public void FloorNavMeshBuilder_Start()
         {
             navMeshData = new NavMeshData();
             NavMesh.AddNavMeshData(navMeshData);
@@ -46,9 +53,12 @@ namespace Creotly_Studios
 
             BuildNavMeshSurface(false);
             StartCoroutine(CheckPlayerMovement());
+            OnNavMeshBuilderUpdate += EnemySpawner.Instance.HandleNavMeshUpdate;
+
+            EnemySpawner.Instance.EnemySpawner_Start();
         }
 
-        public void BuildNavMeshSurface(bool asyncBuild)
+        private void BuildNavMeshSurface(bool asyncBuild)
         {
             AsyncOperation navMeshUpdateOperation = null;
             Bounds navMeshBounds = new Bounds(sentient.playerTransform.position, navMeshAreaBakeSize);

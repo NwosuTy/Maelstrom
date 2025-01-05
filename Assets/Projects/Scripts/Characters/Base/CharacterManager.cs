@@ -23,7 +23,7 @@ namespace Creotly_Studios
         [HideInInspector] public bool canRotate;
         [HideInInspector] public bool isJumping;
         [HideInInspector] public bool canReload;
-        [HideInInspector] public bool isGrounded;
+        /*[HideInInspector]*/ public bool isGrounded;
         [HideInInspector] public bool isCrouching;
         [HideInInspector] public bool isAttacking;
         [HideInInspector] public bool performingAction;

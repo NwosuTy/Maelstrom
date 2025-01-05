@@ -18,19 +18,6 @@ namespace Creotly_Studios
             return objectPool;
         }
 
-        public static ObjectPool<AIManager> AIManagerPool(AIManager objectToPool)
-        {
-            ObjectPool<AIManager> objectPool = new ObjectPool<AIManager>
-            (
-                () => {return GameObject.Instantiate(objectToPool);},
-                spawnObject => {spawnObject.gameObject.SetActive(true);},
-                spawnObject => {spawnObject.gameObject.SetActive(false);},
-                spawnObject => {GameObject.Destroy(spawnObject);},
-                false, 500, 700
-            );
-            return objectPool;
-        }
-
         public static ObjectPool<GameObject> GameObjectPool(GameObject objectToPool)
         {
             ObjectPool<GameObject> objectPool = new ObjectPool<GameObject>
@@ -69,7 +56,6 @@ namespace Creotly_Studios
             );
             return objectPool;
         }
-
 
         private static void GetTilesFromPool(Tiles spawnObject, ObjectPool<Tiles> SP)
         {

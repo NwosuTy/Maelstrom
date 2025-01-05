@@ -32,9 +32,7 @@ namespace Creotly_Studios
         public Transform cameraObject {get; protected set;}
 
         [field: Header("Physics")]
-        [field: SerializeField] public LayerMask groundLayer {get; protected set;}
         [Tooltip("Force at which character is sticking to the ground")] [SerializeField] protected float groundedForce = -20f;
-        [Tooltip("Size of sphere used to check if character is grounded")] [SerializeField] protected float sphereRadius = 0.15f;
 
         [field : Header("Character Movement Stats")]
         [field: SerializeField] public float acceleration {get; protected set;} = 1.0f;
@@ -63,20 +61,11 @@ namespace Creotly_Studios
         {
             mainCamera = Camera.main;
             cameraObject = mainCamera.transform;
-            
-            groundLayer = LayerMask.GetMask("Ground");
-        }
-
-        protected virtual void OnDrawGizmosSelected()
-        {
-            Gizmos.DrawSphere(transform.position, sphereRadius);
         }
 
         // Update is called once per frame
         public virtual void CharacterLocomotionManager_Update(float delta)
         {
-            CheckIfPlayerIsGrounded();
-
             HandleGravity(delta);
             HandleRotation(delta);
             HandleMovement(delta);
@@ -91,7 +80,8 @@ namespace Creotly_Studios
 
         protected virtual void HandleGravity(float delta)
         {
-            if(characterManager.isGrounded)
+            CheckIfPlayerIsGrounded();
+            if (characterManager.isGrounded)
             {
                 if(verticalVelocity.y < 0.0f)
                 {
@@ -111,7 +101,6 @@ namespace Creotly_Studios
 
                 fallingTimer += delta;
                 characterManager.animator.SetFloat(AnimatorHashNames.fallingTimerHash, fallingTimer);
-
                 verticalVelocity.y += gravityForce * delta;
             }
             //Force of Gravity pushes character down
@@ -120,7 +109,7 @@ namespace Creotly_Studios
 
         protected virtual void CheckIfPlayerIsGrounded()
         {
-            characterManager.isGrounded = Physics.CheckSphere(characterManager.transform.position, sphereRadius, groundLayer);
+            characterManager.isGrounded = characterManager.characterController.isGrounded;
             characterManager.animator.SetBool(AnimatorHashNames.isGroundedHash, characterManager.isGrounded);
         }
 

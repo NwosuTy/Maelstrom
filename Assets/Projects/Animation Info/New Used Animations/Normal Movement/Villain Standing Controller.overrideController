@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Villain Standing Controller
+  m_Controller: {fileID: 9100000, guid: d097723d42438594eb4c8e94fc0acd9a, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 945821941ee90f044bc0c8c33872b51c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c888761b0a62dc8409efd7bf59c907db, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 31b58ecfe45e5f04baa78caa94fa81bd, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 0c000160c1b2a1d40a33a6c2733e6ceb, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: de459a81af6aa0542b93cb5adf204342, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a78cbdeb3f0362a4e8175def36318bc2, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 637a70bb9ba11624e860a4d074097ac3, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: ee391d512626dc24e937f0aa8481750b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b7375b27729389f46aaadee12a35b629, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3ea494c7f9f52df4cb099a0a7920b338, type: 2}

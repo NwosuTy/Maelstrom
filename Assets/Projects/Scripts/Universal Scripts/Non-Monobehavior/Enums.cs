@@ -6,6 +6,13 @@ namespace Creotly_Studios
         Completed
     }
 
+    public enum GenerationMode
+    {
+        Initial,
+        Periodic
+    }
+
+
     public enum SpawnMethod
     {
         Random,

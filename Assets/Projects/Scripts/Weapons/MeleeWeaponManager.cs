@@ -63,7 +63,7 @@ namespace Creotly_Studios
 
         private void HandleAttacking()
         {
-            if(aIManager != null)
+            if(aiManager != null)
             {
                 return;
             }

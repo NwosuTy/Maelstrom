@@ -119,7 +119,7 @@ namespace Creotly_Studios
 
         private void SetInput()
         {
-            if(aIManager != null)
+            if(aiManager != null)
             {
                 return;
             }
@@ -258,7 +258,7 @@ namespace Creotly_Studios
             {
                 return crossHairTransform.position - MuzzlePoint.position;
             }
-            return aIManager.DirectionToTarget + new Vector3(x,y,0);
+            return aiManager.DirectionToTarget + new Vector3(x,y,0);
         }
 
         private int GetDeathAnimation(Transform damagedCharacter)

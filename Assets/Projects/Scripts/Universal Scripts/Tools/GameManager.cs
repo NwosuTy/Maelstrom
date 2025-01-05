@@ -4,11 +4,22 @@ namespace Creotly_Studios
 {
     public class GameManager : MonoBehaviour
     {
-        public static PlayerManager playerManager;
+        public static GameManager Instance;
+
+        public PlayerManager playerManager;
 
         private void Awake()
         {
-            playerManager = GetComponentInChildren<PlayerManager>();
+            if(Instance != null)
+            {
+                Destroy(gameObject);
+            }
+            Instance = this;
+        }
+
+        public void SetPlayerManager(PlayerManager player)
+        {
+            playerManager = player;
         }
     }
 }

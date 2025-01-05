@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b0d60e4698f4f24dabd87ffc53f4f51, type: 3}
   m_Name: Patrol State
   m_EditorClassIdentifier: 
+  sphereRadius: 17.5
+  idleTimeDefault: 7.5
+  interactTimeDefault: 10
+  patrolMode: 0

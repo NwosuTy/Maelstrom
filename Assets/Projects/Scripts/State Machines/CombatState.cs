@@ -28,6 +28,11 @@ namespace Creotly_Studios
                 aiManager.navMeshAgent.enabled = true;
             }
 
+            if(aiManager.DistanceToTarget >= aiManager.navMeshAgent.stoppingDistance * 1.5f)
+            {
+                return SwitchState(aiManager.pursueState, aiManager);
+            }
+
             if(aiManager.enemyType == EnemyType.Mech)
             {
                 return MechEnemy_Updater(aiManager);

@@ -7,13 +7,14 @@ namespace Creotly_Studios
         Vector3 newPosition;
         private Transform playerTransform;
 
-        private void Awake()
-        {
-            playerTransform = GameManager.playerManager.transform;
-        }
-
         private void LateUpdate()
         {
+            if(playerTransform == null)
+            {
+                playerTransform = GameManager.Instance.playerManager?.transform;
+                return;
+            }
+
             newPosition = playerTransform.transform.position;
 
             newPosition.y = transform.position.y;

@@ -23,7 +23,7 @@ namespace Creotly_Studios
         private MeshRenderer meshRenderer;
 
         [Header("Manager")]
-        protected AIManager aIManager;
+        protected AIManager aiManager;
         protected PlayerManager playerManager;
         public CharacterManager characterManager {get; protected set;}
 
@@ -56,7 +56,7 @@ namespace Creotly_Studios
         public virtual void Initialize(CharacterManager cm)
         {
             characterManager = cm;
-            aIManager = characterManager as AIManager;
+            aiManager = characterManager as AIManager;
             playerManager = characterManager as PlayerManager;
 
             if(playerManager != null)

@@ -22,7 +22,6 @@ namespace Creotly_Studios
         // Update is called once per frame
         public override void CharacterLocomotionManager_Update(float delta)
         {
-            CheckIfPlayerIsGrounded();
             HandleGravity(delta);
         }
 
@@ -112,7 +111,6 @@ namespace Creotly_Studios
             {
                 aiManager.navMeshAgent.SetPath(aiManager.navMeshPath);
             }
-
             Vector3 moveDirection = aiManager.navMeshAgent.desiredVelocity;
             aiManager.characterController.Move(speed * Time.deltaTime * moveDirection);
         }

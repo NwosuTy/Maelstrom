@@ -16,7 +16,6 @@ namespace Creotly_Studios
             Target visualTarget = FetchVisualTarget(aiManager, target);
 
             visualTarget.visualTarget = target;
-            visualTarget.SetDetails(TargetType.Visual, null, target);
             visualTarget.CalculateParameters(aiManager.transform);
         }
 
@@ -26,6 +25,7 @@ namespace Creotly_Studios
             if(visualTarget == null)
             {
                 visualTarget = new Target();
+                visualTarget.SetDetails(TargetType.Visual, null, target);
                 aiManager.possibleVisualTargets.Add(visualTarget);
             }
             return visualTarget;
