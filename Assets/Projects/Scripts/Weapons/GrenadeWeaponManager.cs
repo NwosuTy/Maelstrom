@@ -25,7 +25,10 @@ namespace Creotly_Studios
 
         public override void Initialize(CharacterManager cm)
         {
-            base.Initialize(cm);
+            characterManager = cm;
+            aiManager = characterManager as AIManager;
+            playerManager = characterManager as PlayerManager;
+
             hasBeenInitialized = true;
         }
 

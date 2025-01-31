@@ -6,12 +6,18 @@ namespace Creotly_Studios
         Completed
     }
 
+    public enum MeshSockets_ID
+    {
+        Spine,
+        LeftHand,
+        RightHand
+    }
+
     public enum GenerationMode
     {
         Initial,
         Periodic
     }
-
 
     public enum SpawnMethod
     {

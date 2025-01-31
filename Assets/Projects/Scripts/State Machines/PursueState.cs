@@ -5,7 +5,8 @@ namespace Creotly_Studios
     [CreateAssetMenu(fileName = "Pursue State", menuName = "Creotly Studio/AIStates/Pursue State")]
     public class PursueState : AIState
     {
-        [SerializeField] protected float timeInState = 7.5f;
+        [SerializeField] private float timeInState = 7.5f;
+
         public override AIState AISate_Updater(AIManager aiManager)
         {
             if(aiManager.performingAction)
@@ -14,44 +15,26 @@ namespace Creotly_Studios
                 return this;
             }
 
+            aiManager.isLockedIn = false;
             timeInState -= Time.deltaTime;
+            
             if(aiManager.target.source == null)
             {
                 return SwitchState(aiManager.patrolState, aiManager);
             }
 
-            if(aiManager.navMeshAgent.enabled == false)
+            if (aiManager.dontMove != true && aiManager.navMeshAgent.enabled == false)
             {
                 aiManager.navMeshAgent.enabled = true;
             }
-
-            if(aiManager.enemyType == EnemyType.Mech)
-            {
-                return MechEnemy_Updater(aiManager);
-            }
-            return HumanoidEnemy_Updater(aiManager);
+            return HandleAction(aiManager);
         }
 
-        protected override AIState MechEnemy_Updater(AIManager aiManager)
+        protected AIState HandleAction(AIManager aiManager)
         {
-            if(aiManager.AngleOfTarget < aiManager.angleLimit.lowerBound || aiManager.AngleOfTarget > aiManager.angleLimit.upperBound)
-            {
-                aiManager.aILocomotionManager.PivotTowardsTarget(aiManager);
-            }
             aiManager.aILocomotionManager.RotateTowardsTarget();
-            
-            if(aiManager.target.targetType == TargetType.Visual)
-            {
-                return VisualChase(aiManager);
-            }
-            return SoundChase(aiManager);
-        }
 
-        protected override AIState HumanoidEnemy_Updater(AIManager aiManager)
-        {
-            aiManager.aILocomotionManager.RotateTowardsTarget();
-            
-            if(aiManager.target.targetType == TargetType.Visual)
+            if (aiManager.target.targetType == TargetType.Visual)
             {
                 return VisualChase(aiManager);
             }
@@ -67,7 +50,7 @@ namespace Creotly_Studios
         {
             if(aiManager.DistanceToTarget >= aiManager.navMeshAgent.stoppingDistance)
             {
-                aiManager.aIAnimationManager.HandleAnimation(aiManager.navMeshAgent.stoppingDistance);
+                aiManager.aIAnimationManager.HandleAnimation(5.0f);
                 aiManager.aILocomotionManager.HandleMovement(aiManager.target.targetPosition, aiManager.aILocomotionManager.movementSpeed);
             }
             if(timeInState <= 0.0f)
@@ -80,9 +63,11 @@ namespace Creotly_Studios
 
         private AIState VisualChase(AIManager aiManager)
         {
-            if(aiManager.DistanceToTarget >= aiManager.navMeshAgent.stoppingDistance)
+            bool notClose = aiManager.DistanceToTarget >= aiManager.navMeshAgent.stoppingDistance;
+
+            if (notClose)
             {
-                aiManager.aIAnimationManager.HandleAnimation(aiManager.navMeshAgent.stoppingDistance * 2.5f);
+                aiManager.aIAnimationManager.HandleAnimation(5.0f);
                 aiManager.aILocomotionManager.HandleMovement(aiManager.target.targetPosition, aiManager.aILocomotionManager.movementSpeed);
             }
             else

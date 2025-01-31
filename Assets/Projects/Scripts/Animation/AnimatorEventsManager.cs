@@ -39,11 +39,7 @@ namespace Creotly_Studios
 
         public void ThrowGrenadeForce()
         {
-            if(playerManager == null)
-            {
-                return;
-            }
-            playerManager.playerCombatManager.ThrowGrenadePhysics();
+            characterManager.characterCombatManager.ThrowGrenadePhysics();
         }
 
         public void ApplyExplosionForce()

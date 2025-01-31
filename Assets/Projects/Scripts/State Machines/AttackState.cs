@@ -5,47 +5,72 @@ namespace Creotly_Studios
     [CreateAssetMenu(fileName = "Attack State", menuName = "Creotly Studio/AIStates/Attack State")]
     public class AttackState : AIState
     {
-        public float maxCoolDownTimer;
-        private GunWeaponManager gunWeapon;
-        private WeaponManager currentWeapon;
+        private float attackDuration;
 
-        public override AIState AISate_Updater(AIManager aIManager)
+        private float verticalMovement;
+        private float horizontalMovement;
+        private bool setStrafingDirection;
+        public float maximumEngagementDistance = 5.0f;
+        [SerializeField] private float maxAttackDuration;
+
+        public override AIState AISate_Updater(AIManager aiManager)
         {
-            aIManager.coolDownTimer += Time.deltaTime;
-            currentWeapon = aIManager.characterInventoryManager.currentWeaponManager;
-
-            aIManager.isAttacking = true;
-            gunWeapon = currentWeapon as GunWeaponManager;
-
-            if(aIManager.target.visualTarget == null || aIManager.target.visualTarget.isDead)
+            if (aiManager.DistanceToTarget >= aiManager.navMeshAgent.stoppingDistance * 1.5f)
             {
-                return SwitchState(aIManager.patrolState, aIManager);
+                return SwitchState(aiManager.pursueState, aiManager);
             }
 
-            aIManager.aILocomotionManager.HandleRotationWhileAttacking(aIManager);
-            aIManager.aIAnimationManager.SetBlendTreeParameter(0f,0f,false,Time.deltaTime);
-
-            if(aIManager.performingAction)
+            attackDuration += Time.deltaTime;
+            if (attackDuration >=  maxAttackDuration)
             {
-                return this;
+                return SwitchState(aiManager.combatState, aiManager);
+            }
+            aiManager.isAttacking = true;
+            aiManager.aILocomotionManager.HandleRotationWhileAttacking(aiManager);
+            
+           
+            if(aiManager.target.visualTarget == null || aiManager.target.visualTarget.isDead)
+            {
+                return SwitchState(aiManager.patrolState, aiManager);
             }
 
-            if(gunWeapon != null && gunWeapon.bulletLeft <= 0)
+            if (aiManager.enemyType == EnemyType.Humanoid)
             {
-                return SwitchState(aIManager.combatState, aIManager);
-            }
-
-            if(aIManager.coolDownTimer >= maxCoolDownTimer)
-            {
-                aIManager.coolDownTimer = maxCoolDownTimer;
-                return SwitchState(aIManager.combatState, aIManager);
+                HandleStrafing(aiManager);
+                aiManager.isMoving = true;
+                aiManager.aIAnimationManager.SetBlendTreeParameter(verticalMovement, horizontalMovement, false, Time.deltaTime);
             }
             return this;
         }
 
-        protected override void ResetStateParameters(AIManager aIManager)
+        public void HandleStrafing(AIManager aiManager)
         {
-            aIManager.isAttacking = false;
+            if (setStrafingDirection == true)
+            {
+                return;
+            }
+
+            setStrafingDirection = true;
+            horizontalMovement = RandomValue();
+            verticalMovement = aiManager.DistanceToTarget / maximumEngagementDistance;
+        }
+
+        private float RandomValue()
+        {
+            float randomValue = Random.Range(-1, 1);
+
+            if (randomValue >= -1.0f && randomValue <= 0.0f)
+            {
+                return -0.5f;
+            }
+            return 0.5f;
+        }
+
+        protected override void ResetStateParameters(AIManager aiManager)
+        {
+            attackDuration = 0.0f;
+            aiManager.coolDown = true;
+            aiManager.isAttacking = false;
         }
     }
 }

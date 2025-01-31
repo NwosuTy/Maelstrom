@@ -70,13 +70,11 @@ namespace Creotly_Studios
             {
                 return;
             }
-            
             lastDetected = Time.time;
             targetPosition = source.position;
             targetDirection = (aiManagerDetecting.position - targetPosition);
 
             targetDistance = targetDirection.magnitude;
-            targetDirection.Normalize();
             targetDetectAngle = Maths_PhysicsHelper.CalculateViewAngle(aiManagerDetecting.forward, targetDirection);
         }
     }

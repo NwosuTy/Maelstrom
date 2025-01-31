@@ -29,7 +29,7 @@ namespace Creotly_Studios
 
         public void UpdateGuns(WeaponManager weaponManager)
         {
-            GunWeaponManager gun = weaponManager as GunWeaponManager;
+            HandGunWeaponManager gun = weaponManager as HandGunWeaponManager;
             if(gun != null)
             {
                 bulletLeft = gun.bulletLeft;
@@ -41,7 +41,7 @@ namespace Creotly_Studios
         {
             if(weaponManager.weaponType == WeaponType.Grenade)
             {
-                quantity = weaponManager.characterManager.characterInventoryManager.grenadesLeft;
+                quantity = weaponManager.characterManager.characterCombatManager.grenadesLeft;
                 return;
             }
             quantity = 1;

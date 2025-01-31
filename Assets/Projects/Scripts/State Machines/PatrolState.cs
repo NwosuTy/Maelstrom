@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using System.Collections;
 
 namespace Creotly_Studios
 {
@@ -21,13 +22,13 @@ namespace Creotly_Studios
 
         public override AIState AISate_Updater(AIManager aiManager)
         {
-            if (aiManager.performingAction)
+            if (aiManager.aIInventoryManager.hasEquippedWeapon || aiManager.performingAction)
             {
                 aiManager.aIAnimationManager.SetBlendTreeParameter(0f, 0f, false, Time.deltaTime);
                 return this;
             }
 
-            if (aiManager.navMeshAgent.enabled == false)
+            if(aiManager.dontMove != true && aiManager.navMeshAgent.enabled == false)
             {
                 aiManager.navMeshAgent.enabled = true;
             }
@@ -41,13 +42,6 @@ namespace Creotly_Studios
 
         private AIState HandleAction(AIManager aiManager)
         {
-            if (aiManager.enemyType == EnemyType.Humanoid)
-            {
-                if (aiManager.AngleOfTarget < aiManager.angleLimit.lowerBound || aiManager.AngleOfTarget > aiManager.angleLimit.upperBound)
-                {
-                    aiManager.aILocomotionManager.PivotTowardsTarget(aiManager);
-                }
-            }
             aiManager.aILocomotionManager.RotateTowardsTarget();
 
             if (patrolMode == PatrolMode.Idle)

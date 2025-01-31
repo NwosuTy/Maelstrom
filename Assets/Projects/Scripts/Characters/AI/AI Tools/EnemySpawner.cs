@@ -127,17 +127,15 @@ namespace Creotly_Studios
                 spawnedEnemiesList.Add(aiManager);
                 return;
             }
-
             spawnedEnemies--;
             spawnedTiles.Remove(tilePosition);
-            Debug.LogWarning($"The Position {randomPosition} is not on a suitable NavMesh Area");
         }
 
         public void HandleNavMeshUpdate(Bounds bounds)
         {
-            int hits = Physics.OverlapBoxNonAlloc(bounds.center, bounds.extents, enemyColliders, Quaternion.identity);
-
+            int hits = Physics.OverlapBoxNonAlloc(bounds.center, bounds.extents, enemyColliders, Quaternion.identity, enemyLayerMask);
             AIManager[] enemyArrays = new AIManager[hits];
+
             for (int i = 0; i < hits; i++)
             {
                 AIManager aiManager = enemyColliders[i].GetComponentInParent<AIManager>();
@@ -145,19 +143,16 @@ namespace Creotly_Studios
                 {
                     continue;
                 }
-
                 enemyArrays[i] = aiManager;
-                aiManager.navMeshAgent.enabled = true;
+                aiManager.ShouldMove(true);
             }
-
-            HashSet<AIManager> outOfBoundsEnemy = new HashSet<AIManager>();
+            HashSet<AIManager> outOfBoundsEnemy = new HashSet<AIManager>(spawnedEnemiesList);
             outOfBoundsEnemy.ExceptWith(enemyArrays);
 
-            foreach(AIManager ai in  outOfBoundsEnemy)
+            foreach (AIManager ai in outOfBoundsEnemy)
             {
-                ai.navMeshAgent.enabled = false;
+                ai.ShouldMove(false);
             }
-
             Transform playerTransform = sentient.playerTransform;
             Vector3 currentTilePosition = new Vector3
             (

@@ -59,13 +59,17 @@ namespace Creotly_Studios
             aiManager = characterManager as AIManager;
             playerManager = characterManager as PlayerManager;
 
-            if(playerManager != null)
+            if(playerManager == null)
+            {
+                aiManager.aIAnimationManager.standingAnimatorController = mainAnimatorController;
+            }
+            else
             {
                 playerManager.playerAnimationManager.mainAnimatorController = mainAnimatorController;
                 playerManager.playerAnimationManager.crouchAnimatorController = crouchAnimatorController;
             }
+            characterManager.characterAnimatorRigController.SetTwoBoneIKConstraint(weaponGrip, weaponRest);
             hasBeenInitialized = true;
-            characterManager.characterAnimationRigController.SetTwoBoneIKConstraint(weaponGrip, weaponRest);
         }
 
         public virtual void ResetAllStats()

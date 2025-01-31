@@ -9,13 +9,14 @@ namespace Creotly_Studios
         public CharacterController characterController {get; private set;}
 
         //Creotly Components
+        public GrenadeWeaponManager hitGrenadeWeapon { get; private set; }
         public AnimatorEventsManager animatorEventsManager {get; private set;}
         public CharacterStatsManager characterStatsManager {get; private set;}
         public CharacterCombatManager characterCombatManager {get; private set;}
         public CharacterAnimationManager characterAnimationManager {get; private set;}
         public CharacterInventoryManager characterInventoryManager {get; private set;}
-        public CharacterLocomotionManager characterLocomotionManager {get; private set;}
-        public CharacterAnimationRigController characterAnimationRigController {get; private set;}
+        public CharacterLocomotionManager characterLocomotionManager { get; private set; }
+        public CharacterAnimatorRigController characterAnimatorRigController {get; private set;}
 
         //Status
         [HideInInspector] public bool isDead;
@@ -23,15 +24,16 @@ namespace Creotly_Studios
         [HideInInspector] public bool canRotate;
         [HideInInspector] public bool isJumping;
         [HideInInspector] public bool canReload;
-        /*[HideInInspector]*/ public bool isGrounded;
+        [HideInInspector] public bool isLockedIn;
+        [HideInInspector] public bool isGrounded;
         [HideInInspector] public bool isCrouching;
         [HideInInspector] public bool isAttacking;
+        [HideInInspector] public bool canThrowGrenade;
         [HideInInspector] public bool performingAction;
         [HideInInspector] public bool rotateWithRootMotion;
 
         [field: Header("Status")]
-        [HideInInspector] public bool isLockedIn;
-        public GrenadeWeaponManager hitGrenadeWeapon {get; private set;}
+        [field: SerializeField] public Transform targetPoint { get; private set; }
         [field: SerializeField] public CharacterType characterType {get; private set;} = CharacterType.Enemy;
 
         [field: Header("UI Bars")]
@@ -48,7 +50,7 @@ namespace Creotly_Studios
             characterInventoryManager = GetComponent<CharacterInventoryManager>();
             characterAnimationManager = GetComponent<CharacterAnimationManager>();
             characterLocomotionManager = GetComponent<CharacterLocomotionManager>();
-            characterAnimationRigController = GetComponentInChildren<CharacterAnimationRigController>();
+            characterAnimatorRigController = GetComponentInChildren<CharacterAnimatorRigController>();
         }
 
         protected virtual void Start()
@@ -61,12 +63,10 @@ namespace Creotly_Studios
             SetAnimatorParameters();
             float delta = Time.deltaTime;
 
-            characterCombatManager.CharacterCombatManager_Update();
             characterStatsManager.CharacterStatsManager_Update(delta);
-            
+            characterCombatManager.CharacterCombatManager_Update(delta);
             characterAnimationManager.CharacterAnimatorManager_Update(delta);
             characterLocomotionManager.CharacterLocomotionManager_Update(delta);
-            characterAnimationRigController?.CharacterAnimationRig_Updater(delta);
 
             characterInventoryManager.CharacterInventory_Updater(delta);
         }

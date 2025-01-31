@@ -32,9 +32,8 @@ namespace Creotly_Studios
 
             if(cross.y < 0.0f)
             {
-                viewAngle = -viewAngle;
+                return -viewAngle;
             }
-
             return viewAngle;
         }
     }

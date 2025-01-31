@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7270f4b15761a514a8b4afb827461780, type: 3}
   m_Name: Attack State
   m_EditorClassIdentifier: 
+  maximumEngagementDistance: 5
+  maxAttackDuration: 1.75

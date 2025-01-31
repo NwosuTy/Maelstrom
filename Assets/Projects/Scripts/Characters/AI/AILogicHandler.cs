@@ -100,8 +100,8 @@ namespace Creotly_Studios
 
                 if(aiManager.target.source == null || target.targetScore > currentVisualTarget.targetScore)
                 {
-                    currentVisualTarget = target;
                     aiManager.target = target;
+                    currentVisualTarget = target;
                 }
             }
         }

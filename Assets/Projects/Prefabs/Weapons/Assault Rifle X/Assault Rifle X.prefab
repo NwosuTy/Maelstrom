@@ -898,7 +898,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
   EmissionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 4
     rateOverTime:
       serializedVersion: 2
@@ -5899,7 +5899,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
   EmissionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 4
     rateOverTime:
       serializedVersion: 2
@@ -10087,7 +10087,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6299800303449334577}
   - component: {fileID: 5780474839079691982}
-  - component: {fileID: 6101053299378740585}
+  - component: {fileID: -8298906599015552507}
   m_Layer: 9
   m_Name: Assault Rifle X
   m_TagString: Untagged
@@ -10138,7 +10138,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6101053299378740585
+--- !u!114 &-8298906599015552507
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10147,20 +10147,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 7176241237875941114}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e62564b2dbb87e4aa23cb40ea9facdd, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b53d2e8462f6134ab4689117a80ee54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   partOfBody: 0
   weaponName: Assault Rifle X
-  weaponImage: {fileID: 21300000, guid: 6967fd8262eeee84db206f04e1ecc8bd, type: 3}
+  weaponImage: {fileID: 21300002, guid: dccc05b8d01dde54f88f9910329187c2, type: 3}
   weaponType: 0
   weaponDataHolder: {fileID: 11400000, guid: e621a553339822e489f69732564c29ba, type: 2}
   rigidBody: {fileID: 5780474839079691982}
   weaponCollider: {fileID: 694849963548705227}
-  <damageValue>k__BackingField: 7.5
+  <damageValue>k__BackingField: 2
   <EnemyLayerMask>k__BackingField:
     serializedVersion: 2
-    m_Bits: 392
+    m_Bits: 2440
   weaponGrip: {fileID: 1374427907096174390}
   weaponRest: {fileID: 7013997456457123801}
   inactiveWeaponHolder: {fileID: 0}
@@ -10168,16 +10168,18 @@ MonoBehaviour:
   <RestOriginalPosition>k__BackingField: {x: 0.25, y: 0.2, z: 0.1}
   mainAnimatorController: {fileID: 22100000, guid: 2cb789b24365d14468ecd561ea72cd98, type: 2}
   crouchAnimatorController: {fileID: 22100000, guid: e36ba14512995f040a2665c4cc98ca6f, type: 2}
-  canHoldShooting: 1
-  range: 100
-  spread: 0.02
-  timeBetweenShots: 0.2
-  maxBullet: 35
+  fireRate: 25
+  bulletDrop: 300
+  bulletSpeed: 1000
+  maxBulletTime: 3
+  simulationSpeed: 50
   muzzleFlash:
   - {fileID: 4858060690315746075}
   - {fileID: 3187762413597012684}
-  bulletPathTrail: {fileID: 1909042924805348475, guid: 98ba830bdd0ed5c4b819184b048b7c26, type: 3}
-  <MagazineSize>k__BackingField: 300
+  bulletTrailPrefab: {fileID: 4330412615122653451, guid: 05d04303e5e3c994495cb4a8f74b06eb, type: 3}
+  maxBullet: 144
+  <MagazineSize>k__BackingField: 386
+  crossHairImage: {fileID: 21300000, guid: 08a0351e5306f984d93fe28c8b712659, type: 3}
+  aimingCrossHairImage: {fileID: 21300000, guid: b5429c1b72938134cba311bed7a76bc4, type: 3}
+  gunType: 1
   <MuzzlePoint>k__BackingField: {fileID: 5961108290691048707}
-  crossHairImage: {fileID: 21300000, guid: 47cdd929638ca344a814d0bea1ec001a, type: 3}
-  aimingCrossHairImage: {fileID: 21300000, guid: 873a510ca51a05f47ae37fed4096b6d1, type: 3}

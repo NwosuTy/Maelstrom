@@ -9,15 +9,11 @@ AnimatorOverrideController:
   m_Name: Shotgun Standing Controller
   m_Controller: {fileID: 9100000, guid: 56e928e81a904a749b370720f6afbff1, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: d57a1737a8959b74bb9cb6aae79f2469, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 525acad3d559ec34e9abd2b75430dca1, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 41c63f001fc1a054abe8b16520894276, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: 128ba7cb89fa9e24aa240988db2afa17, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 7038039f993152e4dab855e26ad9fa33, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: fdae30df12d313748a20e7d1490be3bc, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 91d2ce4f313e54e4287813f13fb77cff, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 29648707a42d22b40918dbffbbf443ab, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 1c1c0004e25a7af4d8f9cf93cd09e1ed, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 91d2ce4f313e54e4287813f13fb77cff, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: aa3d306eaf10edf45877712c28e89693, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: b8eae83be9babdc4bb5b1377e69fd689, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: c1d8135453f9958439540c7420510926, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 68d0dc024e665cf488acfb4d7b31862e, type: 2}

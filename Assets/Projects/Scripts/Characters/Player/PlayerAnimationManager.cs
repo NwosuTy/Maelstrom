@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEditor.Animations;
 
 namespace Creotly_Studios
 {
@@ -26,12 +25,6 @@ namespace Creotly_Studios
             base.Start();
         }
 
-        private void OnAnimatorIK(int layerIndex)
-        {
-            
-        }
-
-
         // Update is called once per frame
         public override void CharacterAnimatorManager_Update(float delta)
         {
@@ -50,7 +43,9 @@ namespace Creotly_Studios
 
         public void Unarmed_StandOrCrouch()
         {
-            if(playerManager.isCrouching != true)
+            characterManager.characterAnimatorRigController.SetTwoBoneIKConstraint(null, null);
+
+            if (playerManager.isCrouching != true)
             {
                 mainAnimatorController = unarmedStandingController;
                 return;

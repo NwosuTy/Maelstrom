@@ -11,6 +11,11 @@ namespace Creotly_Studios
         [SerializeField] private float verticalVelocity;
         [SerializeField] private float horizontalVelocity;
 
+        [Header("Objects To Spawn")]
+        public int grenadesLeft = 5;
+        [SerializeField] private Transform grenadeHandler;
+        [SerializeField] private GrenadeWeaponManager grenadePrefab;
+
         [field: Header("Damage Effect")]
         [field: SerializeField] public MeleeDamageEffect melee_DamageEffect {get; protected set;}
 
@@ -26,24 +31,34 @@ namespace Creotly_Studios
         }
 
         // Update is called once per frame
-        public virtual void CharacterCombatManager_Update()
+        public virtual void CharacterCombatManager_Update(float delta)
         {
         
         }
 
         public virtual void ThrowGrenade()
         {
+            if (grenadesLeft <= 0)
+            {
+                grenadesLeft = 0;
+                return;
+            }
+
+            if (characterManager.canThrowGrenade != true)
+            {
+                return;
+            }
             characterManager.characterAnimationManager.PlayTargetAnimation(AnimatorHashNames.throwingObjectHash, true);
         }
 
         public void ThrowGrenadePhysics()
         {
-            GrenadeWeaponManager grenade = GameObjectManager.grenadePool.Get();
-            grenade.Initialize(characterManager);
+            GrenadeWeaponManager grenade = Instantiate(grenadePrefab, grenadeHandler.position, grenadeHandler.rotation);
+            characterManager.characterAnimatorRigController.RightHandIKConstraint.weight = 0.0f;
 
             Rigidbody rb = grenade.rigidBody;
-            // grenade.transform.SetPositionAndRotation(characterManager.handHolder.position, characterManager.handHolder.rotation);
-
+            grenade.Initialize(characterManager);
+            
             rb.isKinematic = false;
             grenade.weaponCollider.enabled = true;
 
@@ -53,7 +68,8 @@ namespace Creotly_Studios
 
             rb.mass = grenade.Mass;
             grenade.transform.SetParent(null);
-            characterManager.characterInventoryManager.grenadesLeft--;
+            grenadesLeft--;
+            characterManager.characterAnimatorRigController.RightHandIKConstraint.weight = 1.0f;
         }
     }
 }

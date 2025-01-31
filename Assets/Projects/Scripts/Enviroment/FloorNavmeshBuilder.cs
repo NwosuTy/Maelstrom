@@ -92,6 +92,12 @@ namespace Creotly_Studios
             }
         }
 
+        private void OnDrawGizmosSelected()
+        {
+            Bounds bounds = new Bounds(worldAnchor, 2 * (navMeshAreaBakeSize));
+            Gizmos.DrawCube(bounds.center, bounds.extents);
+        }
+
         private void HandleNavMeshUpdateOperation(AsyncOperation asyncOperation)
         {
             Bounds bounds = new Bounds(worldAnchor, navMeshAreaBakeSize);

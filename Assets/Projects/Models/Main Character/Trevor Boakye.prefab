@@ -994,37 +994,6 @@ Transform:
   - {fileID: 4373552350937250852}
   m_Father: {fileID: 6980494884605414981}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &798237219170990788
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6007829684507709533}
-  m_Layer: 3
-  m_Name: Rest
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6007829684507709533
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 798237219170990788}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7803633831786377872}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &832639874758498575
 GameObject:
   m_ObjectHideFlags: 0
@@ -1637,7 +1606,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6162431050793308568}
   m_Layer: 3
-  m_Name: Camera Target
+  m_Name: Target Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1795,6 +1764,37 @@ Transform:
   m_Children:
   - {fileID: 4579887599198909711}
   m_Father: {fileID: 1835174131785707521}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2116821958499920081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1256526847780962628}
+  m_Layer: 3
+  m_Name: Grenade Holder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1256526847780962628
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116821958499920081}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5328044407146808202}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2253303869270244978
 GameObject:
@@ -2215,6 +2215,7 @@ Transform:
   - {fileID: 1067268413956985591}
   - {fileID: 6162431050793308568}
   - {fileID: 1799093367751114662}
+  - {fileID: 1256526847780962628}
   m_Father: {fileID: 2670283431316257271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2889162809183542496
@@ -2336,7 +2337,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1799093367751114662}
-  - component: {fileID: 8995679236611782740}
+  - component: {fileID: 1326948351300331383}
   m_Layer: 3
   m_Name: Animation Rigs
   m_TagString: Untagged
@@ -2364,7 +2365,7 @@ Transform:
   - {fileID: 7911497489001318252}
   m_Father: {fileID: 5328044407146808202}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8995679236611782740
+--- !u!114 &1326948351300331383
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2373,13 +2374,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3093438658466955592}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94b99f738389f4349bd76347433d0eba, type: 3}
+  m_Script: {fileID: 11500000, guid: cc320d85a105a124cb112cbae85481e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aimDuration: 0.2
-  weaponRestIK: {fileID: 6007829684507709533}
-  weaponGripIK: {fileID: 8238431496574470556}
-  rigBuilder: {fileID: 0}
+  aimDuration: 0.5
+  rigBuilder: {fileID: 4008568214473328878}
   <HandIKConstraints>k__BackingField: {fileID: 6259433722885322945}
   <WeaponAimConstraint>k__BackingField: {fileID: 355172445540065828}
   <LeftHandIKConstraint>k__BackingField: {fileID: 1022638677943979710}
@@ -2389,10 +2388,10 @@ MonoBehaviour:
   - {fileID: 4355228139581459748}
   <MultiAimConstraintArray>k__BackingField:
   - {fileID: 2164695251584008564}
-  - {fileID: 2637633725089754358}
+  - {fileID: 8927587771043597434}
   - {fileID: 1709920926396552063}
   - {fileID: 3290049600908301637}
-  - {fileID: 8927587771043597434}
+  - {fileID: 2637633725089754358}
   <WeaponParentConstraints>k__BackingField:
   - {fileID: 9079499524973790435}
   - {fileID: 245464861410574995}
@@ -4184,37 +4183,6 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
---- !u!1 &4938361549122435665
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8238431496574470556}
-  m_Layer: 3
-  m_Name: Grip
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8238431496574470556
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4938361549122435665}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7803633831786377872}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4962469101580032128
 GameObject:
   m_ObjectHideFlags: 0
@@ -4570,7 +4538,7 @@ MonoBehaviour:
     m_Root: {fileID: 4189430620358571042}
     m_Mid: {fileID: 3450981644558154973}
     m_Tip: {fileID: 1835174131785707521}
-    m_Target: {fileID: 8238431496574470556}
+    m_Target: {fileID: 0}
     m_Hint: {fileID: 0}
     m_TargetPositionWeight: 1
     m_TargetRotationWeight: 1
@@ -6147,12 +6115,14 @@ MonoBehaviour:
   canRotate: 0
   isJumping: 0
   canReload: 0
+  isLockedIn: 0
   isGrounded: 0
   isCrouching: 0
   isAttacking: 0
+  canThrowGrenade: 0
   performingAction: 0
   rotateWithRootMotion: 0
-  isLockedIn: 0
+  <targetPoint>k__BackingField: {fileID: 6162431050793308568}
   <characterType>k__BackingField: 1
   <healthBarUI>k__BackingField: {fileID: 3440475239852658686}
   sprintFlag: 0
@@ -6210,15 +6180,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b576994c3f25c2448906be4d4eb9f58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grenadesLeft: 5
   activeWeapons: []
   inactiveWeaponSpawnPoint:
   - {fileID: 4232196313282670746}
   - {fileID: 6224179149697893130}
+  <PrimaryWeapon>k__BackingField: {fileID: -8298906599015552507, guid: 4dceedc7c1ff9cf49a6d78344548da86, type: 3}
   <ActiveWeaponSpawnPoint>k__BackingField: {fileID: 7803633831786377872}
-  <PrimaryWeapon>k__BackingField: {fileID: 6101053299378740585, guid: 4dceedc7c1ff9cf49a6d78344548da86, type: 3}
-  <Grenade>k__BackingField: {fileID: 1855803067300241307, guid: ad227f8846e46df43886a3e5f69e991f, type: 3}
-  <SecondaryWeapon>k__BackingField: {fileID: 7884064613221441947, guid: c62700470e3e7d24588cc9b2842848a5, type: 3}
+  <SecondaryWeapon>k__BackingField: {fileID: 3636189490986340829, guid: c62700470e3e7d24588cc9b2842848a5, type: 3}
 --- !u!114 &5505826243453133865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6234,6 +6202,9 @@ MonoBehaviour:
   grenadeObject: {fileID: 0}
   verticalVelocity: 150
   horizontalVelocity: 500
+  grenadesLeft: 5
+  grenadeHandler: {fileID: 1256526847780962628}
+  grenadePrefab: {fileID: 1855803067300241307, guid: ad227f8846e46df43886a3e5f69e991f, type: 3}
   <melee_DamageEffect>k__BackingField: {fileID: 11400000, guid: e6522fe576d097141a145096c4d8c208, type: 2}
 --- !u!114 &7501547729844767030
 MonoBehaviour:
@@ -6253,7 +6224,6 @@ MonoBehaviour:
   <movementSpeed>k__BackingField: 7
   <crouchingSpeed>k__BackingField: 7
   <sprintingSpeed>k__BackingField: 12
-  sphereRadius: 0.15
   jumpHeight: 4
   gravityForce: -30
   <fallingVelocitySet>k__BackingField: 0
@@ -7140,7 +7110,7 @@ MonoBehaviour:
     m_Root: {fileID: 386416396559255935}
     m_Mid: {fileID: 5843773810162955978}
     m_Tip: {fileID: 731970851263845429}
-    m_Target: {fileID: 6007829684507709533}
+    m_Target: {fileID: 0}
     m_Hint: {fileID: 0}
     m_TargetPositionWeight: 1
     m_TargetRotationWeight: 1
@@ -8230,9 +8200,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 8238431496574470556}
-  - {fileID: 6007829684507709533}
+  m_Children: []
   m_Father: {fileID: 2670283431316257271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2219473422287313451

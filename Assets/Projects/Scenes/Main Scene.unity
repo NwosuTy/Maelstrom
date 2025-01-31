@@ -779,7 +779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3401479e2d173a49b3b0dcc6cdc2f5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxEnemies: 15
+  maxEnemies: 1
   parent: {fileID: 727185297}
   enemyLayerMask:
     serializedVersion: 2
@@ -787,11 +787,7 @@ MonoBehaviour:
   spawnRadius: 15
   spawnDensityPerTile: 0.5
   enemyDataHolders:
-  - {fileID: 11400000, guid: 431ba3e4ef4b6a74c99846d7c4b56209, type: 2}
   - {fileID: 11400000, guid: 1b12a81aa0ad30d449d449b5abace122, type: 2}
-  - {fileID: 11400000, guid: a1213c9780b7dac46bbffe68bb0c899c, type: 2}
-  - {fileID: 11400000, guid: 015fb15100bec364c97c9d4b1644b011, type: 2}
-  - {fileID: 11400000, guid: 28f35b30475f8b746822b1b1fa2d2994, type: 2}
   spawnMethod: 1
   navMeshSize: {x: 40, y: 0, z: 40}
 --- !u!1 &616581544

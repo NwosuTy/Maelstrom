@@ -39,7 +39,7 @@ namespace Creotly_Studios
 
         public void HandleJumping()
         {
-            if(playerManager.performingAction)
+            if(playerManager.performingAction || playerManager.isLockedIn)
             {
                 return;
             }

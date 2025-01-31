@@ -43,13 +43,7 @@ namespace Creotly_Studios
             {
                 return;
             }
-
-            if(aiManager.performingAction != true)
-            {
-                return;
-            }
-
-            Vector3 targetDirection = aiManager.DirectionToTarget;
+            Vector3 targetDirection = aiManager.target.source.position - aiManager.transform.position;
             targetDirection.y = 0.0f;
             targetDirection.Normalize();
 
@@ -57,36 +51,9 @@ namespace Creotly_Studios
             {
                 targetDirection = aiManager.transform.forward;
             }
-            
             Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
             aiManager.transform.rotation = Quaternion.Slerp(aiManager.transform.rotation, targetRotation, 
                 aiManager.characterLocomotionManager.rotationSpeed * Time.deltaTime);
-        }
-
-        public void PivotTowardsTarget(AIManager aiManager)
-        {
-            if(aiManager.performingAction)
-            {
-                return;
-            }
-            
-            if(aiManager.AngleOfTarget >= 20 && aiManager.AngleOfTarget <= 145)
-            {
-                aiManager.aIAnimationManager.PlayRootTargetAnimation(AnimatorHashNames.turn_R_90, true);
-            }
-            else if(aiManager.AngleOfTarget >= -145  && aiManager.AngleOfTarget <= -20)
-            {
-                aiManager.aIAnimationManager.PlayRootTargetAnimation(AnimatorHashNames.turn_L_90, true);
-            }
-            else if(aiManager.AngleOfTarget > 145 && aiManager.AngleOfTarget <= 180)
-            {
-                aiManager.aIAnimationManager.PlayRootTargetAnimation(AnimatorHashNames.turn_R_180, true);
-            }
-            else if(aiManager.AngleOfTarget < -145 && aiManager.AngleOfTarget >= -180)
-            {
-                aiManager.aIAnimationManager.PlayRootTargetAnimation(AnimatorHashNames.turn_L_180, true);
-            }
-
         }
 
         public void RotateTowardsTarget()
@@ -99,17 +66,26 @@ namespace Creotly_Studios
 
         public void HandleMovement(Vector3 targetPosition, float speed)
         {
-            if(aiManager.navMeshPath == null)
-            {
-                aiManager.navMeshPath = new NavMeshPath();
-            }
+            aiManager.navMeshPath ??= new NavMeshPath();
             if(aiManager.navMeshPath.status != NavMeshPathStatus.PathComplete)
             {
                 aiManager.navMeshPath.ClearCorners();
             }
-            if(aiManager.navMeshAgent.CalculatePath(targetPosition, aiManager.navMeshPath))
+
+            if (aiManager.dontMove == true)
+            {
+                Debug.LogWarning("Dont Move");
+                return;
+            }
+
+            if (aiManager.navMeshAgent.CalculatePath(targetPosition, aiManager.navMeshPath))
             {
                 aiManager.navMeshAgent.SetPath(aiManager.navMeshPath);
+            }
+
+            if (!NavMesh.SamplePosition(targetPosition, out NavMeshHit hit, 1.0f, NavMesh.AllAreas))
+            {
+                return;
             }
             Vector3 moveDirection = aiManager.navMeshAgent.desiredVelocity;
             aiManager.characterController.Move(speed * Time.deltaTime * moveDirection);

@@ -92,7 +92,7 @@ namespace Creotly_Studios
         {
             hasExploded = false;
             grenadeWeaponManager.rigidBody.mass = 1f;
-            GameObjectManager.grenadePool.Release(grenadeWeaponManager);
+            Destroy(grenadeWeaponManager.gameObject);
         }
 
         private void SpawnExplosions()

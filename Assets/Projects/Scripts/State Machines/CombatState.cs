@@ -5,84 +5,68 @@ namespace Creotly_Studios
     [CreateAssetMenu(fileName = "Combat State", menuName = "Creotly Studio/AIStates/CombatState")]
     public class CombatState : AIState
     {
-        private GunWeaponManager gunWeapon;
-        private WeaponManager currentWeapon;
+        private bool isBulletSmall;
 
         //Strafing Parameters
         private float stoppingDistance;
         private float verticalMovement;
         private float horizontalMovement;
+        private bool setStrafingDirection;
         public float maximumEngagementDistance = 5.0f;
-        [HideInInspector] public bool setStrafingDirection;
-
+        
         public override AIState AISate_Updater(AIManager aiManager)
         {
-            currentWeapon = aiManager.characterInventoryManager.currentWeaponManager;
-            if(aiManager.isLockedIn == false && currentWeapon.weaponType == WeaponType.Guns)
-            {
-                aiManager.isLockedIn = true;
-            }
-
-            if(aiManager.navMeshAgent.enabled == false)
+            aiManager.isLockedIn = true;
+            if(aiManager.dontMove != true && aiManager.navMeshAgent.enabled == false)
             {
                 aiManager.navMeshAgent.enabled = true;
             }
-
+            
             if(aiManager.DistanceToTarget >= aiManager.navMeshAgent.stoppingDistance * 1.5f)
             {
                 return SwitchState(aiManager.pursueState, aiManager);
             }
-
-            if(aiManager.enemyType == EnemyType.Mech)
-            {
-                return MechEnemy_Updater(aiManager);
-            }
-            return HumanoidEnemy_Updater(aiManager);
+            return HandleAction(aiManager);
         }
 
-        protected override AIState MechEnemy_Updater(AIManager aiManager)
+        protected AIState HandleAction(AIManager aiManager)
         {
-            aiManager.aILocomotionManager.RotateTowardsTarget();
-            HandleReloading(aiManager);
-
-            if(aiManager.target.targetType != TargetType.Visual)
+            isBulletSmall = false;
+            if (aiManager.enemyType == EnemyType.Humanoid)
             {
-                return SwitchState(aiManager.patrolState, aiManager);
+                //ThrowGrenade(aiManager);
+                HandleStrafing(aiManager);
             }
-            return this;
-        }
+            aiManager.aILocomotionManager.HandleRotationWhileAttacking(aiManager);
 
-        protected override AIState HumanoidEnemy_Updater(AIManager aiManager)
-        {
-            if(aiManager.isMoving != true)
-            {
-                if(aiManager.AngleOfTarget < aiManager.angleLimit.lowerBound || aiManager.AngleOfTarget > aiManager.angleLimit.upperBound)
-                {
-                    aiManager.aILocomotionManager.PivotTowardsTarget(aiManager);
-                }
-            }
-            aiManager.aILocomotionManager.RotateTowardsTarget();
-
-            ThrowGrenade(aiManager);
-            HandleReloading(aiManager);
-
-            if(aiManager.target.targetType != TargetType.Visual)
+            if (aiManager.target.targetType != TargetType.Visual)
             {
                 return SwitchState(aiManager.patrolState, aiManager);
             }
 
-            if(setStrafingDirection != true)
+            if (aiManager.coolDown == false && isBulletSmall != true)
             {
-                HandleStrafing(aiManager.DistanceToTarget);
+                return SwitchState(aiManager.attackState, aiManager);
+            }
+
+            if (aiManager.enemyType == EnemyType.Humanoid)
+            {
+                aiManager.isMoving = true;
+                aiManager.aIAnimationManager.SetBlendTreeParameter(verticalMovement, horizontalMovement, false, Time.deltaTime);
             }
             return this;
         }
 
-        public void HandleStrafing(float distance)
+        public void HandleStrafing(AIManager aiManager)
         {
+            if (setStrafingDirection == true)
+            {
+                return;
+            }
+
             setStrafingDirection = true;
             horizontalMovement = RandomValue();
-            verticalMovement = distance / maximumEngagementDistance;
+            verticalMovement = aiManager.DistanceToTarget / maximumEngagementDistance;
         }
 
         private float RandomValue()
@@ -119,18 +103,9 @@ namespace Creotly_Studios
         {
             int random = Random.Range(0, 100);
 
-            if(aIManager.characterInventoryManager.grenadesLeft > 0 && random >= aIManager.aICombatManager.grenadeThrowChance)
+            if(random >= aIManager.aICombatManager.grenadeThrowChance)
             {
-                aIManager.aICombatManager.ThrowGrenade();
-            }
-        }
-
-        private void HandleReloading(AIManager aIManager)
-        {
-            gunWeapon = currentWeapon as GunWeaponManager;
-            if(gunWeapon != null)
-            {
-                aIManager.canReload = (gunWeapon.bulletLeft <= 0);
+                aIManager.canThrowGrenade = true;
             }
         }
 

@@ -4,6 +4,7 @@ namespace Creotly_Studios
 {
     public class MultipleAnimatorReseter : StateMachineBehaviour
     {
+        bool isEnemy;
         CharacterManager characterManager;
 
         // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
@@ -12,11 +13,12 @@ namespace Creotly_Studios
             if(characterManager == null)
             {
                 characterManager = animator.GetComponent<CharacterManager>();
+                isEnemy = characterManager.characterType == CharacterType.Enemy;
             }
 
             characterManager.isJumping = false;
-            animator.SetBool(AnimatorHashNames.canRotateHash, false);
             animator.SetBool(AnimatorHashNames.interactHash, false);
+            animator.SetBool(AnimatorHashNames.canRotateHash, isEnemy);
             animator.SetBool(AnimatorHashNames.isReloadingHash, false);
             animator.SetBool(AnimatorHashNames.rootMotionRotateHash, true);
         }

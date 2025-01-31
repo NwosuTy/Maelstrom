@@ -14,6 +14,7 @@ namespace Creotly_Studios
         public static int rootMotionRotateHash;
 
         //Actions
+        public static int aimingHash;
         public static int interactHash;
         public static int isReloadingHash;
         public static int fallingTimerHash;
@@ -29,12 +30,6 @@ namespace Creotly_Studios
 
         //Complex Movement
         public static int jumpHash;
-
-        //Turning
-        public static int turn_L_90;
-        public static int turn_R_90;
-        public static int turn_L_180;
-        public static int turn_R_180;
 
         //Death Animations
         public static int backDeathHash;
@@ -107,6 +102,7 @@ namespace Creotly_Studios
             rootMotionRotateHash = Animator.StringToHash("rootMotionRotation");
 
             //Actions
+            aimingHash = Animator.StringToHash("isAiming");
             interactHash = Animator.StringToHash("isInteracting");
             isReloadingHash = Animator.StringToHash("isReloading");
             fallingTimerHash = Animator.StringToHash("fallingTimer");
@@ -134,12 +130,6 @@ namespace Creotly_Studios
             //Explosion Damage Animations
             explosionBackAnimation = Animator.StringToHash("Explosion_Back");
             explosionFrontAnimation = Animator.StringToHash("Explosion_Front");
-
-            //Turning
-            turn_L_90 = Animator.StringToHash("Turn_90_L");
-            turn_R_90 = Animator.StringToHash("Turn_90_R");
-            turn_L_180 = Animator.StringToHash("Turn_180_L");
-            turn_R_180 = Animator.StringToHash("Turn_180_R");
         }
     }
 }

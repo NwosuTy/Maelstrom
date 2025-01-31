@@ -5,10 +5,6 @@ namespace Creotly_Studios
     public class PlayerCombatManager : CharacterCombatManager
     {
         protected PlayerManager playerManager;
-        
-        //Weapons
-        private bool canThrowGrenade;
-        private WeaponManager currentWeapon;
 
         protected override void Awake()
         {
@@ -17,26 +13,27 @@ namespace Creotly_Studios
         }
 
         // Update is called once per frame
-        public override void CharacterCombatManager_Update()
+        public override void CharacterCombatManager_Update(float delta)
         {
-            canThrowGrenade = playerManager.playerInputManager.tapShootInput;
-            currentWeapon = playerManager.characterInventoryManager.currentWeaponManager;
+            playerManager.isAttacking = playerManager.playerInputManager.attackInput;
 
             ThrowGrenade();
+            HandleGun(delta);
         }
 
-        public override void ThrowGrenade()
+        private void HandleGun(float delta)
         {
-            if(playerManager.performingAction)
+            if(playerManager.isAttacking != true || playerManager.playerInventoryManager.currentWeaponManager == null)
             {
                 return;
             }
-    
-            if(currentWeapon != grenadeObject || canThrowGrenade != true)
+
+            GunWeaponManager gun = playerManager.playerInventoryManager.currentWeaponManager as GunWeaponManager;
+            if (gun == null)
             {
                 return;
             }
-            base.ThrowGrenade();
+            gun.HandleShooting(playerManager.crossHairTransform.position, delta);
         }
     }
 }

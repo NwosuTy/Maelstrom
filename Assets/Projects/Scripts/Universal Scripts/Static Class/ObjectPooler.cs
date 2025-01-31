@@ -18,6 +18,19 @@ namespace Creotly_Studios
             return objectPool;
         }
 
+        public static ObjectPool<TrailRenderer> TrailPool(TrailRenderer objectToPool)
+        {
+            ObjectPool<TrailRenderer> objectPool = new ObjectPool<TrailRenderer>
+            (
+                () => { return GameObject.Instantiate(objectToPool); },
+                spawnObject => { spawnObject.gameObject.SetActive(true); },
+                spawnObject => { spawnObject.gameObject.SetActive(false); },
+                spawnObject => { GameObject.Destroy(spawnObject.gameObject); },
+                false, 400, 500
+            );
+            return objectPool;
+        }
+
         public static ObjectPool<GameObject> GameObjectPool(GameObject objectToPool)
         {
             ObjectPool<GameObject> objectPool = new ObjectPool<GameObject>
@@ -40,19 +53,6 @@ namespace Creotly_Studios
                 spawnObject => {spawnObject.gameObject.SetActive(false);},
                 spawnObject => {GameObject.Destroy(spawnObject);},
                 false, 50, 100
-            );
-            return objectPool;
-        }
-
-        public static ObjectPool<GrenadeWeaponManager> GrenadePool(GrenadeWeaponManager objectToPool)
-        {
-            ObjectPool<GrenadeWeaponManager> objectPool = new ObjectPool<GrenadeWeaponManager>
-            (
-                () => {return GameObject.Instantiate(objectToPool);},
-                spawnObject => {spawnObject.gameObject.SetActive(true);},
-                spawnObject => {spawnObject.gameObject.SetActive(false);},
-                spawnObject => {GameObject.Destroy(spawnObject);},
-                false, 100, 200
             );
             return objectPool;
         }

@@ -15,12 +15,6 @@ namespace Creotly_Studios
         public float verticalMovementInput {get; private set;}
         public float horizontalMovementInput {get; private set;}
 
-        //Camera Movement Input
-        private Vector2 cameraMovementInput;
-        public float cameraMovementX {get; private set;}
-        public float cameraMovementY {get; private set;}
-        public float totalCameraMoveAmount {get; private set;}
-
         //Complex Locomotion
         public bool jumpInput {get; private set;}
         public bool crouchInput {get; private set;}
@@ -31,8 +25,7 @@ namespace Creotly_Studios
         public bool swapWeaponInput {get; private set;}
 
         //Shooting Input
-        public bool holdShootInput {get; private set;}
-        public bool tapShootInput {get; private set;}
+        public bool attackInput {get; private set;}
 
         //Modifying Input
         public bool sprintInput {get; private set;}
@@ -54,7 +47,6 @@ namespace Creotly_Studios
 
                 //Movement Input
                 controls.Movement.Movement.performed += x => movementInput = x.ReadValue<Vector2>();
-                controls.Movement.CameraLook.performed += x => cameraMovementInput = x.ReadValue<Vector2>();
 
                 //Action Inputs
                 controls.GeneralActions.Jump.performed += x => jumpInput = true;
@@ -66,9 +58,8 @@ namespace Creotly_Studios
                 controls.CombatActions.SwapWeapon.performed += x => swapWeaponInput = true;
 
                 //Shoot Input
-                controls.CombatActions.Shoot.performed += x => holdShootInput = true;
-                controls.CombatActions.Shoot.canceled += x => holdShootInput = false;
-                controls.CombatActions.Shoot.performed += x => tapShootInput = true;
+                controls.CombatActions.Shoot.performed += x => attackInput = true;
+                controls.CombatActions.Shoot.canceled += x => attackInput = false;
 
                 //Modifiers
                 controls.CombatActions.Aim.performed += x => lockedInInput = true;
@@ -114,23 +105,25 @@ namespace Creotly_Studios
             jumpInput = false;
             crouchInput = false;
             reloadInput = false;
-            tapShootInput = false;
             swapWeaponInput = false;
+            playerManager.canThrowGrenade = false;
         }
 
         private void HandleLockedInput()
         {
-            if(playerManager.isJumping)
-            {
-                playerManager.isLockedIn = false;
-                return;
-            }
             playerManager.isLockedIn = lockedInInput;
+            if(playerManager.isLockedIn)
+            {
+                if(jumpInput)
+                {
+                    playerManager.canThrowGrenade = true;
+                }
+            }
         }
 
         private void HandleReloadingInput()
         {
-            if(tapShootInput || holdShootInput)
+            if(attackInput)
             {
                 return;
             }
@@ -142,7 +135,6 @@ namespace Creotly_Studios
             if(jumpInput == true)
             {
                 jumpInput = false;
-                playerManager.isLockedIn = false;
                 playerManager.playerLocomotionManager.HandleJumping();
             }
         }

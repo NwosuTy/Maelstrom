@@ -8,4 +8,6 @@ AnimatorOverrideController:
   m_PrefabAsset: {fileID: 0}
   m_Name: AR Standing Override Controller 3
   m_Controller: {fileID: 9100000, guid: 56e928e81a904a749b370720f6afbff1, type: 2}
-  m_Clips: []
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 130808dc6b1487a4e95c4042e6936d75, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d57a1737a8959b74bb9cb6aae79f2469, type: 2}

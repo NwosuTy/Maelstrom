@@ -55,16 +55,16 @@ namespace Creotly_Studios
 
         public override void TakeHealthDamage(int damageAnimation, int deathAnimation, float damageValue)
         {
-            currentHealth -= damageValue;
+            //currentHealth -= damageValue;
             
-            if(currentHealth <= 0.0f)
-            {
-                HandleDeath(deathAnimation);
-                return;
-            }
-            showHealthBar = true;
-            aiManager.healthBarUI.gameObject.SetActive(showHealthBar);
-            base.TakeHealthDamage(damageAnimation, deathAnimation, damageValue);
+            //if(currentHealth <= 0.0f)
+            //{
+            //    HandleDeath(deathAnimation);
+            //    return;
+            //}
+            //showHealthBar = true;
+            //aiManager.healthBarUI.gameObject.SetActive(showHealthBar);
+            //base.TakeHealthDamage(damageAnimation, deathAnimation, damageValue);
         }
 
         private IEnumerator DisplayHealthBarCoroutine()

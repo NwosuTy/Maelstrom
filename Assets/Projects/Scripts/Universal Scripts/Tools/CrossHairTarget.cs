@@ -23,7 +23,7 @@ namespace Creotly_Studios
                 transform.position = hitInfo.point;
                 return;
             }
-            transform.position = ray.direction * 1000f;
+            transform.position = ray.origin + ray.direction * 1000f;
         }
     }
 }

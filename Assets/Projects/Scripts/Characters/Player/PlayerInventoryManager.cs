@@ -4,9 +4,11 @@ namespace Creotly_Studios
 {
     public class PlayerInventoryManager : CharacterInventoryManager
     {
+        int index;
         PlayerManager playerManager;
 
-        [field: SerializeField] public GunWeaponManager SecondaryWeapon {get; protected set;}
+        [field: Header("Parameters")]
+        [field: SerializeField] public GunWeaponManager SecondaryWeapon { get; private set; }
 
         protected override void Awake()
         {
@@ -17,12 +19,16 @@ namespace Creotly_Studios
         protected override void Start()
         {
             base.Start();
+            SetWeaponParent(currentWeaponManager, ActiveWeaponSpawnPoint);
         }
 
         public override void CharacterInventory_Updater(float delta)
         {
             WeaponChange();
-            base.CharacterInventory_Updater(delta);
+            if (currentWeaponManager != null)
+            {
+                currentWeaponManager.WeaponManager_Update(delta);
+            }
         }
 
         protected override void SetDefaultWeapons()
@@ -31,7 +37,6 @@ namespace Creotly_Studios
             SecondaryWeapon = Instantiate(SecondaryWeapon);
 
             SecondaryWeapon.SetPhysicsSystem(false);
-
             SecondaryWeapon.ResetAllStats();
 
             SetWeaponParent(PrimaryWeapon, inactiveWeaponSpawnPoint[0]);
@@ -43,7 +48,6 @@ namespace Creotly_Studios
             activeWeapons.Add(null);
             activeWeapons.Add(PrimaryWeapon);
             activeWeapons.Add(SecondaryWeapon);
-            activeWeapons.Add(Grenade);
         }
 
         private void WeaponChange()
@@ -55,30 +59,19 @@ namespace Creotly_Studios
 
             PlayerSwapWeapon();
             SwapWeapon(selectedOption);
-            
-            if(currentWeaponManager == Grenade && grenadesLeft <= 0)
-            {
-                selectedOption = 0;
-                SetCurrentWeapon(selectedOption);
-                Grenade.gameObject.SetActive(false);
-                SetWeaponParent(currentWeaponManager, ActiveWeaponSpawnPoint);
-            }
+        }
+
+        public override void EquipWeapon()
+        {
+            base.EquipWeapon();
+            SetWeaponParent(currentWeaponManager, ActiveWeaponSpawnPoint);
+            currentWeaponManager.Initialize(characterManager);
         }
 
         private void PlayerSwapWeapon()
         {
-            selectedOption++;
-
-            if(selectedOption >= activeWeapons.Count)
-            {
-                selectedOption = 0;
-            }
-
-            if(selectedOption >= activeWeapons.Count - 1 && grenadesLeft <= 0)
-            {
-                grenadesLeft = 0;
-                selectedOption = 0;
-            }
+            index++;
+            selectedOption = index % activeWeapons.Count;
         }
 
         protected override void SetCurrentWeapon(int selectedWeaponOption)

@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 namespace Creotly_Studios
 {
@@ -6,9 +7,9 @@ namespace Creotly_Studios
     {
         AIManager aiManager;
 
-        [field: Header("Parameters")]
-        [field: SerializeField] public HumanBones[] HumanBones {get; private set;}
-        [field: SerializeField] public Transform[] BoneTransforms {get; private set;}
+        [Header("Animator Controller")]
+        public AnimatorOverrideController standingAnimatorController;
+        [SerializeField] private AnimatorOverrideController unarmedController;
 
         protected override void Awake()
         {
@@ -20,36 +21,22 @@ namespace Creotly_Studios
         protected override void Start()
         {
             base.Start();
-            GetBoneTransforms();
         }
 
         // Update is called once per frame
         public override void CharacterAnimatorManager_Update(float delta)
         {
-        
-        }
-
-        private void GetBoneTransforms()
-        {
-            BoneTransforms = new Transform[HumanBones.Length];
-            if(aiManager.enemyType == EnemyType.Mech)
-            {
-                for(int i = 0; i < BoneTransforms.Length; i++)
-                {
-                    BoneTransforms[i] = HumanBones[i].boneTransform;
-                }
-                return;
-            }
-
-            for(int i = 0; i < BoneTransforms.Length; i++)
-            {
-                BoneTransforms[i] = aiManager.animator.GetBoneTransform(HumanBones[i].bone);
-            }
+            Stand_Or_Crouch();
         }
 
         private float HaltRunning(float maxDistance)
         {
             return maxDistance + 2.5f;
+        }
+
+        private void Stand_Or_Crouch()
+        {
+            aiManager.animator.runtimeAnimatorController = standingAnimatorController;
         }
 
         public void HandleAnimation(float maxDistance)
@@ -64,6 +51,11 @@ namespace Creotly_Studios
                 }
                 aiManager.aIAnimationManager.SetBlendTreeParameter(1.0f, 0.0f, false, Time.deltaTime);
             }
+        }
+
+        public void Unarmed_StandOrCrouch()
+        {
+            standingAnimatorController = unarmedController;
         }
     }
 }

@@ -7,7 +7,6 @@ namespace Creotly_Studios
     {
         //Pools
         public static ObjectPool<GameObject> bloodPrefabPool {get; private set;}
-        public static ObjectPool<GrenadeWeaponManager> grenadePool {get; private set;}
 
         public static ObjectPool<GameObject> woodBulletHolesPool {get; private set;}
         public static ObjectPool<GameObject> metalBulletHolesPool {get; private set;}
@@ -20,11 +19,9 @@ namespace Creotly_Studios
 
         [Header("Objects To Spawn")]
         [SerializeField] private GameObject bloodPrefab;
-        [SerializeField] private GrenadeWeaponManager grenade;
 
         private void Awake()
         {
-            grenadePool = ObjectPooler.GrenadePool(grenade);
             bloodPrefabPool = ObjectPooler.GameObjectPool(bloodPrefab);
 
             //Impact Objects
