@@ -77,12 +77,8 @@ namespace Creotly_Studios
         protected override void SetCurrentWeapon(int selectedWeaponOption)
         {
             base.SetCurrentWeapon(selectedWeaponOption);
-
-            if(currentWeaponManager == null)
-            {
-                playerManager.playerAnimationManager.Unarmed_StandOrCrouch();
-                return;
-            }
+            playerManager.playerUIManager.SetWeaponDetails(currentWeaponManager);
+            if(currentWeaponManager == null) { playerManager.playerAnimationManager.Unarmed_StandOrCrouch(); }
         }
     }
 }

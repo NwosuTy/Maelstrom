@@ -5053,7 +5053,7 @@ MonoBehaviour:
   <damageValue>k__BackingField: 2
   <EnemyLayerMask>k__BackingField:
     serializedVersion: 2
-    m_Bits: 2440
+    m_Bits: 448
   weaponGrip: {fileID: 5776815205203340294}
   weaponRest: {fileID: 6842957588742741551}
   inactiveWeaponHolder: {fileID: 0}
@@ -5070,7 +5070,7 @@ MonoBehaviour:
   - {fileID: 7407991956792562201}
   - {fileID: 7185581492560632011}
   bulletTrailPrefab: {fileID: 4330412615122653451, guid: 4165e838bb41336479e35bea1eba0a0a, type: 3}
-  maxBullet: 35
+  <maxBullet>k__BackingField: 33
   <MagazineSize>k__BackingField: 105
   crossHairImage: {fileID: 21300000, guid: f0e3ce45f4e2e2448a0369ef6718bf77, type: 3}
   aimingCrossHairImage: {fileID: 21300000, guid: e6ecd8d647dac8641bd73d06ce8a57f4, type: 3}

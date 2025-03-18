@@ -122,7 +122,7 @@ namespace Creotly_Studios
 
             if (Physics.Raycast(ray, out RaycastHit raycastHit, distance, EnemyLayerMask))
             {
-                CharacterStatsManager shotCharacter = raycastHit.collider.GetComponent<CharacterStatsManager>();
+                CharacterStatsManager shotCharacter = raycastHit.collider.GetComponentInParent<CharacterStatsManager>();
                 StartCoroutine(HandleTrailFX(start, raycastHit.point));
 
                 if (shotCharacter == null)

@@ -11,7 +11,7 @@ namespace Creotly_Studios
         [Header("UI Components")]
         [SerializeField] private Image crossHairImage;
         [SerializeField] private UITimeStamp timeStamp;
-        [SerializeField] private UIWeaponsManager weaponsManager;
+        [field: SerializeField] public UIWeaponsManager weaponsManager { get; private set; }
 
         [field: Header("UI Bar")]
         private UIBar[] uiBars;
@@ -27,11 +27,15 @@ namespace Creotly_Studios
             weaponsManager = GetComponentInChildren<UIWeaponsManager>();
         }
 
+        public void SetWeaponDetails(WeaponManager currentWeapon)
+        {
+            weaponsManager.SetWeaponParameters(currentWeapon);
+        }
+
         public void PlayerUIManager_Update(float delta)
         {
             SetCrossHairImage();
             timeStamp.UITimeStamp_Updater(delta);
-            weaponsManager.UIWeaponManager_Update();
         }
 
         public void SetCrossHairImage()

@@ -83,7 +83,6 @@ namespace Creotly_Studios
             {
                 SetPhysicsSystem(characterManager == null);
             }
-            if(playerManager != null) {weaponDataHolder.UpdateWeaponParameters(this);}
         }
 
         public void SetPhysicsSystem(bool enable)

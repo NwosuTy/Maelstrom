@@ -6,13 +6,14 @@ namespace Creotly_Studios
     public class HandGunWeaponManager : GunWeaponManager
     {
         private bool isReloading;
+        private UIWeaponsManager playerWeaponUI;
 
         //Bullet Parameters
-        public int bulletLeft { get; protected set; }
+        public int bulletLeft { get; private set; }
 
         [Header("Bullet Statistics")]
-        [SerializeField] private int maxBullet;
-        [field: SerializeField] public int MagazineSize { get; protected set; }
+        [field: SerializeField] public int maxBullet { get; private set; }
+        [field: SerializeField] public int MagazineSize { get; private set; }
 
         [Header("Cross Hair Properties")]
         [SerializeField] private Sprite crossHairImage;
@@ -20,7 +21,7 @@ namespace Creotly_Studios
 
         [Header("Gun Parameters")]
         [SerializeField] private GunType gunType = GunType.AssaultRifle;
-        [field: SerializeField] public Transform MuzzlePoint { get; protected set; }
+        [field: SerializeField] public Transform MuzzlePoint { get; private set; }
 
         public override void Initialize(CharacterManager cm)
         {
@@ -29,6 +30,8 @@ namespace Creotly_Studios
             {
                 playerManager.crossHairImage = crossHairImage;
                 playerManager.aimingCrossHairImage = aimingCrossHairImage;
+
+                playerWeaponUI = playerManager.playerUIManager.weaponsManager;
                 SetWeaponPose(characterManager.characterAnimatorRigController);
             }
         }
@@ -59,10 +62,11 @@ namespace Creotly_Studios
         protected override void FireBullet(Vector3 targetPosition)
         {
             Vector3 velocity = (targetPosition - MuzzlePoint.position).normalized * bulletSpeed;
-
             Bullet bullet = CreateBullet(MuzzlePoint.position, velocity);
+
             bulletLeft--;
             bulletList.Add(bullet);
+            if(playerWeaponUI != null) { playerWeaponUI.UpdateBulletCountUI(bulletLeft, maxBullet); }
         }
 
         private void HandleReloading()
@@ -87,7 +91,11 @@ namespace Creotly_Studios
 
             int bulletsNeeded = maxBullet - bulletLeft;
             bulletLeft += bulletsNeeded;
-            if (playerManager != null) { MagazineSize -= bulletsNeeded; }
+            if (playerManager != null) 
+            { 
+                MagazineSize -= bulletsNeeded;
+                playerWeaponUI.UpdateMagazineCount(bulletLeft, MagazineSize);
+            }
         }
 
         public override void ResetAllStats()

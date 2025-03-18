@@ -225,12 +225,12 @@ MonoBehaviour:
   <damageValue>k__BackingField: 2.5
   <EnemyLayerMask>k__BackingField:
     serializedVersion: 2
-    m_Bits: 2440
+    m_Bits: 448
   weaponGrip: {fileID: 1921498732280831739}
   weaponRest: {fileID: 245583140499155840}
   inactiveWeaponHolder: {fileID: 0}
-  <RestLockedPosition>k__BackingField: {x: 0.283, y: 0.28, z: -0.014}
-  <RestOriginalPosition>k__BackingField: {x: 0.27, y: 0.004, z: 0.106}
+  <RestLockedPosition>k__BackingField: {x: 0.678, y: 0.074, z: -0.303}
+  <RestOriginalPosition>k__BackingField: {x: 0.352, y: -0.219, z: 0.066}
   mainAnimatorController: {fileID: 22100000, guid: 5592c881cafd11e489ead05be0fabd75, type: 2}
   crouchAnimatorController: {fileID: 22100000, guid: 859c64ff77a24d0448e4ed833c471a7d, type: 2}
   fireRate: 10
@@ -242,7 +242,7 @@ MonoBehaviour:
   - {fileID: 7079597963751369109}
   - {fileID: 8675681975802537871}
   bulletTrailPrefab: {fileID: 4330412615122653451, guid: b60b1b1f4d88389428ee25605a7b0e41, type: 3}
-  maxBullet: 56
+  <maxBullet>k__BackingField: 64
   <MagazineSize>k__BackingField: 122
   crossHairImage: {fileID: 21300000, guid: 08a0351e5306f984d93fe28c8b712659, type: 3}
   aimingCrossHairImage: {fileID: 21300000, guid: b5429c1b72938134cba311bed7a76bc4, type: 3}
@@ -305,13 +305,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2993749194114289691}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.89939725, y: -0.2583202, z: 0.31571385, w: -0.157099}
-  m_LocalPosition: {x: 0.283, y: 0.28, z: -0.014}
+  m_LocalRotation: {x: 0, y: -0.86602545, z: 0, w: 0.49999994}
+  m_LocalPosition: {x: 0.352, y: -0.219, z: 0.066}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1258864542921350730}
-  m_LocalEulerAnglesHint: {x: -6.862, y: 139.175, z: 214.606}
+  m_LocalEulerAnglesHint: {x: 0, y: -120, z: 0}
 --- !u!1 &3711588737907726254
 GameObject:
   m_ObjectHideFlags: 0
@@ -5239,13 +5239,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3877637939384387123}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.9914449, w: 0.13052626}
-  m_LocalPosition: {x: -0.371, y: -0.062, z: -0.025}
+  m_LocalRotation: {x: 0.7435029, y: 0.0069577997, z: -0.21281636, w: -0.63392764}
+  m_LocalPosition: {x: -0.292, y: -0.055, z: -0.015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1258864542921350730}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -165}
+  m_LocalEulerAnglesHint: {x: -70, y: -108, z: -235}
 --- !u!1 &3998261071748754429
 GameObject:
   m_ObjectHideFlags: 0

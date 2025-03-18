@@ -75,10 +75,18 @@ namespace Creotly_Studios
                 return;
             }
 
-            if (characterManager.isLockedIn || characterManager.isAttacking)
+            if (characterManager.isLockedIn)
             {
                 WeaponAimConstraint.weight += moveDuration;
                 weaponRestIK.localPosition = Vector3.MoveTowards(weaponRestIK.localPosition, currentWeapon.RestLockedPosition, moveDuration);
+                return;
+            }
+
+            //Instantly Set Aim if isAttacking and not loked in
+            if(characterManager.isAttacking)
+            {
+                WeaponAimConstraint.weight = 1.0f;
+                weaponRestIK.localPosition = currentWeapon.RestLockedPosition;
                 return;
             }
             WeaponAimConstraint.weight -= moveDuration;

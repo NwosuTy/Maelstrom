@@ -57,7 +57,6 @@ namespace Creotly_Studios
         {
             playerManager.isDead = true;
             base.HandleDeath(deathAnimation);
-            playerManager.characterAnimationManager.PlayTargetAnimation(deathAnimation, true);
             //Show Exit Dialog
         }
 

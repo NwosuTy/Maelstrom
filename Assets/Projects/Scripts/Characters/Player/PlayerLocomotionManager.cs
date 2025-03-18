@@ -94,7 +94,7 @@ namespace Creotly_Studios
         {
             if(characterManager.isJumping)
             {
-                characterManager.characterController.Move(delta * sprintingSpeed * jumpDirection);
+                characterManager.characterController.Move(delta * movementSpeed * jumpDirection);
             }
         }
         
@@ -145,10 +145,12 @@ namespace Creotly_Studios
             if(playerManager.sprintFlag)
             {
                 playerManager.playerStatsManager.ReduceEndurancePeriodically(sprintEnduranceCost, delta);
-                playerManager.characterController.Move((sprintingSpeed * acceleration) * delta * moveDirection);
+		acceleration = 2.4f;
+                playerManager.characterController.Move((movementSpeed * acceleration) * delta * moveDirection);
             }
             else
             {
+		acceleration = (horizontalInput >= 0.11f) ? 0.6f : 1f;
                 playerManager.characterController.Move((movementSpeed * acceleration) * delta * moveDirection);
             }
             playerManager.characterAnimationManager.SetBlendTreeParameter(verticalInput, horizontalInput, playerManager.sprintFlag, delta);

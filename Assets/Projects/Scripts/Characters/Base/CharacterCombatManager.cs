@@ -51,7 +51,7 @@ namespace Creotly_Studios
             characterManager.characterAnimationManager.PlayTargetAnimation(AnimatorHashNames.throwingObjectHash, true);
         }
 
-        public void ThrowGrenadePhysics()
+        public virtual void ThrowGrenadePhysics()
         {
             GrenadeWeaponManager grenade = Instantiate(grenadePrefab, grenadeHandler.position, grenadeHandler.rotation);
             characterManager.characterAnimatorRigController.RightHandIKConstraint.weight = 0.0f;
@@ -68,6 +68,7 @@ namespace Creotly_Studios
 
             rb.mass = grenade.Mass;
             grenade.transform.SetParent(null);
+
             grenadesLeft--;
             characterManager.characterAnimatorRigController.RightHandIKConstraint.weight = 1.0f;
         }

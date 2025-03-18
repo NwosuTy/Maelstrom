@@ -24,6 +24,7 @@ namespace Creotly_Studios
         private Vector3 force;
         private Vector3 explosionDirection;
         private float distanceFromExplosion;
+	protected float acceleration = 1.0f;
 
         #endregion
 
@@ -35,11 +36,9 @@ namespace Creotly_Studios
         [Tooltip("Force at which character is sticking to the ground")] [SerializeField] protected float groundedForce = -20f;
 
         [field : Header("Character Movement Stats")]
-        [field: SerializeField] public float acceleration {get; protected set;} = 1.0f;
         [field: SerializeField] public float rotationSpeed {get; protected set;} = 12f;
         [field: SerializeField] public float movementSpeed {get; protected set;} = 3.5f;
         [field: SerializeField] public float crouchingSpeed {get; protected set;} = 3.5f;
-        [field: SerializeField] public float sprintingSpeed {get; protected set;} = 8.0f;
 
         [field: Header("Gravity Stats")]
         [SerializeField] protected float jumpHeight = 4.0f;

@@ -6,57 +6,52 @@ namespace Creotly_Studios
 {
     public class UIWeaponsManager : MonoBehaviour
     {
-        //Managers
-        PlayerManager playerManager;
-
-        //Weapon Details
-        private WeaponDetails gunDetails;
-        private WeaponDetails otherDetails;
-        private WeaponDetails currentDetail;
+        [SerializeField] private GameObject weaponDetailObject;
 
         [Header("Weapon Details")]
         [SerializeField] private Image weaponSprite;
-        [SerializeField] private WeaponDetails[] weaponDetailHolders;
-        [field: SerializeField] public TextMeshProUGUI weaponName {get; private set;}
+        [SerializeField] private TextMeshProUGUI grenadeCountText;
+        [field: SerializeField] public TextMeshProUGUI weaponName { get; private set; }
 
-        private void Awake()
+        [field: Header("Bullet Details")]
+        [SerializeField] private TextMeshProUGUI magazineSizeText;
+        [SerializeField] private TextMeshProUGUI totalBulletCountText;
+        [SerializeField] private TextMeshProUGUI currentBulletCountText;
+
+        public void UpdateGrenadeCountUI(int count)
         {
-            WeaponDetailSetters();
-            playerManager = GetComponentInParent<PlayerManager>();
+            grenadeCountText.text = $"Grenade Count: {count}";
         }
 
-        private void WeaponDetailSetters()
+        public void SetWeaponParameters(WeaponManager weaponManager)
         {
-            weaponDetailHolders = GetComponentsInChildren<WeaponDetails>();
-
-            foreach(var weaponDetailHolder in weaponDetailHolders)
+            if(weaponManager == null)
             {
-                if(weaponDetailHolder.weaponType == WeaponType.Guns)
-                {
-                    gunDetails = weaponDetailHolder;
-                    continue;
-                }
-                otherDetails = weaponDetailHolder;
-            }
-        }
-
-        public void UIWeaponManager_Update()
-        {
-            WeaponManager currentWeapon = playerManager.characterInventoryManager.currentWeaponManager;
-
-            //SetDetail
-            if(currentWeapon == null)
-            {
+                weaponDetailObject.SetActive(false);
                 return;
             }
-            weaponSprite.sprite = currentWeapon.weaponImage;
-            weaponName.text = "Name:  " + currentWeapon.weaponName;
-            currentDetail = (currentWeapon.weaponType == WeaponType.Guns) ? gunDetails : otherDetails;
+            weaponDetailObject.SetActive(true);
+            WeaponDataHolder dataHolder = weaponManager.weaponDataHolder;
+            dataHolder.UpdateWeaponParameters(weaponManager);
 
-            gunDetails.gameObject.SetActive(currentDetail == gunDetails);
-            otherDetails.gameObject.SetActive(currentDetail == otherDetails);
+            weaponName.text = weaponManager.weaponName;
+            weaponSprite.sprite = weaponManager.weaponImage;
+            grenadeCountText.text = dataHolder.quantity.ToString();
 
-            currentDetail.WeaponDetails_Update(playerManager);
+            currentBulletCountText.text = dataHolder.bulletLeft.ToString();
+            totalBulletCountText.text = dataHolder.totalBulletCount.ToString();
+        }
+
+        public void UpdateMagazineCount(int count, int magazineCount)
+        {
+            currentBulletCountText.text = count.ToString();
+            magazineSizeText.text = $"Magazine Count: {magazineCount}";
+        }
+
+        public void UpdateBulletCountUI(int count, int maxCount)
+        {
+            currentBulletCountText.text = count.ToString();
+            totalBulletCountText.text = maxCount.ToString();
         }
     }
 }

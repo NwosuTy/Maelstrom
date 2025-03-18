@@ -10160,12 +10160,12 @@ MonoBehaviour:
   <damageValue>k__BackingField: 2
   <EnemyLayerMask>k__BackingField:
     serializedVersion: 2
-    m_Bits: 2440
+    m_Bits: 448
   weaponGrip: {fileID: 1374427907096174390}
   weaponRest: {fileID: 7013997456457123801}
   inactiveWeaponHolder: {fileID: 0}
-  <RestLockedPosition>k__BackingField: {x: 0.25, y: 0.35, z: -0.15}
-  <RestOriginalPosition>k__BackingField: {x: 0.25, y: 0.2, z: 0.1}
+  <RestLockedPosition>k__BackingField: {x: 0.612, y: 0.142, z: -0.197}
+  <RestOriginalPosition>k__BackingField: {x: 0.6, y: -0.125, z: 0.07}
   mainAnimatorController: {fileID: 22100000, guid: 2cb789b24365d14468ecd561ea72cd98, type: 2}
   crouchAnimatorController: {fileID: 22100000, guid: e36ba14512995f040a2665c4cc98ca6f, type: 2}
   fireRate: 25
@@ -10177,7 +10177,7 @@ MonoBehaviour:
   - {fileID: 4858060690315746075}
   - {fileID: 3187762413597012684}
   bulletTrailPrefab: {fileID: 4330412615122653451, guid: 05d04303e5e3c994495cb4a8f74b06eb, type: 3}
-  maxBullet: 144
+  <maxBullet>k__BackingField: 174
   <MagazineSize>k__BackingField: 386
   crossHairImage: {fileID: 21300000, guid: 08a0351e5306f984d93fe28c8b712659, type: 3}
   aimingCrossHairImage: {fileID: 21300000, guid: b5429c1b72938134cba311bed7a76bc4, type: 3}

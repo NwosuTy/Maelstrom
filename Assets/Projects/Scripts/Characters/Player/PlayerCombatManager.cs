@@ -21,6 +21,12 @@ namespace Creotly_Studios
             HandleGun(delta);
         }
 
+        public override void ThrowGrenadePhysics()
+        {
+            base.ThrowGrenadePhysics();
+            playerManager.playerUIManager.weaponsManager.UpdateGrenadeCountUI(grenadesLeft);
+        }
+
         private void HandleGun(float delta)
         {
             if(playerManager.isAttacking != true || playerManager.playerInventoryManager.currentWeaponManager == null)

@@ -169,7 +169,7 @@ namespace Creotly_Studios
             verticalMovementInput = movementInput.y;
             horizontalMovementInput = movementInput.x;
 
-            totalMoveAmount = Mathf.Clamp01(Mathf.Abs(verticalMovementInput) + MathF.Abs(horizontalMovementInput));
+            totalMoveAmount = Mathf.Clamp01(Mathf.Abs(verticalMovementInput) + Mathf.Abs(horizontalMovementInput));
             playerManager.isMoving = (totalMoveAmount > 0.0f);
         }
     }

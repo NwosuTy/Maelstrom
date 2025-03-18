@@ -6,19 +6,15 @@ namespace Creotly_Studios
     public class WeaponDataHolder : ScriptableObject
     {
         [field: Header("Weapon Parameters")]
-        [field: SerializeField] public float damageValue {get; private set;}
-
         //Others
         [field: SerializeField] public int quantity {get; private set;}
 
         //Gun
         [field: SerializeField] public int bulletLeft {get; private set;}
-        [field: SerializeField] public int magazineSize {get; private set;}
+        [field: SerializeField] public int totalBulletCount {get; private set;}
 
         public void UpdateWeaponParameters(WeaponManager weaponManager)
         {
-            damageValue = weaponManager.damageValue;
-
             if(weaponManager.weaponType == WeaponType.Guns)
             {
                 UpdateGuns(weaponManager);
@@ -33,7 +29,7 @@ namespace Creotly_Studios
             if(gun != null)
             {
                 bulletLeft = gun.bulletLeft;
-                magazineSize = gun.MagazineSize;
+                totalBulletCount = gun.maxBullet;
             }
         }
 

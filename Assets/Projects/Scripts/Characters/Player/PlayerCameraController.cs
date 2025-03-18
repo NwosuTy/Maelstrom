@@ -1,5 +1,5 @@
 using UnityEngine;
-using Cinemachine;
+using Unity.Cinemachine;
 
 namespace Creotly_Studios
 {
@@ -21,8 +21,8 @@ namespace Creotly_Studios
         [field: SerializeField] public Transform miniMapTarget {get; private set;}
 
         [field: Header("Cameras")]
-        [field: SerializeField] public CinemachineFreeLook normalCamera {get; private set;}
-        [field: SerializeField] public CinemachineFreeLook lockedInCamera {get; private set;}
+        //[field: SerializeField] public CinemachineFreeLook normalCamera {get; private set;}
+        //[field: SerializeField] public CinemachineFreeLook lockedInCamera {get; private set;}
 
 
         // Start is called before the first frame update
@@ -30,14 +30,14 @@ namespace Creotly_Studios
         {
             playerManager = GetComponent<PlayerManager>();
 
-            normalCamera = GameObject.Find("Normal Camera").GetComponent<CinemachineFreeLook>();
-            lockedInCamera = GameObject.Find("Locked-In Camera").GetComponent<CinemachineFreeLook>();
+            //normalCamera = GameObject.Find("Normal Camera").GetComponent<CinemachineFreeLook>();
+            //lockedInCamera = GameObject.Find("Locked-In Camera").GetComponent<CinemachineFreeLook>();
         }
 
         private void Start()
         {
-            InitializeCameras(normalCamera, true);
-            InitializeCameras(lockedInCamera, false);
+            //InitializeCameras(normalCamera, true);
+            //InitializeCameras(lockedInCamera, false);
 
             mainCamera = Camera.main;
             cameraTransform = mainCamera.transform;
@@ -46,7 +46,7 @@ namespace Creotly_Studios
         // Update is called once per frame
         public void PlayerCameraController_Update()
         {
-            SwapCameraLockedIn();
+            //SwapCameraLockedIn();
         }
 
         //Functionalities
@@ -60,7 +60,7 @@ namespace Creotly_Studios
 
         private void SwapCameraLockedIn()
         {
-            lockedInCamera.gameObject.SetActive(playerManager.isLockedIn);
+            //lockedInCamera.gameObject.SetActive(playerManager.isLockedIn);
         }
     }
 }

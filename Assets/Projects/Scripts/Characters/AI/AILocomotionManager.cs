@@ -52,8 +52,7 @@ namespace Creotly_Studios
                 targetDirection = aiManager.transform.forward;
             }
             Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
-            aiManager.transform.rotation = Quaternion.Slerp(aiManager.transform.rotation, targetRotation, 
-                aiManager.characterLocomotionManager.rotationSpeed * Time.deltaTime);
+            aiManager.transform.rotation = Quaternion.Slerp(aiManager.transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
 
         public void RotateTowardsTarget()

@@ -46,10 +46,10 @@ namespace Creotly_Studios
                 float shouldRun = HaltRunning(maxDistance);
                 if(aiManager.DistanceToTarget > shouldRun)
                 {
-                    aiManager.aIAnimationManager.SetBlendTreeParameter(2.0f, 0.0f, true, Time.deltaTime);
+                    SetBlendTreeParameter(2.0f, 0.0f, true, Time.deltaTime);
                     return;
                 }
-                aiManager.aIAnimationManager.SetBlendTreeParameter(1.0f, 0.0f, false, Time.deltaTime);
+                SetBlendTreeParameter(1.0f, 0.0f, false, Time.deltaTime);
             }
         }
 
