@@ -2654,6 +2654,7 @@ MonoBehaviour:
   aimDuration: 0.5
   rigBuilder: {fileID: 4008568214473328878}
   <HandIKConstraints>k__BackingField: {fileID: 6259433722885322945}
+  <BodyAimConstraints>k__BackingField: {fileID: 8939751005572825754}
   <WeaponAimConstraint>k__BackingField: {fileID: 355172445540065828}
   <LeftHandIKConstraint>k__BackingField: {fileID: 1022638677943979710}
   <RightHandIKConstraint>k__BackingField: {fileID: 3216875688739873156}

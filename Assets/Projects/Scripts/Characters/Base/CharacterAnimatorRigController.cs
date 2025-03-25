@@ -14,6 +14,7 @@ namespace Creotly_Studios
         [field: Header("Rigs")]
         public RigBuilder rigBuilder;
         [field: SerializeField] public Rig HandIKConstraints { get; protected set; }
+        [field: SerializeField] public Rig BodyAimConstraints { get; protected set; }
         [field: SerializeField] public Rig WeaponAimConstraint { get; protected set; }
 
         [field: Header("Hand_IK Parameters")]
@@ -63,6 +64,13 @@ namespace Creotly_Studios
                 multiAimConstraint.data.sourceObjects = sources;
             }
             rigBuilder.Build();
+        }
+
+        public void StopAllRigs()
+        {
+            HandIKConstraints.weight = 0.0f;
+            BodyAimConstraints.weight = 0.0f;
+            WeaponAimConstraint.weight = 0.0f;
         }
 
         private void Lock_In(float delta)

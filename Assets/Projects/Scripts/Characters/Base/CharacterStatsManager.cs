@@ -43,12 +43,13 @@ namespace Creotly_Studios
         {
             currentHealth = 0.0f;
             characterManager.healthBarUI.SetCurrentValue(currentHealth);
+             
+            characterManager.characterAnimatorRigController.StopAllRigs();
+            characterManager.characterInventoryManager.UnloadAllWeapons();
             characterManager.characterAnimationManager.PlayTargetAnimation(deathAnimation, true);
-
-            //Unload Weapon
         }
 
-        public virtual void TakeHealthDamage(int damageAnimation, int deathAnimation, float damageValue)
+        public virtual void TakeHealthDamage(int damageAnimation, int deathAnuimation, float damageValue)
         {
             characterManager.healthBarUI.SetCurrentValue(currentHealth);
             characterManager.characterAnimationManager.PlayTargetAnimation(damageAnimation, true);

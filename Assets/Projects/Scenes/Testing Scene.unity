@@ -175,8 +175,8 @@ MonoBehaviour:
       Owner: {fileID: 135268777}
       Enabled: 1
       Input:
-        InputAction: {fileID: -3424154650421358412, guid: ca31489fe1520e04ab0438c6f6c7fa1e, type: 3}
-        Gain: 4
+        InputAction: {fileID: -5214439444905997168, guid: ca31489fe1520e04ab0438c6f6c7fa1e, type: 3}
+        Gain: 6.75
         LegacyInput: 
         LegacyGain: 1
         CancelDeltaTime: 0
@@ -188,8 +188,8 @@ MonoBehaviour:
       Owner: {fileID: 135268777}
       Enabled: 1
       Input:
-        InputAction: {fileID: -3424154650421358412, guid: ca31489fe1520e04ab0438c6f6c7fa1e, type: 3}
-        Gain: -4
+        InputAction: {fileID: -5214439444905997168, guid: ca31489fe1520e04ab0438c6f6c7fa1e, type: 3}
+        Gain: -6.75
         LegacyInput: 
         LegacyGain: 1
         CancelDeltaTime: 0
@@ -226,7 +226,7 @@ MonoBehaviour:
   TiltAxis:
     Value: 0
     Center: 0
-    Range: {x: -70, y: 70}
+    Range: {x: -17.5, y: 10}
     Wrap: 0
     Recentering:
       Enabled: 0
@@ -471,13 +471,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cyber Soldiers
       objectReference: {fileID: 0}
-    - target: {fileID: 8754921659492857998, guid: 9f1ab346c5a6de2498249fc5da6ff499, type: 3}
-      propertyPath: m_AnchorMax.x
+    - target: {fileID: 5014165933970459472, guid: 9f1ab346c5a6de2498249fc5da6ff499, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8754921659492857998, guid: 9f1ab346c5a6de2498249fc5da6ff499, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8754921659492857998, guid: 9f1ab346c5a6de2498249fc5da6ff499, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1525,6 +1529,63 @@ Transform:
   - {fileID: 1689449821}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &3441892187034994097
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2293973943713244318, guid: 634dabde84534614187dc3455eeca907, type: 3}
+      propertyPath: m_Name
+      value: Final Trail IJN
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393327435369724806, guid: 634dabde84534614187dc3455eeca907, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 20.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393327435369724806, guid: 634dabde84534614187dc3455eeca907, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.951
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393327435369724806, guid: 634dabde84534614187dc3455eeca907, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 25.457
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393327435369724806, guid: 634dabde84534614187dc3455eeca907, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393327435369724806, guid: 634dabde84534614187dc3455eeca907, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393327435369724806, guid: 634dabde84534614187dc3455eeca907, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393327435369724806, guid: 634dabde84534614187dc3455eeca907, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393327435369724806, guid: 634dabde84534614187dc3455eeca907, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393327435369724806, guid: 634dabde84534614187dc3455eeca907, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393327435369724806, guid: 634dabde84534614187dc3455eeca907, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 634dabde84534614187dc3455eeca907, type: 3}
 --- !u!1001 &3959358102437918292
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1577,13 +1638,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: UE4 Cyborg
       objectReference: {fileID: 0}
-    - target: {fileID: 7513495116663215256, guid: af6b5e444a957364fad660c40550a548, type: 3}
-      propertyPath: m_AnchorMax.x
+    - target: {fileID: 4850617207460661239, guid: af6b5e444a957364fad660c40550a548, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7513495116663215256, guid: af6b5e444a957364fad660c40550a548, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7513495116663215256, guid: af6b5e444a957364fad660c40550a548, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1606,3 +1671,4 @@ SceneRoots:
   - {fileID: 489993069}
   - {fileID: 1298647948}
   - {fileID: 1120824696}
+  - {fileID: 3441892187034994097}

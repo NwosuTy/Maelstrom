@@ -199,6 +199,8 @@ namespace Creotly_Studios
             yield return null;
 
             trail.emitting = false;
+            trail.transform.position = end;
+
             bulletTrailPool.Release(trail);
         }
 

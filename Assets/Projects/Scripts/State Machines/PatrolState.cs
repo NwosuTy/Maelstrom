@@ -33,7 +33,11 @@ namespace Creotly_Studios
                 aiManager.navMeshAgent.enabled = true;
             }
 
-            if (aiManager.target.visualTarget != null || aiManager.target.audioTarget != null)
+            Target target = aiManager.target;
+            CharacterManager visualTarget = aiManager.target.visualTarget;
+            bool hasVisualTarget = (visualTarget != null && visualTarget.isDead != true);
+
+            if (hasVisualTarget || target.audioTarget != null)
             {
                 return SwitchState(aiManager.pursueState, aiManager);
             }

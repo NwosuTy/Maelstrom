@@ -21,8 +21,13 @@ namespace Creotly_Studios
             {
                 aiManager.navMeshAgent.enabled = true;
             }
-            
-            if(aiManager.DistanceToTarget >= aiManager.navMeshAgent.stoppingDistance * 1.5f)
+
+            if(aiManager.target.source == null || aiManager.target.visualTarget.isDead)
+            {
+                return SwitchState(aiManager.patrolState, aiManager);
+            }
+
+            if (aiManager.DistanceToTarget >= aiManager.navMeshAgent.stoppingDistance * 1.5f)
             {
                 return SwitchState(aiManager.pursueState, aiManager);
             }

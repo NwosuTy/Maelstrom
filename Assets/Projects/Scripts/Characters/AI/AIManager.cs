@@ -94,8 +94,10 @@ namespace Creotly_Studios
 
             HandleEquipWeapon();
             SetCurrentTargetDetails();
-            HandleStateChange(delta);
+
             base.Update();
+            HandleStateChange(delta);
+            
         }
 
         protected override void FixedUpdate()

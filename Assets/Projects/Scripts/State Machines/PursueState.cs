@@ -18,7 +18,7 @@ namespace Creotly_Studios
             aiManager.isLockedIn = false;
             timeInState -= Time.deltaTime;
             
-            if(aiManager.target.source == null)
+            if(aiManager.target.source == null || aiManager.target.visualTarget.isDead)
             {
                 return SwitchState(aiManager.patrolState, aiManager);
             }

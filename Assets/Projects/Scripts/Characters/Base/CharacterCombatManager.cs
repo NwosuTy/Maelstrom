@@ -59,10 +59,7 @@ namespace Creotly_Studios
             Rigidbody rb = grenade.rigidBody;
             grenade.Initialize(characterManager);
             
-            rb.isKinematic = false;
-            grenade.weaponCollider.enabled = true;
-
-            rb.constraints = RigidbodyConstraints.None;
+            grenade.UnloadWeapon();
             rb.AddForce(grenade.transform.forward * horizontalVelocity);
             rb.AddForce(grenade.transform.up * verticalVelocity);
 

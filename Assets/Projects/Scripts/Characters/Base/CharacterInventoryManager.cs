@@ -76,7 +76,20 @@ namespace Creotly_Studios
         public virtual void UnEquipWeapon()
         {
             SetWeaponParent(previousWeaponManager, previousWeaponManager.inactiveWeaponHolder);
-        } 
+        }
+
+        public void UnloadAllWeapons()
+        {
+            foreach(WeaponManager weapon in activeWeapons)
+            {
+                if(weapon == null)
+                {
+                    continue;
+                }
+                weapon.UnloadWeapon();
+                weapon.transform.SetParent(null);
+            }
+        }
 
         protected void SetWeaponParent(WeaponManager weapon, Transform parent)
         {

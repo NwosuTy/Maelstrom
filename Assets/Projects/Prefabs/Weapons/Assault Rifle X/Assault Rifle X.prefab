@@ -24,15 +24,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 272766799101140936}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.78, y: -0.015000001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4760565756820491692}
   - {fileID: 4233946288317121514}
   m_Father: {fileID: 5742191960563974560}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &492422347288345478
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,8 +59,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492422347288345478}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.78400004, y: -0.030000001, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5060,13 +5060,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2749041176487409556}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.78400004, y: -0.030000001, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5961108290691048707}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &4858060690315746075
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -10176,7 +10176,7 @@ MonoBehaviour:
   muzzleFlash:
   - {fileID: 4858060690315746075}
   - {fileID: 3187762413597012684}
-  bulletTrailPrefab: {fileID: 4330412615122653451, guid: 05d04303e5e3c994495cb4a8f74b06eb, type: 3}
+  bulletTrailPrefab: {fileID: 7797175582377925549, guid: 634dabde84534614187dc3455eeca907, type: 3}
   <maxBullet>k__BackingField: 174
   <MagazineSize>k__BackingField: 386
   crossHairImage: {fileID: 21300000, guid: 08a0351e5306f984d93fe28c8b712659, type: 3}

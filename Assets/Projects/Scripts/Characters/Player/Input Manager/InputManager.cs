@@ -47,6 +47,13 @@ namespace Creotly_Studios
 
                 //Movement Input
                 controls.Movement.Movement.performed += x => movementInput = x.ReadValue<Vector2>();
+                /*
+                 * controls.Movement.CameraLook.performed += x =>
+                {
+                    lookInputDebug = x.ReadValue<Vector2>();
+                    Debug.Log($"CameraLook Input: {lookInputDebug}");
+                };
+                 */
 
                 //Action Inputs
                 controls.GeneralActions.Jump.performed += x => jumpInput = true;

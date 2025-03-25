@@ -85,6 +85,13 @@ namespace Creotly_Studios
             }
         }
 
+        public void UnloadWeapon()
+        {
+            rigidBody.isKinematic = false;
+            weaponCollider.enabled = true;
+            rigidBody.constraints = RigidbodyConstraints.None;
+        }
+
         public void SetPhysicsSystem(bool enable)
         {
             weaponCollider.enabled = enable;
