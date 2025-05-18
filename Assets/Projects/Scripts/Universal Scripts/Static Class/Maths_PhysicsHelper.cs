@@ -12,6 +12,11 @@ namespace Creotly_Studios
             return Mathf.Clamp(lfAngle, lfMin, lfMax);
         }
 
+        public static Vector3 GetTangent(Vector3 surfaceNormal)
+        {
+            return Vector3.Cross(surfaceNormal, Vector3.up);
+        }
+
         public static Vector3 SpawnPoint(float sphereRadius, Transform transform, int layerMask = NavMesh.AllAreas)
         {
             NavMeshHit navMeshHit;

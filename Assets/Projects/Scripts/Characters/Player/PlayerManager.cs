@@ -82,12 +82,11 @@ namespace Creotly_Studios
 
             float delta = Time.deltaTime;
             playerInputManager.InputManager_Updater();
+            playerCameraController.PlayerCameraController_Update();
 
             base.Update();
-            playerAnimationRigController.CharacterAnimationRig_Updater(delta);
-
             playerUIManager.PlayerUIManager_Update(delta);
-            playerCameraController.PlayerCameraController_Update();
+            playerAnimationRigController.CharacterAnimationRig_Updater(delta);
         }
         
         protected override void FixedUpdate()

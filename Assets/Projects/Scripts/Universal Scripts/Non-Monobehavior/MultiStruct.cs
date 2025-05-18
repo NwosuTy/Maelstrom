@@ -1,8 +1,19 @@
-using System;
 using UnityEngine;
 
 namespace Creotly_Studios
 {
+    public struct CreotlyTransforms
+    {
+        public Vector3 pos {  get; private set; }
+        public Vector3 rot {  get; private set; }
+
+        public CreotlyTransforms(Vector3 p, Vector3 r)
+        {
+            pos = p;
+            rot = r;
+        }
+    }
+
     [System.Serializable]
     public struct BoundaryFloat
     {

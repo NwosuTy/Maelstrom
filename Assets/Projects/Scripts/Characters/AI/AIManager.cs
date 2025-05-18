@@ -38,7 +38,6 @@ namespace Creotly_Studios
         public List<Target> possibleVisualTargets = new List<Target>();
 
         [Header("Enemy Status")]
-        public bool dontMove;
         public bool coolDown;
         public bool canUpdate;
         public float coolDownTimer;

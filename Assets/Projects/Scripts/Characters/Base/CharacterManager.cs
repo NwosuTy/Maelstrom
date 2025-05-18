@@ -9,6 +9,8 @@ namespace Creotly_Studios
         public CharacterController characterController {get; private set;}
 
         //Creotly Components
+        public FootIKSystem footIKSystem { get; private set; }
+        public CoverDetector coverDetector {get; private set;}
         public GrenadeWeaponManager hitGrenadeWeapon { get; private set; }
         public AnimatorEventsManager animatorEventsManager {get; private set;}
         public CharacterStatsManager characterStatsManager {get; private set;}
@@ -25,7 +27,6 @@ namespace Creotly_Studios
         [HideInInspector] public bool isJumping;
         [HideInInspector] public bool canReload;
         [HideInInspector] public bool isLockedIn;
-        [HideInInspector] public bool isGrounded;
         [HideInInspector] public bool isCrouching;
         [HideInInspector] public bool isAttacking;
         [HideInInspector] public bool canThrowGrenade;
@@ -33,6 +34,10 @@ namespace Creotly_Studios
         [HideInInspector] public bool rotateWithRootMotion;
 
         [field: Header("Status")]
+        public bool dontMove;
+        public bool isGrounded;
+        public bool enterCover;
+        public CoverState coverState;
         [field: SerializeField] public Transform targetPoint { get; private set; }
         [field: SerializeField] public CharacterType characterType {get; private set;} = CharacterType.Enemy;
 
@@ -41,6 +46,8 @@ namespace Creotly_Studios
 
         protected virtual void Awake()
         {
+            footIKSystem = GetComponent<FootIKSystem>();
+            coverDetector = GetComponent<CoverDetector>();
             characterController = GetComponent<CharacterController>();
             
             animatorEventsManager = GetComponent<AnimatorEventsManager>();
@@ -62,18 +69,20 @@ namespace Creotly_Studios
         {
             SetAnimatorParameters();
             float delta = Time.deltaTime;
-
             characterStatsManager.CharacterStatsManager_Update(delta);
             characterCombatManager.CharacterCombatManager_Update(delta);
+
+            coverDetector.CoverDetector_Update();
             characterAnimationManager.CharacterAnimatorManager_Update(delta);
             characterLocomotionManager.CharacterLocomotionManager_Update(delta);
 
+            footIKSystem.FootIKSystem_Update();
             characterInventoryManager.CharacterInventory_Updater(delta);
         }
 
         protected virtual void FixedUpdate()
         {
-        
+            //footIKSystem.FootIKSystem_FixedUpdate();
         }
 
         protected virtual void LateUpdate()
@@ -84,7 +93,8 @@ namespace Creotly_Studios
         private void SetAnimatorParameters()
         {
             animator.SetBool(AnimatorHashNames.movingHash, isMoving);
-            
+            animator.SetBool(AnimatorHashNames.beginCoverHash, enterCover);
+
             canRotate = animator.GetBool(AnimatorHashNames.canRotateHash);
             performingAction = animator.GetBool(AnimatorHashNames.interactHash);
             rotateWithRootMotion = animator.GetBool(AnimatorHashNames.rootMotionRotateHash);

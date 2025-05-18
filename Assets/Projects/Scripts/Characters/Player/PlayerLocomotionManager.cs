@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace Creotly_Studios
@@ -5,6 +6,11 @@ namespace Creotly_Studios
     public class PlayerLocomotionManager : CharacterLocomotionManager
     {
         PlayerManager playerManager;
+        public PlayerMovementState CurrentState { get; private set; }
+
+        [field: Header("Movement States")]
+        [field: SerializeField] public CoverMovement CoverState { get; private set; }
+        [field: SerializeField] public NormalMovement NormalState { get; private set; }
 
         protected override void Awake()
         {
@@ -16,30 +22,37 @@ namespace Creotly_Studios
         protected override void Start()
         {
             base.Start();
-
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
+
+            CoverState = Instantiate(CoverState);
+            NormalState = Instantiate(NormalState);
+
+            CurrentState = NormalState;
+            CurrentState.EnterState(playerManager);
         }
 
         // Update is called once per frame
         public override void CharacterLocomotionManager_Update(float delta)
         {
             base.CharacterLocomotionManager_Update(delta);
-
             HandleFreeFall(delta);
             HandleJumpingMovement(delta);
         }
 
         public override void CharacterLocomotion_FixedUpdate(float delta)
         {
-            HandleRotation(delta);
+            if (playerManager.dontMove != true)
+            {
+                HandleRotation(delta);
+            }
         }
 
         //Functionalities
 
         public void HandleJumping()
         {
-            if(playerManager.performingAction || playerManager.isLockedIn)
+            if(playerManager.performingAction || playerManager.isLockedIn || playerManager.dontMove)
             {
                 return;
             }
@@ -65,15 +78,13 @@ namespace Creotly_Studios
             }
 
             playerManager.isJumping = true;
-            playerManager.playerAnimationManager.PlayTargetAnimation(AnimatorHashNames.jumpHash, false);
-            playerManager.playerStatsManager.ReduceEndurancePeriodically(jumpEnduranceCost, 1.0f);
+            playerManager.footIKSystem.SetBoneIKConstraint(0.0f);
 
             jumpDirection = cameraObject.transform.forward * playerManager.playerInputManager.verticalMovementInput;
             jumpDirection += cameraObject.transform.right * playerManager.playerInputManager.horizontalMovementInput;
-            jumpDirection.Normalize();
-
             jumpDirection.y = 0.0f;
-            if(jumpDirection == Vector3.zero)
+
+            if(jumpDirection != Vector3.zero)
             {
                 if(playerManager.sprintFlag)
                 {
@@ -85,22 +96,48 @@ namespace Creotly_Studios
                 }
                 else if (playerManager.playerInputManager.totalMoveAmount < 0.5f)
                 {
-                    jumpDirection *= 0.0f;
+                    jumpDirection *= 0.25f;
                 }
             }
+            int jumpHash = (jumpDirection == Vector3.zero) ? AnimatorHashNames.jumpHash : AnimatorHashNames.jumpFwdHash;
+            playerManager.playerAnimationManager.PlayTargetAnimation(jumpHash, false);
         }
         
         protected virtual void HandleJumpingMovement(float delta)
         {
             if(characterManager.isJumping)
             {
-                characterManager.characterController.Move(delta * movementSpeed * jumpDirection);
+                characterManager.characterController.Move(delta * walkingSpeed * jumpDirection);
             }
         }
         
         public virtual void ApplyJumpingVelocity()
         {
-            verticalVelocity.y = Mathf.Sqrt(jumpHeight - 2.0f * gravityForce);
+            verticalVelocity.y = Mathf.Sqrt(jumpHeight * - 2.0f * gravityForce);
+            playerManager.playerStatsManager.ReduceEndurancePeriodically(jumpEnduranceCost, 1.0f);
+        }
+
+        public void HandleMovementStateSwitch(PlayerMovementState current, PlayerMovementState next, bool quickSwitch = true)
+        {
+            if(quickSwitch)
+            {
+                current.ExitState(playerManager);
+                next.EnterState(playerManager);
+                CurrentState = next;
+                return;
+            }
+            StartCoroutine(SwitchMovement(current, next));
+        }
+
+        private IEnumerator SwitchMovement(PlayerMovementState current, PlayerMovementState next)
+        {
+            current.ExitState(playerManager);
+            yield return null;
+
+            next.EnterState(playerManager);
+            yield return null;
+
+            CurrentState = next;
         }
 
         protected virtual void HandleFreeFall(float delta)
@@ -111,49 +148,22 @@ namespace Creotly_Studios
 
                 freeFallDirection = cameraObject.forward * playerManager.playerInputManager.verticalMovementInput;
                 freeFallDirection += cameraObject.right * playerManager.playerInputManager.horizontalMovementInput;
-
-                freeFallDirection.Normalize();
                 freeFallDirection.y = 0.0f;
 
-                characterManager.characterController.Move(movementSpeed * delta * freeFallDirection);
+                characterManager.characterController.Move(walkingSpeed * delta * freeFallDirection);
             }
         }
 
         protected override void HandleRotation(float delta)
         {
-            float yawCamera = cameraObject.rotation.eulerAngles.y;
-            Quaternion targetRotation = Quaternion.Euler(0f, yawCamera, 0f);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            if(CurrentState != null)
+                CurrentState.HandleRotation(delta, playerManager);
         }
 
         protected override void HandleMovement(float delta)
         {
-            if(playerManager.isGrounded != true)
-            {
-                return;
-            }
-            
-            float verticalInput = playerManager.playerInputManager.verticalMovementInput;
-            float horizontalInput = playerManager.playerInputManager.horizontalMovementInput;
-
-            moveDirection = verticalInput * cameraObject.forward;
-            moveDirection += horizontalInput * cameraObject.right;
-
-            moveDirection.Normalize();
-            moveDirection.y = 0.0f;
-
-            if(playerManager.sprintFlag)
-            {
-                playerManager.playerStatsManager.ReduceEndurancePeriodically(sprintEnduranceCost, delta);
-		acceleration = 2.4f;
-                playerManager.characterController.Move((movementSpeed * acceleration) * delta * moveDirection);
-            }
-            else
-            {
-		acceleration = (horizontalInput >= 0.11f) ? 0.6f : 1f;
-                playerManager.characterController.Move((movementSpeed * acceleration) * delta * moveDirection);
-            }
-            playerManager.characterAnimationManager.SetBlendTreeParameter(verticalInput, horizontalInput, playerManager.sprintFlag, delta);
+            if (CurrentState != null)
+                CurrentState.HandleMovement(delta, playerManager);
         }
     }
 }

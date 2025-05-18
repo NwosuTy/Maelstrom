@@ -139,7 +139,7 @@ namespace Creotly_Studios
                 MultiPositionConstraint posConstraint = rigController.WeaponPositionConstraints[i];
                 posConstraint.weight = (i == constraintIndex) ? 1f : 0f;
             }
-            rigController.rigBuilder.Build();
+            rigController.RigBuilder.Build();
         }
         #endregion
     }

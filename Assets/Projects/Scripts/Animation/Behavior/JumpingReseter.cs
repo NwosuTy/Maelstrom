@@ -13,7 +13,6 @@ namespace Creotly_Studios
             {
                 characterManager = animator.GetComponent<CharacterManager>();
             }
-
             characterManager.isJumping = false;
         }
 

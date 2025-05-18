@@ -6,6 +6,14 @@ namespace Creotly_Studios
         Completed
     }
 
+    public enum CoverState
+    {
+        NoCover,
+        EnteringCover,
+        InCover,
+        ExitingCover
+    }
+
     public enum MeshSockets_ID
     {
         Spine,

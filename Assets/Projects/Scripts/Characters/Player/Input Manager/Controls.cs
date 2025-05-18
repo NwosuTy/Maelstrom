@@ -37,6 +37,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
+                    ""name"": ""Zoom"",
+                    ""type"": ""Value"",
+                    ""id"": ""b4d97c1a-e60f-453d-ba75-33f963db44bf"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
                     ""name"": ""CameraLook"",
                     ""type"": ""PassThrough"",
                     ""id"": ""580cce6b-ea01-4a8e-8883-4c6d80af9ae8"",
@@ -159,23 +168,34 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""0451eea5-8559-475e-9eb8-b20acce6da01"",
-                    ""path"": ""<Gamepad>/dpad"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""0dddbf61-91da-4193-a13d-2b7997e154da"",
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f6e23745-550c-4da6-bace-63839b895cad"",
+                    ""path"": ""<Mouse>/scroll"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Zoom"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8f324d49-7c14-4d4c-8c79-c8beb0437bc4"",
+                    ""path"": ""<XInputController>/dpad"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Zoom"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -248,7 +268,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""1f722c3a-a586-412d-b573-5c5ab0b9c508"",
-                    ""path"": ""<Keyboard>/k"",
+                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard And Mouse"",
@@ -303,7 +323,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""97d04e79-a99c-4f5a-99bb-b072356bf6bb"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""path"": ""<Gamepad>/dpad/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
@@ -314,7 +334,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""1a805397-3042-4406-8e28-e93de7bae0cb"",
-                    ""path"": ""<Keyboard>/leftShift"",
+                    ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard And Mouse"",
@@ -374,13 +394,22 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""TakeCover"",
+                    ""type"": ""Button"",
+                    ""id"": ""5112bbca-ba30-446a-bfb0-4ba24cd0f63e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
                     ""id"": ""099163bd-4fb8-4f5e-a286-a4602b6b6f0b"",
-                    ""path"": ""<Keyboard>/i"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard And Mouse"",
@@ -464,6 +493,17 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""Sprint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""74d00b7c-9ebb-45c0-96f5-a512dcb3f8ad"",
+                    ""path"": ""<Keyboard>/t"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TakeCover"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -501,6 +541,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         // Movement
         m_Movement = asset.FindActionMap("Movement", throwIfNotFound: true);
         m_Movement_Movement = m_Movement.FindAction("Movement", throwIfNotFound: true);
+        m_Movement_Zoom = m_Movement.FindAction("Zoom", throwIfNotFound: true);
         m_Movement_CameraLook = m_Movement.FindAction("CameraLook", throwIfNotFound: true);
         // CombatActions
         m_CombatActions = asset.FindActionMap("CombatActions", throwIfNotFound: true);
@@ -514,6 +555,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_GeneralActions_Sprint = m_GeneralActions.FindAction("Sprint", throwIfNotFound: true);
         m_GeneralActions_Crouch = m_GeneralActions.FindAction("Crouch", throwIfNotFound: true);
         m_GeneralActions_Interact = m_GeneralActions.FindAction("Interact", throwIfNotFound: true);
+        m_GeneralActions_TakeCover = m_GeneralActions.FindAction("TakeCover", throwIfNotFound: true);
     }
 
     ~@Controls()
@@ -583,12 +625,14 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Movement;
     private List<IMovementActions> m_MovementActionsCallbackInterfaces = new List<IMovementActions>();
     private readonly InputAction m_Movement_Movement;
+    private readonly InputAction m_Movement_Zoom;
     private readonly InputAction m_Movement_CameraLook;
     public struct MovementActions
     {
         private @Controls m_Wrapper;
         public MovementActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Movement_Movement;
+        public InputAction @Zoom => m_Wrapper.m_Movement_Zoom;
         public InputAction @CameraLook => m_Wrapper.m_Movement_CameraLook;
         public InputActionMap Get() { return m_Wrapper.m_Movement; }
         public void Enable() { Get().Enable(); }
@@ -602,6 +646,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Movement.started += instance.OnMovement;
             @Movement.performed += instance.OnMovement;
             @Movement.canceled += instance.OnMovement;
+            @Zoom.started += instance.OnZoom;
+            @Zoom.performed += instance.OnZoom;
+            @Zoom.canceled += instance.OnZoom;
             @CameraLook.started += instance.OnCameraLook;
             @CameraLook.performed += instance.OnCameraLook;
             @CameraLook.canceled += instance.OnCameraLook;
@@ -612,6 +659,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Movement.started -= instance.OnMovement;
             @Movement.performed -= instance.OnMovement;
             @Movement.canceled -= instance.OnMovement;
+            @Zoom.started -= instance.OnZoom;
+            @Zoom.performed -= instance.OnZoom;
+            @Zoom.canceled -= instance.OnZoom;
             @CameraLook.started -= instance.OnCameraLook;
             @CameraLook.performed -= instance.OnCameraLook;
             @CameraLook.canceled -= instance.OnCameraLook;
@@ -710,6 +760,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_GeneralActions_Sprint;
     private readonly InputAction m_GeneralActions_Crouch;
     private readonly InputAction m_GeneralActions_Interact;
+    private readonly InputAction m_GeneralActions_TakeCover;
     public struct GeneralActionsActions
     {
         private @Controls m_Wrapper;
@@ -718,6 +769,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Sprint => m_Wrapper.m_GeneralActions_Sprint;
         public InputAction @Crouch => m_Wrapper.m_GeneralActions_Crouch;
         public InputAction @Interact => m_Wrapper.m_GeneralActions_Interact;
+        public InputAction @TakeCover => m_Wrapper.m_GeneralActions_TakeCover;
         public InputActionMap Get() { return m_Wrapper.m_GeneralActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -739,6 +791,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
+            @TakeCover.started += instance.OnTakeCover;
+            @TakeCover.performed += instance.OnTakeCover;
+            @TakeCover.canceled += instance.OnTakeCover;
         }
 
         private void UnregisterCallbacks(IGeneralActionsActions instance)
@@ -755,6 +810,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
+            @TakeCover.started -= instance.OnTakeCover;
+            @TakeCover.performed -= instance.OnTakeCover;
+            @TakeCover.canceled -= instance.OnTakeCover;
         }
 
         public void RemoveCallbacks(IGeneralActionsActions instance)
@@ -793,6 +851,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     public interface IMovementActions
     {
         void OnMovement(InputAction.CallbackContext context);
+        void OnZoom(InputAction.CallbackContext context);
         void OnCameraLook(InputAction.CallbackContext context);
     }
     public interface ICombatActionsActions
@@ -808,5 +867,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnSprint(InputAction.CallbackContext context);
         void OnCrouch(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnTakeCover(InputAction.CallbackContext context);
     }
 }

@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEditor.Animations;
 
 namespace Creotly_Studios
 {
@@ -9,8 +8,8 @@ namespace Creotly_Studios
         protected CharacterManager characterManager;
 
         //HashNames
-        protected int verticalMovementHash;
-        protected int horizontalMovementHash;
+        public int verticalMovementHash { get; protected set; }
+        public int horizontalMovementHash { get; protected set; }
 
         //Parameters
         private bool hasHashed;
@@ -49,13 +48,22 @@ namespace Creotly_Studios
 
         protected virtual void OnAnimatorMove()
         {
-            if(characterManager.isGrounded != true)
+            if(characterManager.isGrounded != true || characterManager.isDead)
             {
                 return;
             }
             deltaPosition = characterManager.animator.deltaPosition;
             characterManager.characterController.Move(deltaPosition);
             characterManager.transform.rotation *= characterManager.animator.deltaRotation;
+        }
+
+        protected virtual void OnAnimatorIK(int layerIndex)
+        {
+            if(characterManager.isGrounded != true || characterManager.isDead)
+            {
+                return;
+            }
+            //characterManager.footIKSystem.FootIKSystem_AnimatorIK();
         }
 
         // Update is called once per frame
@@ -65,6 +73,11 @@ namespace Creotly_Studios
         }
 
         //Functionalities
+        public void InstantSetFloat(int hash, float value)
+        {
+            characterManager.animator.SetFloat(hash, value);
+        }
+
         public void SetBlendTreeParameter(float verticalInput, float horizontalInput, bool isSprinting, float delta)
         {
             float snappedVertical = verticalInput;

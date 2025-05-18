@@ -18,6 +18,7 @@ namespace Creotly_Studios
         //Complex Locomotion
         public bool jumpInput {get; private set;}
         public bool crouchInput {get; private set;}
+        public bool coverInput { get; private set;}
         public bool interactInput {get; private set;}
 
         //Action Input
@@ -47,13 +48,9 @@ namespace Creotly_Studios
 
                 //Movement Input
                 controls.Movement.Movement.performed += x => movementInput = x.ReadValue<Vector2>();
-                /*
-                 * controls.Movement.CameraLook.performed += x =>
-                {
-                    lookInputDebug = x.ReadValue<Vector2>();
-                    Debug.Log($"CameraLook Input: {lookInputDebug}");
-                };
-                 */
+
+                //Advanced Movement
+                controls.GeneralActions.TakeCover.performed += HandleCoverInput;
 
                 //Action Inputs
                 controls.GeneralActions.Jump.performed += x => jumpInput = true;
@@ -81,6 +78,7 @@ namespace Creotly_Studios
         public void InputManager_Updater()
         {
             HandleLockedInput();
+            
             HandleCrouchInput();
             HandleJumpingInput();
 
@@ -106,10 +104,10 @@ namespace Creotly_Studios
             return false;
         }
 
-
         public void ResetInputs()
         {
             jumpInput = false;
+            //coverInput = false;
             crouchInput = false;
             reloadInput = false;
             swapWeaponInput = false;
@@ -128,6 +126,19 @@ namespace Creotly_Studios
             }
         }
 
+        private void HandleCoverInput(InputAction.CallbackContext ctx)
+        {
+            coverInput = true;
+            PlayerLocomotionManager loco = playerManager.playerLocomotionManager;
+            if (playerManager.coverState == CoverState.NoCover)
+            {
+                loco.HandleMovementStateSwitch(loco.CurrentState, loco.CoverState);
+                return;
+            }
+            //Come out of Cover State if in Cover
+            loco.HandleMovementStateSwitch(loco.CurrentState, loco.NormalState);
+        }
+
         private void HandleReloadingInput()
         {
             if(attackInput)
@@ -139,26 +150,21 @@ namespace Creotly_Studios
 
         private void HandleJumpingInput()
         {
-            if(jumpInput == true)
+            if(jumpInput != true)
             {
-                jumpInput = false;
-                playerManager.playerLocomotionManager.HandleJumping();
+                return;
             }
+            jumpInput = false;
+            playerManager.playerLocomotionManager.HandleJumping();
         }
 
         private void HandleCrouchInput()
         {
-            if(crouchInput != true)
+            if(crouchInput != true || playerManager.coverState != CoverState.NoCover)
             {
                 return;
             }
-
-            if(playerManager.isCrouching)
-            {
-                playerManager.isCrouching = false;
-                return;
-            }
-            playerManager.isCrouching = true;
+            playerManager.isCrouching = !playerManager.isCrouching;
         }
 
         private void HandleSprintingInput()
@@ -177,7 +183,7 @@ namespace Creotly_Studios
             horizontalMovementInput = movementInput.x;
 
             totalMoveAmount = Mathf.Clamp01(Mathf.Abs(verticalMovementInput) + Mathf.Abs(horizontalMovementInput));
-            playerManager.isMoving = (totalMoveAmount > 0.0f);
+            playerManager.isMoving = (totalMoveAmount > 0.0f) || (playerManager.coverState == CoverState.EnteringCover);
         }
     }
 }

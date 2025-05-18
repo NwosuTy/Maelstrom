@@ -12,7 +12,7 @@ namespace Creotly_Studios
         [SerializeField] protected float aimDuration;
 
         [field: Header("Rigs")]
-        public RigBuilder rigBuilder;
+        [field: SerializeField] public RigBuilder RigBuilder { get; protected set; }
         [field: SerializeField] public Rig HandIKConstraints { get; protected set; }
         [field: SerializeField] public Rig BodyAimConstraints { get; protected set; }
         [field: SerializeField] public Rig WeaponAimConstraint { get; protected set; }
@@ -31,13 +31,16 @@ namespace Creotly_Studios
 
         protected virtual void Awake()
         {
-            rigBuilder = GetComponentInParent<RigBuilder>();
+            RigBuilder = GetComponentInParent<RigBuilder>();
             characterManager = GetComponentInParent<CharacterManager>();
         }
 
         public virtual void CharacterAnimationRig_Updater(float delta)
         {
             Lock_In(delta);
+
+            bool shouldAim = (characterManager.coverState == CoverState.NoCover) || (characterManager.isLockedIn);
+            SetAimTargetWeight(shouldAim);
         }
 
         public void SetTwoBoneIKConstraint(Transform weaponGrip, Transform weaponRest)
@@ -49,7 +52,7 @@ namespace Creotly_Studios
 
             LeftHandIKConstraint.weight = (weaponRest == null) ? 0.0f : 0.55f;
             RightHandIKConstraint.weight = (weaponGrip == null) ? 0.0f : 1.0f;
-            rigBuilder.Build();
+            RigBuilder.Build();
         }
 
         public void SetAimTarget(Transform aimedTarget)
@@ -63,7 +66,21 @@ namespace Creotly_Studios
                 sources.Add(weightedTransform);
                 multiAimConstraint.data.sourceObjects = sources;
             }
-            rigBuilder.Build();
+            RigBuilder.Build();
+        }
+
+        public void SetAimTargetWeight(bool shouldAim)
+        {
+            if(shouldAim != true)
+            {
+                MultiAimConstraintArray[0].weight = 0;
+                MultiAimConstraintArray[1].weight = 0;
+                MultiAimConstraintArray[2].weight = 0;
+                return;
+            }
+            MultiAimConstraintArray[0].weight = 0.75f;
+            MultiAimConstraintArray[1].weight = 0.35f;
+            MultiAimConstraintArray[2].weight = 0.55f;
         }
 
         public void StopAllRigs()

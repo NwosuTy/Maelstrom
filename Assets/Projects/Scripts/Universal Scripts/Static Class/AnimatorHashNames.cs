@@ -11,6 +11,7 @@ namespace Creotly_Studios
         public static int movingHash;
         public static int canRotateHash;
         public static int isGroundedHash;
+        public static int beginCoverHash;
         public static int rootMotionRotateHash;
 
         //Actions
@@ -30,7 +31,10 @@ namespace Creotly_Studios
 
         //Complex Movement
         public static int jumpHash;
-
+        public static int jumpFwdHash;
+        public static int exitCoverHash;
+        public static int enterCoverHash;
+        
         //Death Animations
         public static int backDeathHash;
         public static int frontDeathHash;
@@ -97,6 +101,7 @@ namespace Creotly_Studios
         {
             //Movement
             movingHash = Animator.StringToHash("isMoving");
+            beginCoverHash = Animator.StringToHash("inCover");
             canRotateHash = Animator.StringToHash("canRotate");
             isGroundedHash = Animator.StringToHash("isGrounded");
             rootMotionRotateHash = Animator.StringToHash("rootMotionRotation");
@@ -113,7 +118,10 @@ namespace Creotly_Studios
             throwingObjectHash = Animator.StringToHash("Throw Object");
             
             //Complex Movement
-            jumpHash = Animator.StringToHash("Jump_Start");
+            jumpHash = Animator.StringToHash("Jump");
+            jumpFwdHash = Animator.StringToHash("Jump Forward");
+            exitCoverHash = Animator.StringToHash("Exit Cover");
+            enterCoverHash = Animator.StringToHash("Enter Cover");
 
             //Death Animations
             backDeathHash = Animator.StringToHash("Death_Back");

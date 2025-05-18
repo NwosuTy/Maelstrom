@@ -24,7 +24,7 @@ namespace Creotly_Studios
         private Vector3 force;
         private Vector3 explosionDirection;
         private float distanceFromExplosion;
-	protected float acceleration = 1.0f;
+	    protected float acceleration = 1.0f;
 
         #endregion
 
@@ -37,7 +37,7 @@ namespace Creotly_Studios
 
         [field : Header("Character Movement Stats")]
         [field: SerializeField] public float rotationSpeed {get; protected set;} = 12f;
-        [field: SerializeField] public float movementSpeed {get; protected set;} = 3.5f;
+        [field: SerializeField] public float walkingSpeed {get; protected set;} = 3.5f;
         [field: SerializeField] public float crouchingSpeed {get; protected set;} = 3.5f;
 
         [field: Header("Gravity Stats")]
@@ -66,20 +66,18 @@ namespace Creotly_Studios
         public virtual void CharacterLocomotionManager_Update(float delta)
         {
             HandleGravity(delta);
-            HandleRotation(delta);
             HandleMovement(delta);
         }
 
         public virtual void CharacterLocomotion_FixedUpdate(float delta)
         {
-
+            
         }
 
         //Functionalities
 
         protected virtual void HandleGravity(float delta)
         {
-            CheckIfPlayerIsGrounded();
             if (characterManager.isGrounded)
             {
                 if(verticalVelocity.y < 0.0f)
@@ -89,8 +87,7 @@ namespace Creotly_Studios
                     verticalVelocity.y = groundedForce;
                 }
             }
-
-            else if(characterManager.isGrounded != true)
+            else
             {
                 if(characterManager.isJumping != true && fallingVelocitySet != true)
                 {
@@ -104,6 +101,7 @@ namespace Creotly_Studios
             }
             //Force of Gravity pushes character down
             characterManager.characterController.Move(verticalVelocity * delta);
+            CheckIfPlayerIsGrounded();
         }
 
         protected virtual void CheckIfPlayerIsGrounded()

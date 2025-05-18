@@ -21,8 +21,9 @@ namespace Creotly_Studios
         [field: SerializeField] public Transform miniMapTarget {get; private set;}
 
         [field: Header("Cameras")]
-        //[field: SerializeField] public CinemachineFreeLook normalCamera {get; private set;}
-        //[field: SerializeField] public CinemachineFreeLook lockedInCamera {get; private set;}
+        [field: SerializeField] public CinemachineCamera InCoverCamera {get; private set;}
+        [field: SerializeField] public CinemachineCamera FreeLookCamera {get; private set;}
+        [field: SerializeField] public CinemachineCamera LockedInCamera {get; private set;}
 
 
         // Start is called before the first frame update
@@ -30,14 +31,16 @@ namespace Creotly_Studios
         {
             playerManager = GetComponent<PlayerManager>();
 
-            //normalCamera = GameObject.Find("Normal Camera").GetComponent<CinemachineFreeLook>();
-            //lockedInCamera = GameObject.Find("Locked-In Camera").GetComponent<CinemachineFreeLook>();
+            FreeLookCamera = GameObject.Find("Free Camera").GetComponent<CinemachineCamera>();
+            InCoverCamera = GameObject.Find("Cover Camera").GetComponent<CinemachineCamera>();
+            LockedInCamera = GameObject.Find("Locked Camera").GetComponent<CinemachineCamera>();
         }
 
         private void Start()
         {
-            //InitializeCameras(normalCamera, true);
-            //InitializeCameras(lockedInCamera, false);
+            InitializeCamera(FreeLookCamera, true);
+            InitializeCamera(InCoverCamera, false);
+            InitializeCamera(LockedInCamera, false);
 
             mainCamera = Camera.main;
             cameraTransform = mainCamera.transform;
@@ -46,21 +49,16 @@ namespace Creotly_Studios
         // Update is called once per frame
         public void PlayerCameraController_Update()
         {
-            //SwapCameraLockedIn();
+            InCoverCamera.gameObject.SetActive(playerManager.enterCover);
+            LockedInCamera.gameObject.SetActive(playerManager.isLockedIn);
         }
 
         //Functionalities
 
-        private void InitializeCameras(CinemachineFreeLook cinemachineVirtualCamera, bool enableCamera)
+        private void InitializeCamera(CinemachineCamera camera, bool status)
         {
-            cinemachineVirtualCamera.LookAt = cameraTarget;
-            cinemachineVirtualCamera.Follow = playerManager.transform;
-            cinemachineVirtualCamera.gameObject.SetActive(enableCamera);
-        }
-
-        private void SwapCameraLockedIn()
-        {
-            //lockedInCamera.gameObject.SetActive(playerManager.isLockedIn);
+            camera.Target.TrackingTarget = playerManager.targetPoint;
+            camera.gameObject.SetActive(status);
         }
     }
 }

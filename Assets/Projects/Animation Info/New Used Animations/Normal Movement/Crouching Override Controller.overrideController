@@ -7,7 +7,7 @@ AnimatorOverrideController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Crouching Override Controller
-  m_Controller: {fileID: 9100000, guid: 23ec498455db9634a9929839be5a9b4e, type: 2}
+  m_Controller: {fileID: 9100000, guid: d097723d42438594eb4c8e94fc0acd9a, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: 945821941ee90f044bc0c8c33872b51c, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: 3a2f8eb386a1ab844857fff2193f4a20, type: 2}
@@ -21,3 +21,17 @@ AnimatorOverrideController:
     m_OverrideClip: {fileID: 7400000, guid: 3d93ab85ab5085841a3c84a01240a3e1, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: d35d3de48f0ea324f9fbce2ea337db9a, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: 1479127baafeb794e881ad1f5fee2dc4, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 637a70bb9ba11624e860a4d074097ac3, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d30c532d21644a84ebf5bad7f5c965fd, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e1b79747fa288c1468aff868efb5e0f2, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a760750136685fd4fa37c7b688f0fb87, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 741a7fa8d2b842e48add5291524225bf, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c5c8f889f9308924d93fb3c31d25bdda, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 7aaf3cc83ec56da43be2fd00e40760a0, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a764c7170958b584393f86161c12df0c, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: f3b04572303d9394a8f7022d8cb068e6, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f43cfc7177c47c942b7ffc3434d67919, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 40bf104d06033244ab5f6ce415277d7c, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: cf78e3103745b074686798ddb111e0f6, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: be7c0c14eafce8f4f984ad1304aa3001, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 830f2e55c493e7f4ab3f1d63aac3bc26, type: 2}
