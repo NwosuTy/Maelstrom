@@ -1,5 +1,15 @@
 namespace Creotly_Studios
 {
+    public enum ImpactSurface
+    {
+        Wood,
+        Sand,
+        Stone,
+        Flesh,
+        Metal,
+        Robot
+    }
+
     public enum EnvironmentGenerationProgress
     {
         Active,

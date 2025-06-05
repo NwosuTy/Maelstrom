@@ -57,6 +57,27 @@ namespace Creotly_Studios
             return objectPool;
         }
 
+        public static ObjectPool<BulletFX> BulletFXPool(GameObject decalPrefab, ParticleSystem fxPrefab, MonoBehaviour context)
+        {
+            ObjectPool<BulletFX> pool = null;
+
+            pool = new ObjectPool<BulletFX>
+            (
+                () => 
+                {
+                    var fx = new BulletFX(decalPrefab, fxPrefab, context);
+                    fx.SetPool(pool);
+                    return fx;
+                },
+                fx => fx.GetObject(),
+                fx => fx.Release(),
+                null,
+                false, 75, 200
+            );
+            return pool;
+        }
+
+
         private static void GetTilesFromPool(Tiles spawnObject, ObjectPool<Tiles> SP)
         {
             spawnObject.ResetTiles(SP);

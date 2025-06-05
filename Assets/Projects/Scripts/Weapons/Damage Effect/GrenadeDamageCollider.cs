@@ -19,7 +19,6 @@ namespace Creotly_Studios
 
         //Explosion Parameters
         private Vector3 impactNormal;
-        private WaitForSeconds resetGrenadeTimer;
         private WaitForSeconds explosionDelayTimer;
 
         //Damage Characters
@@ -42,7 +41,6 @@ namespace Creotly_Studios
             backDamage = AnimatorHashNames.explosionBackAnimation;
             frontDamage = AnimatorHashNames.explosionFrontAnimation;
 
-            resetGrenadeTimer = new WaitForSeconds(explosionDelay);
             explosionDelayTimer = new WaitForSeconds(explosionDelay);
             grenadeWeaponManager = GetComponentInParent<GrenadeWeaponManager>();
         }

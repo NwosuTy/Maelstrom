@@ -119,6 +119,7 @@ namespace Creotly_Studios
             }
             animManager.InstantSetFloat(verticalAnim, 0.0f);
             player.enterCover = true;
+            player.transform.position = pos;
             player.coverState = CoverState.InCover;
         }
     }

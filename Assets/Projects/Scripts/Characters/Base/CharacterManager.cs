@@ -93,6 +93,7 @@ namespace Creotly_Studios
         private void SetAnimatorParameters()
         {
             animator.SetBool(AnimatorHashNames.movingHash, isMoving);
+            animator.SetBool(AnimatorHashNames.aimingHash, isLockedIn);
             animator.SetBool(AnimatorHashNames.beginCoverHash, enterCover);
 
             canRotate = animator.GetBool(AnimatorHashNames.canRotateHash);

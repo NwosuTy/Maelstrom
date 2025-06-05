@@ -57,8 +57,8 @@ namespace Creotly_Studios
         private void CheckIfHitEdge()
         {
             Vector3 fwd = transform.forward;
-            isHighCover = Physics.Raycast(highRayOrigin.position, fwd, 3.5f, coverLayerMask);
 
+            isHighCover = IsHighCover(fwd);
             atLeftEdge = !Physics.Raycast(leftRayOrigin.position, fwd, 3.5f, coverLayerMask);
             atRightEdge = !Physics.Raycast(rightRayOrigin.position, fwd, 3.5f, coverLayerMask);
 
@@ -74,6 +74,18 @@ namespace Creotly_Studios
                 return;
             }
             //Can Aim
+        }
+
+        private bool IsHighCover(Vector3 fwd)
+        {
+            Vector3 offset = new(0.185f, 0.0f, 0.0f);
+            Vector3 left = highRayOrigin.position - offset;
+            Vector3 right = highRayOrigin.position + offset;
+
+            bool lHigh = Physics.Raycast(left, fwd, 3.5f, coverLayerMask);
+            bool rHigh = Physics.Raycast(right, fwd, 3.5f, coverLayerMask);
+
+            return lHigh && rHigh;
         }
 
         private void SetCoverType()

@@ -60,7 +60,7 @@ namespace Creotly_Studios
             foreach (MultiAimConstraint multiAimConstraint in MultiAimConstraintArray)
             {
                 var sources = multiAimConstraint.data.sourceObjects;
-                WeightedTransform weightedTransform = new WeightedTransform(aimedTarget, 1f);
+                WeightedTransform weightedTransform = new(aimedTarget, 1f);
 
                 sources.Clear();
                 sources.Add(weightedTransform);

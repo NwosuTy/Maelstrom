@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.Pool;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace Creotly_Studios
@@ -8,11 +7,9 @@ namespace Creotly_Studios
     public class GunWeaponManager : WeaponManager
     {
         //Private Parameters
-        protected Ray ray;
         protected float accumulatedTime;
 
         //Private Bullet Parameters
-        protected GameObject bulletHoles;
         protected Quaternion targetRotation;
         protected ObjectPool<TrailRenderer> bulletTrailPool;
         protected List<Bullet> bulletList = new List<Bullet>();
@@ -117,19 +114,16 @@ namespace Creotly_Studios
             Vector3 dir = end - start;
             float distance = dir.magnitude;
 
-            ray.origin = start;
-            ray.direction = dir;
-
+            Ray ray = new(start, dir);
             if (Physics.Raycast(ray, out RaycastHit raycastHit, distance, EnemyLayerMask))
             {
-                CharacterStatsManager shotCharacter = raycastHit.collider.GetComponentInParent<CharacterStatsManager>();
-                StartCoroutine(HandleTrailFX(start, raycastHit.point));
+                Collider collider = raycastHit.collider;
 
-                if (shotCharacter == null)
-                {
-                    InstantiateBulletHoles(raycastHit);
-                }
+                BulletFX bulletFX = GetBulletFX(collider);
+                TrailFX.HandleTrailFX(simulationSpeed, start, raycastHit.point, bulletTrailPool, this);
+                CharacterStatsManager shotCharacter = collider.GetComponentInParent<CharacterStatsManager>();
 
+                InstantiateBulletHoles(bulletFX, raycastHit, shotCharacter);
                 if (shotCharacter != null && shotCharacter.characterManager.characterType != characterManager.characterType)
                 {
                     float directionFromHit = Vector3.SignedAngle(characterManager.transform.position, shotCharacter.transform.position, Vector3.up);
@@ -141,7 +135,7 @@ namespace Creotly_Studios
                 bullet.time = maxBulletTime;
                 return;
             }
-            StartCoroutine(HandleTrailFX(start, end));
+            TrailFX.HandleTrailFX(simulationSpeed, start, raycastHit.point, bulletTrailPool, this);
         }
 
         protected virtual void FireBullet(Vector3 targetPosition)
@@ -149,60 +143,25 @@ namespace Creotly_Studios
             HandleVFX();
         }
 
-        protected void InstantiateBulletHoles(RaycastHit raycastHit)
+        protected void InstantiateBulletHoles(BulletFX bulletFX, RaycastHit raycastHit, CharacterStatsManager shotCharacter)
         {
-            float positionMultiplier = 0.5f;
-            float spawnX = raycastHit.point.x - ray.direction.x * positionMultiplier;
-            float spawnY = raycastHit.point.y - ray.direction.y * positionMultiplier;
-            float spawnZ = raycastHit.point.z - ray.direction.z * positionMultiplier;
-            Vector3 spawnPosition = new Vector3(spawnX, spawnY, spawnZ);
+            if (shotCharacter != null)
+                return;
 
-            bulletHoles = ImpactHole(raycastHit.collider);
-            Quaternion targetRotation = Quaternion.LookRotation(ray.direction);
-            bulletHoles.transform.SetPositionAndRotation(spawnPosition, targetRotation);
+            float decalOffset = 0.05f;
+            Quaternion spawnRotation = Quaternion.LookRotation(raycastHit.normal);
+            Vector3 spawnPosition = raycastHit.point + raycastHit.normal * decalOffset;
+
+            bulletFX.HandleBulletImpact(spawnPosition, spawnRotation);
         }
 
-        protected GameObject ImpactHole(Collider damagedCollider)
+        protected BulletFX GetBulletFX(Collider damagedCollider)
         {
-            if(damagedCollider.CompareTag("Wood"))
-            {
-                return GameObjectManager.woodBulletHolesPool.Get();
-            }
-            else if(damagedCollider.CompareTag("Metal"))
-            {
-                return GameObjectManager.metalBulletHolesPool.Get();
-            } 
-            return GameObjectManager.cementBulletHolesPool.Get();
+            string tag = damagedCollider.tag;
+            return GameObjectManager.Instance.GetBulletFX(tag);
         }
 
         #endregion
-
-        protected IEnumerator HandleTrailFX(Vector3 start, Vector3 end)
-        {
-            TrailRenderer trail = bulletTrailPool.Get();
-            trail.transform.position = start;
-            yield return null;
-
-            trail.emitting = true;
-            float distance  = Vector3.Distance(start, end);
-            float remainingDistance = distance;
-            while (remainingDistance > 0f)
-            {
-                trail.transform.position = Vector3.Lerp(start, end, Mathf.Clamp01(1 - (remainingDistance/distance)));
-
-                remainingDistance -= simulationSpeed * Time.deltaTime;
-                yield return null;
-            }
-
-            trail.transform.position = end;
-            yield return new WaitForSeconds(trail.time);
-            yield return null;
-
-            trail.emitting = false;
-            trail.transform.position = end;
-
-            bulletTrailPool.Release(trail);
-        }
 
         protected int GetDeathAnimation(Vector3 direction, Transform damagedCharacter)
         {

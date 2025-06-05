@@ -10088,6 +10088,7 @@ GameObject:
   - component: {fileID: 6299800303449334577}
   - component: {fileID: 5780474839079691982}
   - component: {fileID: -8298906599015552507}
+  - component: {fileID: 48434547602876074}
   m_Layer: 9
   m_Name: Assault Rifle X
   m_TagString: Untagged
@@ -10160,7 +10161,7 @@ MonoBehaviour:
   <damageValue>k__BackingField: 2
   <EnemyLayerMask>k__BackingField:
     serializedVersion: 2
-    m_Bits: 448
+    m_Bits: 4544
   weaponGrip: {fileID: 1374427907096174390}
   weaponRest: {fileID: 7013997456457123801}
   inactiveWeaponHolder: {fileID: 0}
@@ -10177,9 +10178,80 @@ MonoBehaviour:
   - {fileID: 4858060690315746075}
   - {fileID: 3187762413597012684}
   bulletTrailPrefab: {fileID: 7797175582377925549, guid: 634dabde84534614187dc3455eeca907, type: 3}
+  gunRecoil:
+    duration: 0.1
+    recoilPatterns:
+    - {x: 10, y: 10}
+    - {x: 7, y: 10}
+    - {x: 5, y: 10}
+    - {x: 2, y: 10}
+    - {x: 1, y: 10}
+    - {x: -2, y: 10}
+    - {x: -5, y: 10}
+    - {x: -7, y: 10}
+    - {x: -10, y: 10}
+    - {x: -7, y: 10}
+    - {x: -5, y: 10}
+    - {x: -2, y: 10}
+    - {x: -1, y: 10}
+    - {x: 2, y: 10}
+    - {x: 5, y: 10}
   <maxBullet>k__BackingField: 174
-  <MagazineSize>k__BackingField: 386
+  <ReserveAmmo>k__BackingField: 435
   crossHairImage: {fileID: 21300000, guid: 08a0351e5306f984d93fe28c8b712659, type: 3}
   aimingCrossHairImage: {fileID: 21300000, guid: b5429c1b72938134cba311bed7a76bc4, type: 3}
   gunType: 1
   <MuzzlePoint>k__BackingField: {fileID: 5961108290691048707}
+--- !u!114 &48434547602876074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7176241237875941114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ImpulseDefinition:
+    ImpulseChannel: 1
+    ImpulseShape: 1
+    CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    ImpulseDuration: 0.1
+    ImpulseType: 0
+    DissipationRate: 0.25
+    RawSignal: {fileID: 0}
+    AmplitudeGain: 1
+    FrequencyGain: 1
+    RepeatMode: 0
+    Randomize: 1
+    TimeEnvelope:
+      AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      AttackTime: 0
+      SustainTime: 0.2
+      DecayTime: 0.7
+      ScaleWithImpact: 1
+      HoldForever: 0
+    ImpactRadius: 100
+    DirectionMode: 0
+    DissipationMode: 2
+    DissipationDistance: 100
+    PropagationSpeed: 343
+  DefaultVelocity: {x: 0, y: -1, z: 0}

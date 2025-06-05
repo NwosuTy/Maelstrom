@@ -6703,7 +6703,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 1.64
-  m_Radius: 0.25
+  m_Radius: 0.2
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -6746,6 +6746,7 @@ MonoBehaviour:
   rotateWithRootMotion: 0
   dontMove: 0
   isGrounded: 0
+  enterCover: 0
   coverState: 0
   <targetPoint>k__BackingField: {fileID: 6162431050793308568}
   <characterType>k__BackingField: 1
@@ -6775,7 +6776,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainAnimatorController: {fileID: 9100000, guid: d097723d42438594eb4c8e94fc0acd9a, type: 2}
   crouchAnimatorController: {fileID: 22100000, guid: 3c7e12d49345e374e88e644ac0443a67, type: 2}
-  unarmedStandingController: {fileID: 9100000, guid: d097723d42438594eb4c8e94fc0acd9a, type: 2}
+  unarmedStandingController: {fileID: 22100000, guid: 56af13768d653024797da685eb25af58, type: 2}
   unarmedCrouchingController: {fileID: 22100000, guid: 4cd97f5a4d8eb774ea0b8b681606debb, type: 2}
 --- !u!114 &7883074545115199214
 MonoBehaviour:

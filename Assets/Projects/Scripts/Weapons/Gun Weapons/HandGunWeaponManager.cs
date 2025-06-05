@@ -7,13 +7,14 @@ namespace Creotly_Studios
     {
         private bool isReloading;
         private UIWeaponsManager playerWeaponUI;
+        [SerializeField] private GunRecoil gunRecoil;
 
         //Bullet Parameters
         public int bulletLeft { get; private set; }
 
-        [Header("Bullet Statistics")]
+        [field: Header("Bullet Statistics")]
         [field: SerializeField] public int maxBullet { get; private set; }
-        [field: SerializeField] public int MagazineSize { get; private set; }
+        [field: SerializeField] public int ReserveAmmo { get; private set; }
 
         [Header("Cross Hair Properties")]
         [SerializeField] private Sprite crossHairImage;
@@ -30,9 +31,10 @@ namespace Creotly_Studios
             {
                 playerManager.crossHairImage = crossHairImage;
                 playerManager.aimingCrossHairImage = aimingCrossHairImage;
-
+                
                 playerWeaponUI = playerManager.playerUIManager.weaponsManager;
                 SetWeaponPose(characterManager.characterAnimatorRigController);
+                gunRecoil.Initialize(this, playerManager.playerLocomotionManager.cameraObject);
             }
         }
 
@@ -57,6 +59,7 @@ namespace Creotly_Studios
                 return;
             }
             base.HandleShooting(targetPosition, delta);
+            if (playerManager != null) { gunRecoil.GenerateRecoil(delta); }
         }
 
         protected override void FireBullet(Vector3 targetPosition)
@@ -71,32 +74,24 @@ namespace Creotly_Studios
 
         private void HandleReloading()
         {
-            if (isReloading || characterManager.performingAction || characterManager.canReload != true)
+            if (isReloading || characterManager.performingAction || !characterManager.canReload || bulletLeft >= maxBullet || ReserveAmmo <= 0)
             {
-                return;
-            }
-
-            if (bulletLeft >= maxBullet)
-            {
-                return;
-            }
-
-            if (MagazineSize <= 0)
-            {
-                MagazineSize = 0;
                 return;
             }
             characterManager.animator.SetBool(AnimatorHashNames.isReloadingHash, true);
             characterManager.characterAnimationManager.PlayTargetAnimation(AnimatorHashNames.reloadingHash, true);
 
-            int bulletsNeeded = maxBullet - bulletLeft;
-            bulletLeft += bulletsNeeded;
-            if (playerManager != null) 
-            { 
-                MagazineSize -= bulletsNeeded;
-                playerWeaponUI.UpdateMagazineCount(bulletLeft, MagazineSize);
+            int needed = maxBullet - bulletLeft;
+            int toAdd = Mathf.Min(ReserveAmmo, needed);
+
+            bulletLeft += toAdd;
+            ReserveAmmo -= toAdd;
+            if (playerManager != null)
+            {
+                playerWeaponUI.UpdateMagazineCount(bulletLeft, ReserveAmmo);
             }
         }
+
 
         public override void ResetAllStats()
         {

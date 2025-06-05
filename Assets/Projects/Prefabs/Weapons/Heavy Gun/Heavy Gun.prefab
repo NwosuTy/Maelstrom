@@ -242,8 +242,11 @@ MonoBehaviour:
   - {fileID: 7079597963751369109}
   - {fileID: 8675681975802537871}
   bulletTrailPrefab: {fileID: 4330412615122653451, guid: b60b1b1f4d88389428ee25605a7b0e41, type: 3}
+  gunRecoil:
+    duration: 0
+    recoilPatterns: []
   <maxBullet>k__BackingField: 64
-  <MagazineSize>k__BackingField: 122
+  <ReserveAmmo>k__BackingField: 160
   crossHairImage: {fileID: 21300000, guid: 08a0351e5306f984d93fe28c8b712659, type: 3}
   aimingCrossHairImage: {fileID: 21300000, guid: b5429c1b72938134cba311bed7a76bc4, type: 3}
   gunType: 1

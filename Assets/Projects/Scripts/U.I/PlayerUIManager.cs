@@ -42,7 +42,12 @@ namespace Creotly_Studios
         {
             currentWeapon = playerManager.characterInventoryManager.currentWeaponManager;
 
-            crossHairImage.gameObject.SetActive(currentWeapon != null && currentWeapon.weaponType == WeaponType.Guns);
+            if(currentWeapon == null)
+            {
+                crossHairImage.gameObject.SetActive(false);
+                return;
+            }
+            crossHairImage.gameObject.SetActive(currentWeapon.weaponType == WeaponType.Guns);
             crossHairImage.sprite = (playerManager.isLockedIn == true) ? playerManager.aimingCrossHairImage : playerManager.crossHairImage;
         }
 

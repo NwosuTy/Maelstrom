@@ -17,9 +17,7 @@ namespace Creotly_Studios
         protected override void Awake()
         {
             weaponDataHolder = Instantiate(weaponDataHolder);
-
             Vector3 rotation = new(90.0f, 0.0f, 0.0f);
-            bulletTrailPool = ObjectPooler.TrailPool(bulletTrailPrefab);
         }
 
         public override void WeaponManager_Update(float delta)

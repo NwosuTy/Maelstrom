@@ -15,6 +15,15 @@ namespace Creotly_Studios
     }
 
     [System.Serializable]
+    public struct ImpactFXConfig
+    {
+        public GameObject decal;
+        public ParticleSystem particle;
+        public ImpactSurface impactSurface;
+    }
+
+
+    [System.Serializable]
     public struct BoundaryFloat
     {
         public float lowerBound;

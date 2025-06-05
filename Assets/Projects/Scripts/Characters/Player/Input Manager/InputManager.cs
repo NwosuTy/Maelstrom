@@ -183,7 +183,23 @@ namespace Creotly_Studios
             horizontalMovementInput = movementInput.x;
 
             totalMoveAmount = Mathf.Clamp01(Mathf.Abs(verticalMovementInput) + Mathf.Abs(horizontalMovementInput));
-            playerManager.isMoving = (totalMoveAmount > 0.0f) || (playerManager.coverState == CoverState.EnteringCover);
+            playerManager.isMoving = IsMoving();
+        }
+
+        private bool IsMoving()
+        {
+            if(playerManager.coverState == CoverState.NoCover)
+            {
+                if (totalMoveAmount > 0.0f)
+                {
+                    return true;
+                }
+            }
+            if(playerManager.coverState == CoverState.EnteringCover)
+            {
+                return true;
+            }
+            return Mathf.Abs(horizontalMovementInput) > 0.01f;
         }
     }
 }
