@@ -52,9 +52,9 @@ namespace Creotly_Studios
                     Cells newCell = Instantiate(cellObject, cellsSpawnPoint);
 
                     newCell.CreateCell(x, y, false, new());
+                    newCell.gameObject.name = $"New Cell {cellsList.IndexOf(newCell)}";
                     newCell.transform.SetLocalPositionAndRotation(spacing, Quaternion.identity);
                     cellsList.Add(newCell);
-                    newCell.gameObject.name = $"New Cell {cellsList.IndexOf(newCell)}";
                 }
             }
             objectHolder.Initialize(this);
