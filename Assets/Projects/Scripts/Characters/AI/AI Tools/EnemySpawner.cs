@@ -153,7 +153,7 @@ namespace Creotly_Studios
             {
                 ai.ShouldMove(false);
             }
-            Transform playerTransform = sentient.playerTransform;
+            Transform playerTransform = sentient.PlayerTransform;
             Vector3 currentTilePosition = new Vector3
             (
                 Mathf.FloorToInt(playerTransform.position.x) / cnst_tileSize,

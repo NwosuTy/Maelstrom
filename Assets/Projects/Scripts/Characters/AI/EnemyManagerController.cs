@@ -60,7 +60,7 @@ namespace Creotly_Studios
             AIManager spawnedAI = aiManagersPool.Get();
 
             spawnedAI.transform.SetParent(spawnPoint);
-            Vector3 spawnedPosition = Maths_PhysicsHelper.SpawnPoint(spawnRadius, sentient.playerTransform);
+            Vector3 spawnedPosition = Maths_PhysicsHelper.SpawnPoint(spawnRadius, sentient.PlayerTransform);
 
             Vector3 aiPosition = spawnPoint.InverseTransformPoint(spawnedPosition);
             spawnedAI.transform.SetLocalPositionAndRotation(aiPosition, Quaternion.identity);

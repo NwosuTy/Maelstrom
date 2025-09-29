@@ -7,8 +7,7 @@ namespace Creotly_Studios
     {
         public static ObjectPool<Tiles> TilesPool(Tiles objectToPool, ObjectPool<Tiles> SP)
         {
-            ObjectPool<Tiles> objectPool = new ObjectPool<Tiles>
-            (
+            ObjectPool<Tiles> objectPool = new            (
                 () => {return GameObject.Instantiate(objectToPool);},
                 spawnObject => {GetTilesFromPool(spawnObject, SP);},
                 spawnObject => {spawnObject.gameObject.SetActive(false);},
@@ -20,8 +19,7 @@ namespace Creotly_Studios
 
         public static ObjectPool<TrailRenderer> TrailPool(TrailRenderer objectToPool)
         {
-            ObjectPool<TrailRenderer> objectPool = new ObjectPool<TrailRenderer>
-            (
+            ObjectPool<TrailRenderer> objectPool = new            (
                 () => { return GameObject.Instantiate(objectToPool); },
                 spawnObject => { spawnObject.gameObject.SetActive(true); },
                 spawnObject => { spawnObject.gameObject.SetActive(false); },
@@ -33,8 +31,7 @@ namespace Creotly_Studios
 
         public static ObjectPool<GameObject> GameObjectPool(GameObject objectToPool)
         {
-            ObjectPool<GameObject> objectPool = new ObjectPool<GameObject>
-            (
+            ObjectPool<GameObject> objectPool = new            (
                 () => {return GameObject.Instantiate(objectToPool);},
                 spawnObject => {spawnObject.SetActive(true);},
                 spawnObject => {spawnObject.SetActive(false);},
@@ -46,8 +43,7 @@ namespace Creotly_Studios
 
         public static ObjectPool<ParticleSystem> ParticlePool(ParticleSystem objectToPool)
         {
-            ObjectPool<ParticleSystem> objectPool = new ObjectPool<ParticleSystem>
-            (
+            ObjectPool<ParticleSystem> objectPool = new            (
                 () => {return GameObject.Instantiate(objectToPool);},
                 spawnObject => {spawnObject.gameObject.SetActive(true);},
                 spawnObject => {spawnObject.gameObject.SetActive(false);},
@@ -76,7 +72,6 @@ namespace Creotly_Studios
             );
             return pool;
         }
-
 
         private static void GetTilesFromPool(Tiles spawnObject, ObjectPool<Tiles> SP)
         {

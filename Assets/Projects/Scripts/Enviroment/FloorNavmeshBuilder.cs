@@ -61,13 +61,13 @@ namespace Creotly_Studios
         private void BuildNavMeshSurface(bool asyncBuild)
         {
             AsyncOperation navMeshUpdateOperation = null;
-            Bounds navMeshBounds = new Bounds(sentient.playerTransform.position, navMeshAreaBakeSize);
+            Bounds navMeshBounds = new Bounds(sentient.PlayerTransform.position, navMeshAreaBakeSize);
 
             navMeshModifiers.Clear();
             navMeshBuildMarkups.Clear();
             NavMeshBuilder.CollectSources(navMeshBounds, navMeshSurface.layerMask, navMeshSurface.useGeometry, navMeshSurface.defaultArea, navMeshBuildMarkups, navMeshSources);
 
-            Bounds buildBound = new Bounds(sentient.playerTransform.position, navMeshAreaBakeSize);
+            Bounds buildBound = new Bounds(sentient.PlayerTransform.position, navMeshAreaBakeSize);
             if(asyncBuild)
             {
                 navMeshUpdateOperation = NavMeshBuilder.UpdateNavMeshDataAsync(navMeshData, navMeshSurface.GetBuildSettings(), navMeshSources, buildBound);
@@ -82,11 +82,11 @@ namespace Creotly_Studios
         {
             while(true)
             {
-                float distance = Vector3.Distance(worldAnchor, sentient.playerTransform.position);
+                float distance = Vector3.Distance(worldAnchor, sentient.PlayerTransform.position);
                 if(distance > distanceBeforeBake)
                 {
                     BuildNavMeshSurface(true);
-                    worldAnchor = sentient.playerTransform.position;
+                    worldAnchor = sentient.PlayerTransform.position;
                 }
                 yield return waitForSeconds;
             }

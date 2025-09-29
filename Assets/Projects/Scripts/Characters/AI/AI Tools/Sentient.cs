@@ -11,8 +11,8 @@ namespace Creotly_Studios
         private EnvironmentSetter environmentSetter;
 
         //Target
-        public Transform playerTransform {get; private set;}
-        public PlayerManager playerManager {get; private set;}
+        public Transform PlayerTransform {get; private set;}
+        public PlayerManager PlayerManager {get; private set;}
 
         [Header("Parameters")]
         [SerializeField] private Transform playerHolder;
@@ -46,12 +46,11 @@ namespace Creotly_Studios
         {
             yield return new WaitUntil(() => cells.hasCollapsed == true);
 
-            playerManager = Instantiate(playerPrefab, playerHolder);
-            playerTransform = playerManager.transform;
+            PlayerManager = Instantiate(playerPrefab, playerHolder);
+            PlayerTransform = PlayerManager.transform;
 
-            GameManager.Instance.SetPlayerManager(playerManager);
-
-            yield return new WaitUntil(() => playerManager.isGrounded == true);
+            GameManager.Instance.SetPlayerManager(PlayerManager);
+            yield return new WaitUntil(() => PlayerManager.isGrounded == true);
 
             FloorNavmeshBuilder.Instance.FloorNavMeshBuilder_Start();
         }
