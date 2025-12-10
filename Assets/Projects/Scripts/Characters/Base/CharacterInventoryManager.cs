@@ -43,8 +43,6 @@ namespace Creotly_Studios
         {
             if(currentWeaponManager == null)
             {
-                characterManager.characterAnimatorRigController.LeftHandIKConstraint.weight = 0.0f;
-                characterManager.characterAnimatorRigController.RightHandIKConstraint.weight = 0.0f;
                 return;
             }
             currentWeaponManager.WeaponManager_Update(delta);

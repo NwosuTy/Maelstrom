@@ -43,8 +43,6 @@ namespace Creotly_Studios
 
         public void Unarmed_StandOrCrouch()
         {
-            characterManager.characterAnimatorRigController.SetTwoBoneIKConstraint(null, null);
-
             if (playerManager.isCrouching != true)
             {
                 mainAnimatorController = unarmedStandingController;

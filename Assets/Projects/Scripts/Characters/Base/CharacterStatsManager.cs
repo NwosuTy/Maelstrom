@@ -44,7 +44,6 @@ namespace Creotly_Studios
             currentHealth = 0.0f;
             characterManager.healthBarUI.SetCurrentValue(currentHealth);
              
-            characterManager.characterAnimatorRigController.StopAllRigs();
             characterManager.characterInventoryManager.UnloadAllWeapons();
             characterManager.characterAnimationManager.PlayTargetAnimation(deathAnimation, true);
         }

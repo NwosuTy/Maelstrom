@@ -12,7 +12,6 @@ namespace Creotly_Studios
         public PlayerAnimationManager playerAnimationManager {get; private set;}
         public PlayerInventoryManager playerInventoryManager {get; private set;}
         public PlayerLocomotionManager playerLocomotionManager {get; private set;}
-        public PlayerAnimationRigController playerAnimationRigController { get; private set; }
 
         //Player Components
         public InputManager playerInputManager {get; private set;}
@@ -53,7 +52,6 @@ namespace Creotly_Studios
             playerUIManager = GetComponentInChildren<PlayerUIManager>();
             playerCameraController = GetComponent<PlayerCameraController>();
             crossHairTransform = FindFirstObjectByType<CrossHairTarget>()?.transform;
-            playerAnimationRigController = characterAnimatorRigController as PlayerAnimationRigController;
 
             playerStatsManager = characterStatsManager as PlayerStatsManager;
             playerCombatManager = characterCombatManager as PlayerCombatManager;
@@ -86,7 +84,6 @@ namespace Creotly_Studios
 
             base.Update();
             playerUIManager.PlayerUIManager_Update(delta);
-            playerAnimationRigController.CharacterAnimationRig_Updater(delta);
         }
         
         protected override void FixedUpdate()

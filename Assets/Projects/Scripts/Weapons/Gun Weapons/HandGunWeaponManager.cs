@@ -30,10 +30,8 @@ namespace Creotly_Studios
             if (playerManager != null)
             {
                 playerManager.crossHairImage = crossHairImage;
-                playerManager.aimingCrossHairImage = aimingCrossHairImage;
-                
+                playerManager.aimingCrossHairImage = aimingCrossHairImage;              
                 playerWeaponUI = playerManager.playerUIManager.weaponsManager;
-                SetWeaponPose(characterManager.characterAnimatorRigController);
                 gunRecoil.Initialize(this, playerManager.playerLocomotionManager.cameraObject);
             }
         }
@@ -104,38 +102,5 @@ namespace Creotly_Studios
             base.ResetAllStats();
             bulletLeft = maxBullet;
         }
-
-        #region Animation Rigging
-        private void SetWeaponPose(CharacterAnimatorRigController rigController)
-        {
-            if (gunType == GunType.Handgun || characterManager.characterType == CharacterType.Enemy)
-            {
-                SetWeaponPoseParameters(0, rigController);
-                return;
-            }
-            SetWeaponPoseParameters(1, rigController);
-        }
-
-        private void SetWeaponPoseParameters(int constraintIndex, CharacterAnimatorRigController rigController)
-        {
-            for (int i = 0; i < rigController.WeaponAimObjects.Length; i++)
-            {
-                rigController.WeaponAimObjects[i].SetActive(i == constraintIndex);
-            }
-
-            for (int i = 0; i < rigController.WeaponParentConstraints.Length; i++)
-            {
-                MultiParentConstraint parConstraint = rigController.WeaponParentConstraints[i];
-                parConstraint.weight = (i == constraintIndex) ? 1f : 0f;
-            }
-
-            for (int i = 0; i < rigController.WeaponPositionConstraints.Length; i++)
-            {
-                MultiPositionConstraint posConstraint = rigController.WeaponPositionConstraints[i];
-                posConstraint.weight = (i == constraintIndex) ? 1f : 0f;
-            }
-            rigController.RigBuilder.Build();
-        }
-        #endregion
     }
 }

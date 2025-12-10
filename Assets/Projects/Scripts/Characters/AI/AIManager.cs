@@ -18,7 +18,6 @@ namespace Creotly_Studios
         public AIInventoryManager aIInventoryManager {get; private set;}
         public AILocomotionManager aILocomotionManager {get; private set;}
         public EnemyDetectionScript enemyDetectionScript {get; private set;}
-        public AIAnimationRigController aiAnimationRigController { get; private set; }
 
         //Private Parameters
         public float AngleOfTarget {get; private set;}
@@ -47,7 +46,7 @@ namespace Creotly_Studios
         protected override void Awake()
         {
             animator = GetComponent<Animator>();
-            
+
             base.Awake();
             currentState = null;
 
@@ -65,7 +64,6 @@ namespace Creotly_Studios
             aIAnimationManager = characterAnimationManager as AIAnimationManager;
             aIInventoryManager = characterInventoryManager as AIInventoryManager;
             aILocomotionManager = characterLocomotionManager as AILocomotionManager;
-            aiAnimationRigController = characterAnimatorRigController as AIAnimationRigController;
         }
 
         // Start is called before the first frame update
@@ -117,7 +115,6 @@ namespace Creotly_Studios
             float delta = Time.deltaTime;
 
             base.LateUpdate();
-            aiAnimationRigController?.CharacterAnimationRig_Updater(delta);
         }
 
         private void OnDisable()
@@ -198,7 +195,6 @@ namespace Creotly_Studios
                 return;
             }
             aIInventoryManager.HandleSetWeapon(1);
-            aiAnimationRigController.SetAimTarget(target.visualTarget.targetPoint);
             characterAnimationManager.PlayTargetAnimation(AnimatorHashNames.equipWeapon, true);
         }
 
@@ -213,7 +209,7 @@ namespace Creotly_Studios
                     currentState = nextState;
                 }
             }
-            navMeshAgent.transform.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+            navMeshAgent.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
 
             CheckIfMoving();
             ReduceCoolDownTimer(delta);

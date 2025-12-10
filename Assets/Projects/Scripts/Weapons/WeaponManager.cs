@@ -68,7 +68,6 @@ namespace Creotly_Studios
                 playerManager.playerAnimationManager.mainAnimatorController = mainAnimatorController;
                 playerManager.playerAnimationManager.crouchAnimatorController = crouchAnimatorController;
             }
-            characterManager.characterAnimatorRigController.SetTwoBoneIKConstraint(weaponGrip, weaponRest);
             hasBeenInitialized = true;
         }
 

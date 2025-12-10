@@ -74,8 +74,6 @@ namespace Creotly_Studios
         private void Start()
         {
             animator = characterManager.animator;
-            rigBuilder = characterManager.characterAnimatorRigController.RigBuilder;
-
             leftFootHash = Animator.StringToHash("leftFootIK");
             rightFootHash = Animator.StringToHash("rightFootIK");
 

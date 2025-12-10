@@ -5,117 +5,53 @@ namespace Creotly_Studios
 {
     public class CharacterAnimatorRigController : MonoBehaviour
     {
-        protected Transform weaponRestIK;
-        protected CharacterManager characterManager;
+        private RigBuilder rigBuilder;
+        private CharacterManager characterManager;
 
-        [Header("Stats")]
-        [SerializeField] protected float aimDuration;
+        [Header("Body Rigs")]
+        [SerializeField] private Rig bodyAim_Rig;
+        [SerializeField] private Rig fandIKPose_Rig;
+        [SerializeField] private Rig footIKPose_Rig;
 
-        [field: Header("Rigs")]
-        [field: SerializeField] public RigBuilder RigBuilder { get; protected set; }
-        [field: SerializeField] public Rig HandIKConstraints { get; protected set; }
-        [field: SerializeField] public Rig BodyAimConstraints { get; protected set; }
-        [field: SerializeField] public Rig WeaponAimConstraint { get; protected set; }
+        [Header("Weapon Rigs")]
+        [SerializeField] private Rig weaponAim_Rig;
+        [SerializeField] private Rig weaponPose_Rig;
+        [SerializeField] private Rig weaponHolder_Rig;
 
-        [field: Header("Hand_IK Parameters")]
-        [field: SerializeField] public TwoBoneIKConstraint LeftHandIKConstraint { get; protected set; }
-        [field: SerializeField] public TwoBoneIKConstraint RightHandIKConstraint { get; protected set; }
+        [Header("Weapon Pivot Parameters")]
+        [SerializeField] private Transform mainGrip;
+        [SerializeField] private Transform secondaryGrip;
 
-        [field: Header("Aiming Constraints")]
-        [field: SerializeField] public GameObject[] WeaponAimObjects { get; protected set; }
-        [field: SerializeField] public MultiAimConstraint[] MultiAimConstraintArray { get; protected set; }
+        [Header("Hand IK Constraints")]
+        [SerializeField] private TwoBoneIKConstraint leftHandConstraint;
+        [SerializeField] private TwoBoneIKConstraint rightHandConstraint;
 
-        [field: Header("Weapon Pose Constraint")]
-        [field: SerializeField] public MultiParentConstraint[] WeaponParentConstraints { get; protected set; }
-        [field: SerializeField] public MultiPositionConstraint[] WeaponPositionConstraints { get; protected set; }
+        public TwoBoneIKConstraint LeftHandIK => leftHandConstraint;
+        public TwoBoneIKConstraint RightHandIK => rightHandConstraint;
 
-        protected virtual void Awake()
+        private void Awake()
         {
-            RigBuilder = GetComponentInParent<RigBuilder>();
+            rigBuilder = GetComponentInParent<RigBuilder>();
             characterManager = GetComponentInParent<CharacterManager>();
         }
 
-        public virtual void CharacterAnimationRig_Updater(float delta)
-        {
-            Lock_In(delta);
 
-            bool shouldAim = (characterManager.coverState == CoverState.NoCover) || (characterManager.isLockedIn);
-            SetAimTargetWeight(shouldAim);
+        public void InitializeHandConstraints()
+        {
+            SetHandIKConstraintTarget(1.0f, rightHandConstraint, mainGrip);
+            SetHandIKConstraintTarget(0.75f, leftHandConstraint, secondaryGrip);
+            rigBuilder.Build();
         }
 
-        public void SetTwoBoneIKConstraint(Transform weaponGrip, Transform weaponRest)
+        private void SetHandIKConstraintTarget(float weight, TwoBoneIKConstraint hand, Transform target)
         {
-            weaponRestIK = weaponRest;
-
-            LeftHandIKConstraint.data.target = weaponRest;
-            RightHandIKConstraint.data.target = weaponGrip;
-
-            LeftHandIKConstraint.weight = (weaponRest == null) ? 0.0f : 0.55f;
-            RightHandIKConstraint.weight = (weaponGrip == null) ? 0.0f : 1.0f;
-            RigBuilder.Build();
-        }
-
-        public void SetAimTarget(Transform aimedTarget)
-        {
-            foreach (MultiAimConstraint multiAimConstraint in MultiAimConstraintArray)
+            if(target == null)
             {
-                var sources = multiAimConstraint.data.sourceObjects;
-                WeightedTransform weightedTransform = new(aimedTarget, 1f);
-
-                sources.Clear();
-                sources.Add(weightedTransform);
-                multiAimConstraint.data.sourceObjects = sources;
-            }
-            RigBuilder.Build();
-        }
-
-        public void SetAimTargetWeight(bool shouldAim)
-        {
-            if(shouldAim != true)
-            {
-                MultiAimConstraintArray[0].weight = 0;
-                MultiAimConstraintArray[1].weight = 0;
-                MultiAimConstraintArray[2].weight = 0;
+                hand.weight = 0.0f;
                 return;
             }
-            MultiAimConstraintArray[0].weight = 0.75f;
-            MultiAimConstraintArray[1].weight = 0.35f;
-            MultiAimConstraintArray[2].weight = 0.55f;
-        }
-
-        public void StopAllRigs()
-        {
-            HandIKConstraints.weight = 0.0f;
-            BodyAimConstraints.weight = 0.0f;
-            WeaponAimConstraint.weight = 0.0f;
-        }
-
-        private void Lock_In(float delta)
-        {
-            float moveDuration = delta / aimDuration;
-            WeaponManager currentWeapon = characterManager.characterInventoryManager.currentWeaponManager;
-
-            if (currentWeapon == null || weaponRestIK == null)
-            {
-                return;
-            }
-
-            if (characterManager.isLockedIn)
-            {
-                WeaponAimConstraint.weight += moveDuration;
-                weaponRestIK.localPosition = Vector3.MoveTowards(weaponRestIK.localPosition, currentWeapon.RestLockedPosition, moveDuration);
-                return;
-            }
-
-            //Instantly Set Aim if isAttacking and not loked in
-            if(characterManager.isAttacking)
-            {
-                WeaponAimConstraint.weight = 1.0f;
-                weaponRestIK.localPosition = currentWeapon.RestLockedPosition;
-                return;
-            }
-            WeaponAimConstraint.weight -= moveDuration;
-            weaponRestIK.localPosition = Vector3.MoveTowards(weaponRestIK.localPosition, currentWeapon.RestOriginalPosition, moveDuration);
+            hand.data.target = target;
+            hand.weight = weight;
         }
     }
 }

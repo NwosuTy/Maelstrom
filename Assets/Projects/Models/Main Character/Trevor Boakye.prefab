@@ -2803,7 +2803,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1799093367751114662}
-  - component: {fileID: 1326948351300331383}
   m_Layer: 3
   m_Name: Animation Rigs
   m_TagString: Untagged
@@ -2832,40 +2831,6 @@ Transform:
   - {fileID: 7911497489001318252}
   m_Father: {fileID: 5328044407146808202}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1326948351300331383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3093438658466955592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc320d85a105a124cb112cbae85481e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aimDuration: 0.5
-  <RigBuilder>k__BackingField: {fileID: 0}
-  <HandIKConstraints>k__BackingField: {fileID: 6259433722885322945}
-  <BodyAimConstraints>k__BackingField: {fileID: 8939751005572825754}
-  <WeaponAimConstraint>k__BackingField: {fileID: 355172445540065828}
-  <LeftHandIKConstraint>k__BackingField: {fileID: 1022638677943979710}
-  <RightHandIKConstraint>k__BackingField: {fileID: 3216875688739873156}
-  <WeaponAimObjects>k__BackingField:
-  - {fileID: 1366131385649019620}
-  - {fileID: 4355228139581459748}
-  <MultiAimConstraintArray>k__BackingField:
-  - {fileID: 8927587771043597434}
-  - {fileID: 1709920926396552063}
-  - {fileID: 3290049600908301637}
-  - {fileID: 2164695251584008564}
-  - {fileID: 2637633725089754358}
-  <WeaponParentConstraints>k__BackingField:
-  - {fileID: 9079499524973790435}
-  - {fileID: 245464861410574995}
-  <WeaponPositionConstraints>k__BackingField:
-  - {fileID: 6403419227732820483}
-  - {fileID: 322193927032200979}
 --- !u!1 &3394551774674318237
 GameObject:
   m_ObjectHideFlags: 0
@@ -8074,7 +8039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70b342d8ce5c2fd48b8fa3147d48d1d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Weight: 1
+  m_Weight: 0
   m_Effectors: []
 --- !u!1 &8050959290059534044
 GameObject:
