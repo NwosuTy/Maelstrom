@@ -170,9 +170,9 @@ namespace Creotly_Studios
             ApplyIkPosition(ref _lastIkPositionR.y, ref ikConstraintR, bonePositionR, t);
 
             //ik rotation
-            SetIkRotationWeight();
-            ApplyIkRotation(ref _lastIkRotationL, ref ikConstraintL, boneRotationL, t);
-            ApplyIkRotation(ref _lastIkRotationR, ref ikConstraintR, boneRotationR, t);
+            //SetIkRotationWeight();
+            //ApplyIkRotation(ref _lastIkRotationL, ref ikConstraintL, boneRotationL, t);
+            //ApplyIkRotation(ref _lastIkRotationR, ref ikConstraintR, boneRotationR, t);
         }
 
         public void SetBoneIKConstraint(float value)

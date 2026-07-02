@@ -6868,7 +6868,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   ikRig: {fileID: 3467915837971917629}
-  rigBuilder: {fileID: 0}
+  rigBuilder: {fileID: 4008568214473328878}
   ikConstraintL: {fileID: 1269230598188367021}
   ikConstraintR: {fileID: 7074720795956368858}
   extractConstraintL: {fileID: 8297746315369717780}

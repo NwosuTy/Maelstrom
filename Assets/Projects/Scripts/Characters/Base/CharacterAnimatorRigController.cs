@@ -26,13 +26,15 @@ namespace Creotly_Studios
         [SerializeField] private TwoBoneIKConstraint leftHandConstraint;
         [SerializeField] private TwoBoneIKConstraint rightHandConstraint;
 
-        public TwoBoneIKConstraint LeftHandIK => leftHandConstraint;
-        public TwoBoneIKConstraint RightHandIK => rightHandConstraint;
-
         private void Awake()
         {
             rigBuilder = GetComponentInParent<RigBuilder>();
             characterManager = GetComponentInParent<CharacterManager>();
+        }
+
+        public void MoveCharacterHandToWeaponPlacement(Transform grip1, Transform grip2)
+        {
+            
         }
 
 
